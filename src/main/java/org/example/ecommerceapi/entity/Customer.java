@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author $(bilal belhaj)
  **/
@@ -39,4 +42,8 @@ public class Customer {
 
     @Column(name = "address", columnDefinition = "TEXT")
     private String address;
+
+    @OneToMany(mappedBy = "customer")
+    @Builder.Default
+    private List<Order> orders = new ArrayList<>();
 }
