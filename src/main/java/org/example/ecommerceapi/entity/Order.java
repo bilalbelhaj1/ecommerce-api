@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.example.ecommerceapi.enums.OrderStatus;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -23,27 +24,28 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "order")
+@EntityListeners(AuditingEntityListener.class)
+@Table(name = "orders")
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "date", columnDefinition = "DATE", nullable = false)
     private LocalDateTime date;
 
     @Enumerated(EnumType.STRING)
     @Builder.Default
-    private OrderStatus status = OrderStatus.PROCCESING;
+    private OrderStatus status = OrderStatus.PROCESSING;
 
-    @Column(name = "total_amount", nullable = false, precision = 10, scale = 2)
+    @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal totalAmount;
 
-    @Column(name = "shipping_address", nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = false)
     private String shippingAddress;
 
     @OneToMany(mappedBy = "order", fetch = FetchType.LAZY,orphanRemoval = true, cascade = CascadeType.ALL)
+    @Builder.Default
     private List<OrderItem> items = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -51,10 +53,14 @@ public class Order {
     private Customer customer;
 
     @CreatedDate
-    @Column(name = "created_at", updatable = false)
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
     @LastModifiedDate
-    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    public void addItem(OrderItem item) {
+        this.items.add(item);
+        item.setOrder(this);
+    }
 }

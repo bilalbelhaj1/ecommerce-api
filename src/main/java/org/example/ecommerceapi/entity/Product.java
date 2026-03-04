@@ -23,6 +23,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name = "product")
 public class Product {
 
@@ -30,21 +31,21 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false, columnDefinition = "TEXT",length = 100)
+    @Column(nullable = false,length = 100)
     private String name;
 
-    @Column(name = "description", columnDefinition = "TEXT")
+    @Lob
     private String description;
 
-    @Column(name = "price", nullable = false, precision = 10, scale = 2)
+    @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
 
-    @Column(name = "stock", nullable = false)
+    @Column(nullable = false)
     @Builder.Default
     private Integer stock = 0;
 
 
-    @Column(name = "image_url", columnDefinition = "TEXT")
+    @Lob
     private String imageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -56,11 +57,10 @@ public class Product {
     private List<OrderItem> orderedItems = new ArrayList<>();
 
     @CreatedDate
-    @Column(name = "created_at", updatable = false)
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
     @LastModifiedDate
-    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
 }

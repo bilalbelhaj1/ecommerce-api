@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name = "category")
 public class Category {
 
@@ -28,10 +30,10 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false ,columnDefinition = "TEXT", length = 100)
+    @Column(nullable = false ,length = 100)
     private String name;
 
-    @Column(name = "description", columnDefinition = "TEXT")
+    @Lob
     private String description;
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
@@ -39,11 +41,10 @@ public class Category {
     private List<Product> products = new ArrayList<>();
 
     @CreatedDate
-    @Column(name = "created_at", updatable = false)
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
     @LastModifiedDate()
-    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
 }

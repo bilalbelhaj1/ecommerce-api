@@ -1,12 +1,10 @@
 package org.example.ecommerceapi.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -16,11 +14,15 @@ import java.util.List;
  * @author $(bilal belhaj)
  **/
 
-@Data
+@Setter
+@Getter
+@ToString(exclude = "orders")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name = "customer")
 public class Customer {
 
@@ -28,22 +30,25 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "first_name", nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = false, length = 100)
     private String firstName;
 
-    @Column(name = "last_name", nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = false, length = 100)
     private String lastName;
 
-    @Column(name = "email", nullable = false, columnDefinition = "TEXT", unique = true)
+    @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(name = "phone_number", unique = true ,columnDefinition = "TEXT")
+    @Column(unique = true)
     private String phoneNumber;
 
-    @Column(name = "password_hash", nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = false)
     private String passwordHash;
 
-    @Column(name = "address", columnDefinition = "TEXT")
+    @Transient
+    private String password;
+
+    @Column(name = "address")
     private String address;
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
@@ -51,10 +56,14 @@ public class Customer {
     private List<Order> orders = new ArrayList<>();
 
     @CreatedDate
-    @Column(name = "created_at", updatable = false)
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
     @LastModifiedDate
-    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    public void addOrder(Order order) {
+        this.orders.add(order);
+        order.setCustomer(this);
+    }
 }

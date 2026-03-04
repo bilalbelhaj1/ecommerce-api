@@ -4,5 +4,10 @@ package org.example.ecommerceapi.enums;
  * @author $(bilal belhaj)
  **/
 public enum OrderStatus {
-    SHIPPED, CONFIRMED, PROCCESING
+    PROCESSING,
+    CONFIRMED,
+    SHIPPED,
+    DELIVERED,
+    CANCELLED,
+    RETURNED
 }
