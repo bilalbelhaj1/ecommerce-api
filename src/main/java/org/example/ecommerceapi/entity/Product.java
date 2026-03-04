@@ -11,6 +11,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author $(bilal belhaj)
@@ -48,6 +50,10 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
+
+    @OneToMany(mappedBy = "product")
+    @Builder.Default
+    private List<OrderItem> orderedItems = new ArrayList<>();
 
     @CreatedDate
     @Column(name = "created_at", updatable = false)
