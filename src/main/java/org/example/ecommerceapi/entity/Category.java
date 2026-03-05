@@ -46,5 +46,4 @@ public class Category {
 
     @LastModifiedDate()
     private LocalDateTime updatedAt;
-
 }
