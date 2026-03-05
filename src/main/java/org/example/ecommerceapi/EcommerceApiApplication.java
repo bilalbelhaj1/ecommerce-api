@@ -17,8 +17,6 @@ public class EcommerceApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(EcommerceApiApplication.class, args);
     }
-
-
     @GetMapping
     public String home() {
         return "Welcome";

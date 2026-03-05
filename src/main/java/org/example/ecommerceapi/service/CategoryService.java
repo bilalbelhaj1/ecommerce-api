@@ -59,6 +59,7 @@ public class CategoryService {
         if (categoryRepository.existsByName(createCategoryDTO.name())) {
             throw new IllegalArgumentException("Category with the name" + createCategoryDTO.name() + "already exists");
         }
+        System.out.println(createCategoryDTO);
         // map to entity
         Category category = Category.builder()
                 .name(createCategoryDTO.name())
