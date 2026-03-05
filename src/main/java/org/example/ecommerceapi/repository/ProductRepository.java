@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductRepository extends JpaRepository <Product, Long> {
     public int countByCategoryId(Long id);
+    boolean existsByName(String name);
 }

@@ -13,6 +13,7 @@ public record ProductResponseDTO(
         String description,
         BigDecimal price,
         int stock,
+        String imageUrl,
         Category category
 ) {
 }
