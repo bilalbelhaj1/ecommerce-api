@@ -5,6 +5,8 @@ import org.example.ecommerceapi.dto.category.CategoryResponseDTO;
 import org.example.ecommerceapi.dto.category.CreateCategoryDTO;
 import org.example.ecommerceapi.dto.category.UpdateCategoryDTO;
 import org.example.ecommerceapi.entity.Category;
+import org.example.ecommerceapi.exception.BadRequestException;
+import org.example.ecommerceapi.exception.ResourceNotFoundException;
 import org.example.ecommerceapi.mapper.CategoryMapper;
 import org.example.ecommerceapi.repository.CategoryRepository;
 import org.example.ecommerceapi.repository.ProductRepository;
@@ -41,7 +43,7 @@ public class CategoryService {
     }
     // getCategory
     public CategoryResponseDTO getCategory(Long id) {
-        Category category = categoryRepository.findById(id).orElseThrow(()-> new IllegalStateException("Category not found"));
+        Category category = categoryRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Category not found"));
         return  CategoryMapper.toDTO(
                 category,
                 productRepository.countByCategoryId(category.getId()));
@@ -51,7 +53,7 @@ public class CategoryService {
     public CategoryResponseDTO addCategory(CreateCategoryDTO createCategoryDTO) {
         // check if category name already exists
         if (categoryRepository.existsByName(createCategoryDTO.name())) {
-            throw new IllegalArgumentException("Category with the name" + createCategoryDTO.name() + "already exists");
+            throw new BadRequestException("Category with the name " + createCategoryDTO.name() + " already exists");
         }
         System.out.println(createCategoryDTO);
         // map to entity
@@ -63,7 +65,7 @@ public class CategoryService {
 
     // update category
     public CategoryResponseDTO updateCategory(Long id, UpdateCategoryDTO updateCategoryDTO) {
-        Category category = categoryRepository.findById(id).orElseThrow( () -> new IllegalArgumentException("category does not exists"));
+        Category category = categoryRepository.findById(id).orElseThrow( () -> new ResourceNotFoundException("category does not exists"));
         if (updateCategoryDTO.name() != null
                 && !updateCategoryDTO.name().isEmpty()
                 && !Objects.equals(updateCategoryDTO.name(), category.getName())){
@@ -80,7 +82,7 @@ public class CategoryService {
 
     // delete category
     public void deleteCategory(Long id) {
-        Category category = categoryRepository.findById(id).orElseThrow(()->new IllegalStateException("Category not found"));
+        Category category = categoryRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Category not found"));
         categoryRepository.delete(category);
     }
 }

@@ -1,5 +1,6 @@
 package org.example.ecommerceapi.controller;
 
+import jakarta.validation.Valid;
 import org.example.ecommerceapi.dto.category.CategoryResponseDTO;
 import org.example.ecommerceapi.dto.category.CreateCategoryDTO;
 import org.example.ecommerceapi.dto.category.UpdateCategoryDTO;
@@ -26,7 +27,7 @@ public class CategoryController {
 
     // create
     @PostMapping
-    public CategoryResponseDTO createCategory(@RequestBody CreateCategoryDTO createCategoryDTO) {
+    public CategoryResponseDTO createCategory(@Valid @RequestBody CreateCategoryDTO createCategoryDTO) {
         return categoryService.addCategory(createCategoryDTO);
     }
     // read
@@ -44,7 +45,7 @@ public class CategoryController {
     @PutMapping(path = "{categoryId}")
     public CategoryResponseDTO updateCategory(
             @PathVariable("categoryId") Long id,
-            @RequestBody UpdateCategoryDTO updateCategoryDTO
+            @Valid @RequestBody UpdateCategoryDTO updateCategoryDTO
             ) {
         return categoryService.updateCategory(id, updateCategoryDTO);
     }

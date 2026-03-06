@@ -1,5 +1,6 @@
 package org.example.ecommerceapi.controller;
 
+import jakarta.validation.Valid;
 import org.example.ecommerceapi.dto.product.CreateProductDTO;
 import org.example.ecommerceapi.dto.product.ProductResponseDTO;
 import org.example.ecommerceapi.dto.product.UpdateProductDTO;
@@ -35,13 +36,13 @@ public class ProductController {
 
     // add product
     @PostMapping
-    public ProductResponseDTO addProduct(@RequestBody CreateProductDTO createProductDTO) {
+    public ProductResponseDTO addProduct(@Valid @RequestBody CreateProductDTO createProductDTO) {
         return productService.addProduct(createProductDTO);
     }
 
     // update product
     @PutMapping(path = "{productId}")
-    public ProductResponseDTO updateProduct(@PathVariable("productId") Long id, @RequestBody UpdateProductDTO updateProductDTO) {
+    public ProductResponseDTO updateProduct(@PathVariable("productId") Long id, @Valid @RequestBody UpdateProductDTO updateProductDTO) {
         return productService.updateProduct(id, updateProductDTO);
     }
 
