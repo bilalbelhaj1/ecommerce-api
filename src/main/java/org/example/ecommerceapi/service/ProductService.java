@@ -2,6 +2,7 @@ package org.example.ecommerceapi.service;
 
 import org.example.ecommerceapi.dto.product.CreateProductDTO;
 import org.example.ecommerceapi.dto.product.ProductResponseDTO;
+import org.example.ecommerceapi.dto.product.UpdateProductDTO;
 import org.example.ecommerceapi.entity.Category;
 import org.example.ecommerceapi.entity.Product;
 import org.example.ecommerceapi.repository.CategoryRepository;
@@ -9,7 +10,9 @@ import org.example.ecommerceapi.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author $(bilal belhaj)
@@ -83,8 +86,63 @@ public class ProductService {
         );
     }
     // update product
-    public ProductResponseDTO updateProduct() {
+    public ProductResponseDTO updateProduct(Long id, UpdateProductDTO updateProductDTO) {
+        Product product = productRepository.findById(id).orElseThrow(
+                () -> new IllegalStateException("Product Not Found")
+        );
 
+        if (updateProductDTO.name() != null
+                && !Objects.equals( updateProductDTO.name(), product.getName())
+                && !updateProductDTO.name().isEmpty()
+        ) {
+            product.setName(updateProductDTO.name());
+        }
+
+        if (updateProductDTO.description() != null
+                && !Objects.equals( updateProductDTO.description(), product.getDescription())
+                && !updateProductDTO.description().isEmpty()
+        ) {
+            product.setDescription(updateProductDTO.description());
+        }
+
+        if (updateProductDTO.imageUrl() != null
+                && !Objects.equals( updateProductDTO.imageUrl(), product.getImageUrl())
+                && !updateProductDTO.imageUrl().isEmpty()
+        ) {
+            product.setImageUrl(updateProductDTO.imageUrl());
+        }
+
+        if (updateProductDTO.price() != null
+                && updateProductDTO.price().compareTo(BigDecimal.valueOf(0.01)) > 0
+                && !updateProductDTO.price().equals(product.getPrice())
+        ) {
+            product.setPrice(updateProductDTO.price());
+        }
+
+        if (updateProductDTO.stock() != null
+                && updateProductDTO.stock() >= 0
+                && !updateProductDTO.stock().equals(product.getStock())
+        ) {
+            product.setStock(updateProductDTO.stock());
+        }
+        if (updateProductDTO.categoryId() != null
+                && updateProductDTO.categoryId().equals(product.getCategory().getId())
+        ) {
+            Category category = categoryRepository.findById(updateProductDTO.categoryId()).orElseThrow(
+                    () -> new IllegalStateException("Category Not Found")
+            );
+            product.setCategory(category);
+        }
+        Product saved = productRepository.save(product);
+        return new ProductResponseDTO(
+                saved.getId(),
+                saved.getName(),
+                saved.getDescription(),
+                saved.getPrice(),
+                saved.getStock(),
+                saved.getImageUrl(),
+                saved.getCategory()
+        );
     }
 
     // delete product

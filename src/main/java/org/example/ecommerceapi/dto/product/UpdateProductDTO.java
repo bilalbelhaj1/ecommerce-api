@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 
+import java.math.BigDecimal;
+
 /**
  * @author $(bilal belhaj)
  **/
@@ -13,9 +15,9 @@ public record UpdateProductDTO(
         String name,
         String description,
         @DecimalMin("0.01")
-        String price,
+        BigDecimal price,
         @PositiveOrZero
-        String stock,
+        Integer stock,
         String imageUrl,
         Long categoryId
 ) {
