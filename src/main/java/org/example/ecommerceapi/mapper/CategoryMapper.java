@@ -1,6 +1,7 @@
 package org.example.ecommerceapi.mapper;
 
 import org.example.ecommerceapi.dto.category.CategoryResponseDTO;
+import org.example.ecommerceapi.dto.category.CategorySummaryDTO;
 import org.example.ecommerceapi.dto.category.CreateCategoryDTO;
 import org.example.ecommerceapi.dto.category.UpdateCategoryDTO;
 import org.example.ecommerceapi.entity.Category;
@@ -28,5 +29,9 @@ public final class CategoryMapper {
                 category.getDescription(),
                 productCount
         );
+    }
+
+    public static CategorySummaryDTO toSummary(Category category){
+        return new CategorySummaryDTO(category.getName(), category.getId());
     }
 }
