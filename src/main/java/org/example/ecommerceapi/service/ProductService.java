@@ -1,5 +1,7 @@
 package org.example.ecommerceapi.service;
 
+import jakarta.transaction.Transactional;
+import org.example.ecommerceapi.dto.category.CategorySummaryDTO;
 import org.example.ecommerceapi.dto.product.CreateProductDTO;
 import org.example.ecommerceapi.dto.product.ProductResponseDTO;
 import org.example.ecommerceapi.dto.product.UpdateProductDTO;
@@ -19,6 +21,7 @@ import java.util.Objects;
  **/
 
 @Service
+@Transactional
 public class ProductService {
 
     private final ProductRepository productRepository;
@@ -40,7 +43,10 @@ public class ProductService {
                         p.getPrice(),
                         p.getStock(),
                         p.getImageUrl(),
-                        p.getCategory()))
+                        new CategorySummaryDTO(
+                                p.getCategory().getName(),
+                                p.getCategory().getId()
+                        )))
                 .toList();
     }
 
@@ -56,7 +62,10 @@ public class ProductService {
                 product.getPrice(),
                 product.getStock(),
                 product.getImageUrl(),
-                product.getCategory());
+                new CategorySummaryDTO(
+                        product.getCategory().getName(),
+                        product.getCategory().getId()
+                ));
     }
     // add product
     public ProductResponseDTO addProduct(CreateProductDTO createProductDTO) {
@@ -82,7 +91,10 @@ public class ProductService {
                 saved.getPrice(),
                 saved.getStock(),
                 saved.getImageUrl(),
-                saved.getCategory()
+                new CategorySummaryDTO(
+                        saved.getCategory().getName(),
+                        saved.getCategory().getId()
+                )
         );
     }
     // update product
@@ -126,7 +138,7 @@ public class ProductService {
             product.setStock(updateProductDTO.stock());
         }
         if (updateProductDTO.categoryId() != null
-                && updateProductDTO.categoryId().equals(product.getCategory().getId())
+                && !updateProductDTO.categoryId().equals(product.getCategory().getId())
         ) {
             Category category = categoryRepository.findById(updateProductDTO.categoryId()).orElseThrow(
                     () -> new IllegalStateException("Category Not Found")
@@ -141,7 +153,10 @@ public class ProductService {
                 saved.getPrice(),
                 saved.getStock(),
                 saved.getImageUrl(),
-                saved.getCategory()
+                new CategorySummaryDTO(
+                        saved.getCategory().getName(),
+                        saved.getCategory().getId()
+                )
         );
     }
 
