@@ -42,11 +42,11 @@ public class CategoryController {
 
     // update
     @PutMapping(path = "{categoryId}")
-    public void updateCategory(
+    public CategoryResponseDTO updateCategory(
             @PathVariable("categoryId") Long id,
             @RequestBody UpdateCategoryDTO updateCategoryDTO
             ) {
-        categoryService.updateCategory(id, updateCategoryDTO);
+        return categoryService.updateCategory(id, updateCategoryDTO);
     }
     // delete
     @DeleteMapping(path = "{categoryId}")

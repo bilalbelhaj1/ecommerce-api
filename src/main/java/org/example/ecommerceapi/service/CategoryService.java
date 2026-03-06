@@ -5,6 +5,7 @@ import org.example.ecommerceapi.dto.category.CategoryResponseDTO;
 import org.example.ecommerceapi.dto.category.CreateCategoryDTO;
 import org.example.ecommerceapi.dto.category.UpdateCategoryDTO;
 import org.example.ecommerceapi.entity.Category;
+import org.example.ecommerceapi.mapper.CategoryMapper;
 import org.example.ecommerceapi.repository.CategoryRepository;
 import org.example.ecommerceapi.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,21 +36,14 @@ public class CategoryService {
     public List<CategoryResponseDTO> getCategories(){
         List<Category> categories = categoryRepository.findAll();
         return categories.stream()
-                .map(cat-> new CategoryResponseDTO(
-                        cat.getId(),
-                        cat.getName(),
-                        cat.getDescription(),
-                        productRepository.countByCategoryId(cat.getId()))
-                )
+                .map(cat -> CategoryMapper.toDTO(cat, productRepository.countByCategoryId(cat.getId())))
                 .toList();
     }
     // getCategory
     public CategoryResponseDTO getCategory(Long id) {
         Category category = categoryRepository.findById(id).orElseThrow(()-> new IllegalStateException("Category not found"));
-        return new CategoryResponseDTO(
-                category.getId(),
-                category.getName(),
-                category.getDescription(),
+        return  CategoryMapper.toDTO(
+                category,
                 productRepository.countByCategoryId(category.getId()));
     }
 
@@ -61,17 +55,14 @@ public class CategoryService {
         }
         System.out.println(createCategoryDTO);
         // map to entity
-        Category category = Category.builder()
-                .name(createCategoryDTO.name())
-                .description(createCategoryDTO.description())
-                .build();
+        Category category = CategoryMapper.toEntity(createCategoryDTO);
         // save
         Category saved = categoryRepository.save(category);
         return new CategoryResponseDTO(saved.getId(), saved.getName(), saved.getDescription(), 0);
     }
 
     // update category
-    public void updateCategory(Long id, UpdateCategoryDTO updateCategoryDTO) {
+    public CategoryResponseDTO updateCategory(Long id, UpdateCategoryDTO updateCategoryDTO) {
         Category category = categoryRepository.findById(id).orElseThrow( () -> new IllegalArgumentException("category does not exists"));
         if (updateCategoryDTO.name() != null
                 && !updateCategoryDTO.name().isEmpty()
@@ -83,7 +74,8 @@ public class CategoryService {
                 && !Objects.equals(updateCategoryDTO.description(), category.getDescription())){
             category.setDescription(updateCategoryDTO.description());
         }
-        categoryRepository.save(category);
+        Category saved = categoryRepository.save(category);
+        return CategoryMapper.toDTO(saved, productRepository.countByCategoryId(saved.getId()));
     }
 
     // delete category

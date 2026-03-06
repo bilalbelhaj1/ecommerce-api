@@ -2,7 +2,10 @@ package org.example.ecommerceapi.mapper;
 
 import org.example.ecommerceapi.dto.category.CategoryResponseDTO;
 import org.example.ecommerceapi.dto.category.CreateCategoryDTO;
+import org.example.ecommerceapi.dto.category.UpdateCategoryDTO;
 import org.example.ecommerceapi.entity.Category;
+
+import java.util.Objects;
 
 /**
  * @author $(bilal belhaj)
