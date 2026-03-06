@@ -1,5 +1,6 @@
 package org.example.ecommerceapi.dto.product;
 
+import org.example.ecommerceapi.dto.category.CategorySummaryDTO;
 import org.example.ecommerceapi.entity.Category;
 
 import java.math.BigDecimal;
@@ -14,6 +15,6 @@ public record ProductResponseDTO(
         BigDecimal price,
         int stock,
         String imageUrl,
-        Category category
+        CategorySummaryDTO category
 ) {
 }
