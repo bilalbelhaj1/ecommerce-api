@@ -17,12 +17,14 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author $(bilal belhaj)
  **/
 
 @Service
+@Transactional
 public class OrderManagementService {
     private final OrderRepository orderRepository;
     private final OrderItemRepository orderItemRepository;
@@ -42,7 +44,6 @@ public class OrderManagementService {
     }
 
     // place order
-    @Transactional
     public OrderResponseDTO placeOrder(CreateOrderDTO dto) {
         // find customers
         Customer customer = customerRepository.findById(dto.customerId()).orElseThrow(
@@ -97,11 +98,45 @@ public class OrderManagementService {
     }
 
     // view orders (all by admin)
-
+    public List<OrderSummaryDTO> getAllOrders() {
+        return orderRepository.findAll()
+                .stream()
+                .map(or-> new OrderSummaryDTO(
+                        or.getDate(),
+                        or.getShippingAddress(),
+                        or.getTotalAmount(),
+                        or.getStatus()
+                ))
+                .toList();
+    }
     // view customer orders
-
+    public List<OrderSummaryDTO> getCustomerOrders(Long id) {
+        return orderRepository.findByCustomerId(id).stream()
+                .map(or -> new OrderSummaryDTO(
+                        or.getDate(),
+                        or.getShippingAddress(),
+                        or.getTotalAmount(),
+                        or.getStatus()
+                ))
+                .toList();
+    }
     // view order by id
-
+    public OrderResponseDTO getOrder(Long id) {
+        Order order = orderRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFoundException("Order not found")
+        );
+        return new OrderResponseDTO(new OrderSummaryDTO(
+                order.getDate(),
+                order.getShippingAddress(),
+                order.getTotalAmount(),
+                order.getStatus()
+        ), order.getItems().stream().map(item -> new OrderItemResponse(
+                item.getUnitPrice(),
+                item.getQuantity(),
+                item.getProduct().getName(),
+                item.getProduct().getId()
+        )).toList());
+    }
     // cancel order
 
     // view items
