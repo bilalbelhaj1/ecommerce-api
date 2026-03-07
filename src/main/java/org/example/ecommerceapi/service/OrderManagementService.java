@@ -44,6 +44,20 @@ public class OrderManagementService {
         this.productRepository = productRepository;
     }
 
+    // for the sake of testing we will add a function to insert a customer
+
+    public void insertCustomer() {
+        Customer customer = Customer.builder()
+                .email("bilal@gmail.com")
+                .address("boujrah, tetouan")
+                .firstName("bilal")
+                .lastName("belhaj")
+                .password("bilalbelhaj")
+                .passwordHash("hdeyegdeyyyyyyyyyyyyyyyyyyyyyyyy")
+                .build();
+        customerRepository.save(customer);
+    }
+
     // place order
     public OrderResponseDTO placeOrder(CreateOrderDTO dto) {
         // find customers

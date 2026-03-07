@@ -25,6 +25,10 @@ public class OrderManagementController {
         this.orderManagementService = orderManagementService;
     }
 
+    @PostMapping("/test")
+    public void createCustomer() {
+        orderManagementService.insertCustomer();
+    }
     // place order
     @PostMapping
     public ResponseEntity<OrderResponseDTO> createOrder(@Valid @RequestBody CreateOrderDTO dto) {
@@ -62,7 +66,7 @@ public class OrderManagementController {
     }
 
     // cancel order
-    @PutMapping("{id}")
+    @PutMapping("{id}/cancel")
     public ResponseEntity<OrderSummaryDTO> cancelOrder(
             @PathVariable Long id
     ) {
@@ -70,7 +74,7 @@ public class OrderManagementController {
     }
 
     // update status
-    @PutMapping("{id}")
+    @PutMapping("/status/{id}")
     public ResponseEntity<OrderSummaryDTO> updateStatus(
             @PathVariable Long id,
             @RequestParam OrderStatus status
