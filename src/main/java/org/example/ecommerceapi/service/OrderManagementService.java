@@ -9,6 +9,7 @@ import org.example.ecommerceapi.entity.Product;
 import org.example.ecommerceapi.enums.OrderStatus;
 import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
+import org.example.ecommerceapi.mapper.OrderManagementMapper;
 import org.example.ecommerceapi.repository.CustomerRepository;
 import org.example.ecommerceapi.repository.OrderItemRepository;
 import org.example.ecommerceapi.repository.OrderRepository;
@@ -101,23 +102,13 @@ public class OrderManagementService {
     public List<OrderSummaryDTO> getAllOrders() {
         return orderRepository.findAll()
                 .stream()
-                .map(or-> new OrderSummaryDTO(
-                        or.getDate(),
-                        or.getShippingAddress(),
-                        or.getTotalAmount(),
-                        or.getStatus()
-                ))
+                .map(OrderManagementMapper::toSummaryDTO)
                 .toList();
     }
     // view customer orders
     public List<OrderSummaryDTO> getCustomerOrders(Long id) {
         return orderRepository.findByCustomerId(id).stream()
-                .map(or -> new OrderSummaryDTO(
-                        or.getDate(),
-                        or.getShippingAddress(),
-                        or.getTotalAmount(),
-                        or.getStatus()
-                ))
+                .map(OrderManagementMapper::toSummaryDTO)
                 .toList();
     }
     // view order by id
@@ -125,17 +116,10 @@ public class OrderManagementService {
         Order order = orderRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Order not found")
         );
-        return new OrderResponseDTO(new OrderSummaryDTO(
-                order.getDate(),
-                order.getShippingAddress(),
-                order.getTotalAmount(),
-                order.getStatus()
-        ), order.getItems().stream().map(item -> new OrderItemResponse(
-                item.getUnitPrice(),
-                item.getQuantity(),
-                item.getProduct().getName(),
-                item.getProduct().getId()
-        )).toList());
+        List<OrderItemResponse> itemsRes = order.getItems().stream()
+                .map(item -> OrderManagementMapper.toOrderItemDTO(item, item.getProduct()))
+                .toList();
+        return new OrderResponseDTO(OrderManagementMapper.toSummaryDTO(order), itemsRes);
     }
     // cancel order
 
