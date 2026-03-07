@@ -139,7 +139,7 @@ public class OrderManagementService {
     }
     // cancel order
 
-    // view items
-
     // update status
+
+    // get by status
 }
