@@ -7,6 +7,7 @@ import org.example.ecommerceapi.dto.customer.UpdateCustomerDTO;
 import org.example.ecommerceapi.entity.Customer;
 import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
+import org.example.ecommerceapi.mapper.CustomerMapper;
 import org.example.ecommerceapi.repository.CustomerRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -27,39 +28,21 @@ public class CustomerService {
     }
 
     // create account
-    public void createAccount(CreateCustomerDTO dto) {
+    public CustomerResponseDTO createAccount(CreateCustomerDTO dto) {
         if (customerRepository.existsByEmail(dto.email())) {
             throw new BadRequestException("Email already exists");
         }
+        Customer customer = CustomerMapper.ToEntity(dto);
         String hash = passwordEncoder.encode(dto.password());
-        Customer customer = Customer.builder()
-                .firstName(dto.firstName())
-                .lastName(dto.lastName())
-                .email(dto.email())
-                .passwordHash(hash)
-                .build();
-        if (dto.address() != null && !dto.address().isEmpty()) {
-            customer.setAddress(dto.address());
-        }
-
-        if (dto.phoneNumber() != null && !dto.phoneNumber().isEmpty()) {
-            customer.setPhoneNumber(dto.phoneNumber());
-        }
-        customerRepository.save(customer);
+        customer.setPasswordHash(hash);
+        return CustomerMapper.toDTO(customerRepository.save(customer));
     }
     // get profile
     public CustomerResponseDTO getProfile(Long id) {
         Customer customer = customerRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Customer Not found")
         );
-        return new CustomerResponseDTO(
-                customer.getId(),
-                customer.getFirstName(),
-                customer.getLastName(),
-                customer.getEmail(),
-                customer.getPhoneNumber(),
-                customer.getAddress()
-        );
+        return CustomerMapper.toDTO(customer);
     }
     // update account
     public CustomerResponseDTO updateProfile(Long id, UpdateCustomerDTO dto) {
@@ -86,15 +69,7 @@ public class CustomerService {
             customer.setAddress(dto.address());
         }
 
-        Customer saved = customerRepository.save(customer);
-        return new CustomerResponseDTO(
-                saved.getId(),
-                saved.getFirstName(),
-                saved.getLastName(),
-                saved.getEmail(),
-                saved.getPhoneNumber(),
-                saved.getAddress()
-        );
+        return CustomerMapper.toDTO(customerRepository.save(customer));
     }
 
     // delete account
