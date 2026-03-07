@@ -51,15 +51,15 @@ public class OrderManagementService {
                 () -> new ResourceNotFoundException("Customer Not found")
         );
         // create order
-        Order order = Order.builder()
-                .shippingAddress(dto.shippingAddress())
-                .date(LocalDateTime.now())
-                .customer(customer)
-                .status(OrderStatus.PROCESSING)
-                .build();
+        Order order = OrderManagementMapper.toEntity(dto, customer);
         BigDecimal totalAmount = BigDecimal.ZERO;
         // create items
         for (CreateItemDTO itemDTO : dto.items()) {
+
+            if(dto.items().isEmpty()){
+                throw new BadRequestException("Order must contain at least one item");
+            }
+
             // check if product exists then create item
             Product product = productRepository.findById(itemDTO.productId()).orElseThrow(
                     () -> new ResourceNotFoundException("Product not found ")
@@ -78,7 +78,6 @@ public class OrderManagementService {
             order.addItem(orderItem);
             // update stock
             product.setStock(product.getStock() - itemDTO.quantity());
-            productRepository.save(product);
 
             totalAmount = totalAmount.add(product.getPrice().multiply(BigDecimal.valueOf(itemDTO.quantity())));
         }
@@ -86,14 +85,9 @@ public class OrderManagementService {
         orderRepository.save(order);
 
         return new OrderResponseDTO(
-                new OrderSummaryDTO(order.getDate(), order.getShippingAddress(), order.getTotalAmount(), order.getStatus()),
+                OrderManagementMapper.toSummaryDTO(order),
                 order.getItems().stream()
-                        .map(item -> new OrderItemResponse(
-                                item.getUnitPrice(),
-                                item.getQuantity(),
-                                item.getProduct().getName(),
-                                item.getProduct().getId()
-                        ))
+                        .map(item -> OrderManagementMapper.toOrderItemDTO(item, item.getProduct()))
                         .toList()
         );
     }
@@ -122,8 +116,35 @@ public class OrderManagementService {
         return new OrderResponseDTO(OrderManagementMapper.toSummaryDTO(order), itemsRes);
     }
     // cancel order
+    public OrderSummaryDTO cancelOrder(Long id){
+        Order order = orderRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFoundException("Order not found")
+        );
+        for (OrderItem item : order.getItems()) {
+            Product product = item.getProduct();
+            product.setStock(product.getStock() + item.getQuantity());
+        }
 
+        if(order.getStatus().equals(OrderStatus.DELIVERED)) {
+            throw new BadRequestException("Cannot cancel delevered orders");
+        }
+        order.setStatus(OrderStatus.CANCELLED);
+        return OrderManagementMapper.toSummaryDTO(orderRepository.save(order));
+    }
     // update status
 
+    public OrderSummaryDTO updateStatus(Long id, OrderStatus status) {
+        Order order = orderRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFoundException("Order not found")
+        );
+
+        order.setStatus(status);
+        return OrderManagementMapper.toSummaryDTO(orderRepository.save(order));
+    }
     // get by status
+    public List<OrderSummaryDTO> getByStatus(OrderStatus status) {
+        return orderRepository.findByStatus(status).stream()
+                .map(OrderManagementMapper::toSummaryDTO)
+                .toList();
+    }
 }
