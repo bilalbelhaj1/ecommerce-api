@@ -37,6 +37,7 @@ public class CustomerService {
         customer.setPasswordHash(hash);
         return CustomerMapper.toDTO(customerRepository.save(customer));
     }
+
     // get profile
     public CustomerResponseDTO getProfile(Long id) {
         Customer customer = customerRepository.findById(id).orElseThrow(
@@ -44,6 +45,7 @@ public class CustomerService {
         );
         return CustomerMapper.toDTO(customer);
     }
+
     // update account
     public CustomerResponseDTO updateProfile(Long id, UpdateCustomerDTO dto) {
         Customer customer = customerRepository.findById(id).orElseThrow(
@@ -79,7 +81,4 @@ public class CustomerService {
         }
         customerRepository.deleteById(id);
     }
-    // login
-
-    // reset password
 }
