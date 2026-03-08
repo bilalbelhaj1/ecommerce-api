@@ -18,7 +18,7 @@ public record UpdateCustomerDTO(
 
         @Size(min = 9, max = 15)
         String phoneNumber,
-        
+
         @Size(min = 3, max = 255)
         String address
 ) {
