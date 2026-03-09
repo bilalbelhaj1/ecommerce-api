@@ -38,7 +38,7 @@ public class CustomerController {
     public ResponseEntity<CustomerResponseDTO> getCustomer(@PathVariable Long id) {
         return ResponseEntity.ok().body(customerService.getProfile(id));
     }
-    
+
     // Update
     @PutMapping("{id}")
     public ResponseEntity<CustomerResponseDTO> updateCustomer(@PathVariable Long id, @Valid @RequestBody UpdateCustomerDTO dto) {
