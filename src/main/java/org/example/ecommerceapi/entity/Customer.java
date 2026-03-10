@@ -55,6 +55,10 @@ public class Customer {
     @Builder.Default
     private List<Order> orders = new ArrayList<>();
 
+    @OneToMany(mappedBy = "customer")
+    @Builder.Default
+    private List<Rating> ratings = new ArrayList<>();
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;

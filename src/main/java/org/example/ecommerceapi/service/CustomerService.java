@@ -1,6 +1,7 @@
 package org.example.ecommerceapi.service;
 
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.customer.CreateCustomerDTO;
 import org.example.ecommerceapi.dto.customer.CustomerResponseDTO;
 import org.example.ecommerceapi.dto.customer.UpdateCustomerDTO;
@@ -17,15 +18,11 @@ import org.springframework.stereotype.Service;
  **/
 @Transactional
 @Service
+@RequiredArgsConstructor
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
     private final PasswordEncoder passwordEncoder;
-
-    public CustomerService(CustomerRepository customerRepository, PasswordEncoder passwordEncoder) {
-        this.customerRepository = customerRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
 
     // create account
     public CustomerResponseDTO createAccount(CreateCustomerDTO dto) {

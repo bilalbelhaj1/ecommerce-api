@@ -27,10 +27,9 @@ public class CustomerController {
     // create customer
     @PostMapping
     public ResponseEntity<CustomerResponseDTO> create(@Valid @RequestBody CreateCustomerDTO dto) {
-        URI uri = URI.create("http://localhost:8080");
-        return ResponseEntity.created(uri).body(customerService.createAccount(
-                dto
-        ));
+        CustomerResponseDTO res = customerService.createAccount(dto);
+        URI uri = URI.create("http://localhost:8080/api/v1/customer/" + res.id());
+        return ResponseEntity.created(uri).body(res);
     }
 
     // get
