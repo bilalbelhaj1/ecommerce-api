@@ -18,21 +18,17 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, Object>> handleValidationException(MethodArgumentNotValidException ex) {
         var errors = ex.getBindingResult().getFieldErrors().stream()
-                .collect(
-                        Collectors.toMap(
-                                fieldError -> fieldError.getField(),
-                                fieldError -> fieldError.getDefaultMessage()
-                        )
-                );
+                .map(fieldError -> fieldError.getDefaultMessage())
+                .collect(Collectors.joining(", "));
+
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of(
                 "timestamp", LocalDateTime.now(),
                 "status", 400,
                 "error", "Validation field",
-                "messages", errors
+                "message", errors
         ));
     }
 
