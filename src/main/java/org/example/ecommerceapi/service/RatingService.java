@@ -40,8 +40,11 @@ public class RatingService {
     }
 
     // get all
-    public List<RatingResponseDTO> getAll() {
-        return ratingRepository.findAll()
+    public List<RatingResponseDTO> getAll(Long productId) {
+        Product product = productRepository.findById(productId).orElseThrow(
+                () -> new ResourceNotFoundException("Product Not found")
+        );
+        return ratingRepository.findAllByProduct(product)
                 .stream()
                 .map(RatingMapper::toDTO)
                 .toList();

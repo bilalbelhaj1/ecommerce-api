@@ -1,6 +1,7 @@
 package org.example.ecommerceapi.controller;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.orderManagement.CreateOrderDTO;
 import org.example.ecommerceapi.dto.orderManagement.OrderResponseDTO;
 import org.example.ecommerceapi.dto.orderManagement.OrderSummaryDTO;
@@ -17,18 +18,11 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("api/v1/orders")
+@RequiredArgsConstructor
 public class OrderManagementController {
 
     private final OrderManagementService orderManagementService;
 
-    public OrderManagementController(OrderManagementService orderManagementService) {
-        this.orderManagementService = orderManagementService;
-    }
-
-    @PostMapping("/test")
-    public void createCustomer() {
-        orderManagementService.insertCustomer();
-    }
     // place order
     @PostMapping
     public ResponseEntity<OrderResponseDTO> createOrder(@Valid @RequestBody CreateOrderDTO dto) {

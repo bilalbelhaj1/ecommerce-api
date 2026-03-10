@@ -1,6 +1,7 @@
 package org.example.ecommerceapi.controller;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.customer.CreateCustomerDTO;
 import org.example.ecommerceapi.dto.customer.CustomerResponseDTO;
 import org.example.ecommerceapi.dto.customer.UpdateCustomerDTO;
@@ -16,13 +17,10 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("api/v1/customer")
+@RequiredArgsConstructor
 public class CustomerController {
+
     private final CustomerService customerService;
-
-    public CustomerController(CustomerService customerService) {
-        this.customerService = customerService;
-    }
-
 
     // create customer
     @PostMapping

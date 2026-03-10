@@ -1,6 +1,7 @@
 package org.example.ecommerceapi.service;
 
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.category.CategoryResponseDTO;
 import org.example.ecommerceapi.dto.category.CreateCategoryDTO;
 import org.example.ecommerceapi.dto.category.UpdateCategoryDTO;
@@ -23,16 +24,11 @@ import java.util.Optional;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class CategoryService {
 
     private final CategoryRepository categoryRepository;
     private final ProductRepository productRepository;
-
-    @Autowired
-    public CategoryService(CategoryRepository categoryRepository, ProductRepository productRepository) {
-        this.categoryRepository = categoryRepository;
-        this.productRepository = productRepository;
-    }
 
     // get categories
     public List<CategoryResponseDTO> getCategories(){

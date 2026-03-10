@@ -6,7 +6,9 @@ import org.example.ecommerceapi.dto.product.CreateProductDTO;
 import org.example.ecommerceapi.dto.product.ProductResponseDTO;
 import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
 import org.example.ecommerceapi.dto.product.UpdateProductDTO;
+import org.example.ecommerceapi.dto.rating.RatingResponseDTO;
 import org.example.ecommerceapi.service.ProductService;
+import org.example.ecommerceapi.service.RatingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +24,7 @@ import java.util.List;
 public class ProductController {
 
     private final ProductService productService;
+    private final RatingService ratingService;
 
     // get products
     @GetMapping
@@ -56,5 +59,13 @@ public class ProductController {
     public ResponseEntity<Void> deleteProduct(@PathVariable("productId") Long id) {
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
+    }
+    
+    // get ratings
+    @GetMapping("/ratings/{id}")
+    public ResponseEntity<List<RatingResponseDTO>> getRatings(
+            @PathVariable Long id
+    ) {
+        return ResponseEntity.ok().body(ratingService.getAll(id));
     }
 }

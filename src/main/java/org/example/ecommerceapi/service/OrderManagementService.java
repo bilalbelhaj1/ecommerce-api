@@ -1,6 +1,7 @@
 package org.example.ecommerceapi.service;
 
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.orderManagement.*;
 import org.example.ecommerceapi.entity.Customer;
 import org.example.ecommerceapi.entity.Order;
@@ -26,37 +27,11 @@ import java.util.List;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class OrderManagementService {
     private final OrderRepository orderRepository;
-    private final OrderItemRepository orderItemRepository;
     private final CustomerRepository customerRepository;
     private final ProductRepository productRepository;
-
-    public OrderManagementService(
-            OrderRepository orderRepository,
-            OrderItemRepository orderItemRepository,
-            CustomerRepository customerRepository,
-            ProductRepository productRepository
-    ) {
-        this.orderRepository = orderRepository;
-        this.orderItemRepository = orderItemRepository;
-        this.customerRepository = customerRepository;
-        this.productRepository = productRepository;
-    }
-
-    // for the sake of testing we will add a function to insert a customer
-
-    public void insertCustomer() {
-        Customer customer = Customer.builder()
-                .email("bilal@gmail.com")
-                .address("boujrah, tetouan")
-                .firstName("bilal")
-                .lastName("belhaj")
-                .password("bilalbelhaj")
-                .passwordHash("hdeyegdeyyyyyyyyyyyyyyyyyyyyyyyy")
-                .build();
-        customerRepository.save(customer);
-    }
 
     // place order
     public OrderResponseDTO placeOrder(CreateOrderDTO dto) {
