@@ -2,6 +2,7 @@ package org.example.ecommerceapi.mapper;
 
 import org.example.ecommerceapi.dto.customer.CreateCustomerDTO;
 import org.example.ecommerceapi.dto.customer.CustomerResponseDTO;
+import org.example.ecommerceapi.dto.customer.CustomerSummaryDTO;
 import org.example.ecommerceapi.entity.Customer;
 
 /**
@@ -28,5 +29,9 @@ public class CustomerMapper {
                 customer.getPhoneNumber(),
                 customer.getAddress()
         );
+    }
+
+    public static CustomerSummaryDTO toSummary(Customer customer) {
+        return new CustomerSummaryDTO(customer.getFirstName(), customer.getLastName());
     }
 }
