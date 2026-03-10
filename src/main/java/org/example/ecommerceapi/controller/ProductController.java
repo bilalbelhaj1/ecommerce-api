@@ -4,8 +4,8 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.product.CreateProductDTO;
 import org.example.ecommerceapi.dto.product.ProductResponseDTO;
+import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
 import org.example.ecommerceapi.dto.product.UpdateProductDTO;
-import org.example.ecommerceapi.entity.Product;
 import org.example.ecommerceapi.service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,17 +25,17 @@ public class ProductController {
 
     // get products
     @GetMapping
-    public ResponseEntity<List<ProductResponseDTO>> getAll() {
+    public ResponseEntity<List<ProductSummaryDTO>> getAll() {
         return ResponseEntity.ok().body(productService.getAllProducts());
     }
 
-    // get one produc
+    // get one product
     @GetMapping(path = "{productId}")
     public ResponseEntity<ProductResponseDTO> getOne(@PathVariable("productId") Long id) {
         return ResponseEntity.ok().body(productService.getProduct(id));
     }
 
-    // add product
+    // add product (admin)
     @PostMapping
     public ResponseEntity<ProductResponseDTO> addProduct(@Valid @RequestBody CreateProductDTO createProductDTO) {
         ProductResponseDTO res = productService.addProduct(createProductDTO);
@@ -43,7 +43,7 @@ public class ProductController {
         return ResponseEntity.created(uri).body(res);
     }
 
-    // update product
+    // update product (admin)
     @PutMapping(path = "{productId}")
     public ResponseEntity<ProductResponseDTO> updateProduct(@PathVariable("productId") Long id, @Valid @RequestBody UpdateProductDTO updateProductDTO) {
         ProductResponseDTO res = productService.updateProduct(id, updateProductDTO);
@@ -51,7 +51,7 @@ public class ProductController {
         return ResponseEntity.ok().body(res);
     }
 
-    // delete product
+    // delete product (admin)
     @DeleteMapping(path = "{productId}")
     public ResponseEntity<Void> deleteProduct(@PathVariable("productId") Long id) {
         productService.deleteProduct(id);

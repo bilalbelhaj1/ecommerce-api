@@ -25,7 +25,7 @@ public class RatingService {
     private final RatingRepository ratingRepository;
     private final CustomerRepository customerRepository;
     private final ProductRepository productRepository;
-    
+
     // create
     public RatingResponseDTO create(CreateRatingDTO dto) {
         Customer customer = customerRepository.findById(dto.customerId()).orElseThrow(

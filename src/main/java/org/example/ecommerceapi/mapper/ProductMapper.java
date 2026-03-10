@@ -2,8 +2,12 @@ package org.example.ecommerceapi.mapper;
 
 import org.example.ecommerceapi.dto.product.CreateProductDTO;
 import org.example.ecommerceapi.dto.product.ProductResponseDTO;
+import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
+import org.example.ecommerceapi.dto.rating.RatingResponseDTO;
 import org.example.ecommerceapi.entity.Category;
 import org.example.ecommerceapi.entity.Product;
+
+import java.util.List;
 
 /**
  * @author $(bilal belhaj)
@@ -22,7 +26,7 @@ public final class ProductMapper {
                 .build();
     }
 
-    public static ProductResponseDTO toDTO(Product product) {
+    public static ProductResponseDTO toDTO(Product product, List<RatingResponseDTO> ratings) {
         return new ProductResponseDTO(
                 product.getId(),
                 product.getName(),
@@ -30,7 +34,22 @@ public final class ProductMapper {
                 product.getPrice(),
                 product.getStock(),
                 product.getImageUrl(),
-                CategoryMapper.toSummary(product.getCategory())
+                CategoryMapper.toSummary(product.getCategory()),
+                ratings
+
+        );
+    }
+
+    public static ProductSummaryDTO toSummary(Product product, double rating, int nbrRatings) {
+        return new ProductSummaryDTO(
+                product.getId(),
+                product.getName(),
+                product.getPrice(),
+                product.getStock(),
+                product.getDescription(),
+                product.getImageUrl(),
+                rating,
+                nbrRatings
         );
     }
 }
