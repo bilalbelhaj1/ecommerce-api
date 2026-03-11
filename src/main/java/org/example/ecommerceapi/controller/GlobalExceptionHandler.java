@@ -41,6 +41,7 @@ public class GlobalExceptionHandler {
                 "message", ex.getMessage()
         ));
     }
+    
 
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<Map<String, Object>> handleBadRequest(BadRequestException ex) {
