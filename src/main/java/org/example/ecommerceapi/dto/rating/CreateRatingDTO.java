@@ -13,8 +13,6 @@ public record CreateRatingDTO(
 
         @Min(1) @Max(5)
         int rating,
-
-        Long productId,
         Long customerId
 ) {
 }

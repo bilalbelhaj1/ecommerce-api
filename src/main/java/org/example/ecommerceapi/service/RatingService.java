@@ -13,6 +13,7 @@ import org.example.ecommerceapi.repository.CustomerRepository;
 import org.example.ecommerceapi.repository.ProductRepository;
 import org.example.ecommerceapi.repository.RatingRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,14 +28,16 @@ public class RatingService {
     private final ProductRepository productRepository;
 
     // create
-    public RatingResponseDTO create(CreateRatingDTO dto) {
+    @Transactional
+    public RatingResponseDTO create(Long productId, CreateRatingDTO dto) {
         Customer customer = customerRepository.findById(dto.customerId()).orElseThrow(
                 () -> new ResourceNotFoundException("Customer Not found")
         );
-        Product product = productRepository.findById(dto.productId()).orElseThrow(
+        Product product = productRepository.findById(productId).orElseThrow(
                 () -> new ResourceNotFoundException("Product Not found")
         );
         Rating rating = RatingMapper.toEntity(dto, customer, product);
+        System.out.println(rating);
         Rating saved = ratingRepository.save(rating);
         return RatingMapper.toDTO(saved);
     }

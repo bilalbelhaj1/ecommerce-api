@@ -23,7 +23,7 @@ public class RatingController {
     // create
     @PostMapping("/products/{productId}/rating")
     public ResponseEntity<RatingResponseDTO> rateProduct(@PathVariable Long productId, @Valid @RequestBody CreateRatingDTO dto) {
-        RatingResponseDTO res = ratingService.create(dto);
+        RatingResponseDTO res = ratingService.create(productId, dto);
         URI uri = URI.create("http://localhost:8081/api/v1/ratings" + res.id());
         return ResponseEntity.created(uri).body(res);
     }
