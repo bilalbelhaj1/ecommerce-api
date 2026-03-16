@@ -20,14 +20,11 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository <Product, Long> {
     int countByCategoryId(Long id);
     boolean existsByName(String name);
-    @Query(
-            "SELECT avg(rating) FROM Rating WHERE product.id = :id"
-    )
+
+    @Query("SELECT COALESCE(avg(r.rating), 0) FROM Rating r WHERE r.product.id = :id")
     double rating(@Param("id") Long id);
 
-    @Query(
-            "SELECT count(*) FROM Rating WHERE Rating.product = :product "
-    )
+    @Query("SELECT count(r) FROM Rating r WHERE r.product = :product")
     int nbrRatings(@Param("product") Product product);
 
     Page<Product> findByStatusAndCategory(ProductStatus status, Category category, Pageable pageable);

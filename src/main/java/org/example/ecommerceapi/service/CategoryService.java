@@ -5,10 +5,12 @@ import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.category.CategoryResponseDTO;
 import org.example.ecommerceapi.dto.category.CreateCategoryDTO;
 import org.example.ecommerceapi.dto.category.UpdateCategoryDTO;
+import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
 import org.example.ecommerceapi.entity.Category;
 import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
 import org.example.ecommerceapi.mapper.CategoryMapper;
+import org.example.ecommerceapi.mapper.ProductMapper;
 import org.example.ecommerceapi.repository.CategoryRepository;
 import org.example.ecommerceapi.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,5 +82,15 @@ public class CategoryService {
     public void deleteCategory(Long id) {
         Category category = categoryRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Category not found"));
         categoryRepository.delete(category);
+    }
+
+    // get category products
+    public List<ProductSummaryDTO> getProductsByCategory(Long id) {
+        Category category  = categoryRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFoundException("Category not found")
+        );
+        return category.getProducts().stream()
+                .map(product -> ProductMapper.toSummary(product, productRepository.rating(product.getId()), productRepository.nbrRatings(product)))
+                .toList();
     }
 }

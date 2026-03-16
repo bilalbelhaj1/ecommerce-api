@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.category.CategoryResponseDTO;
 import org.example.ecommerceapi.dto.category.CreateCategoryDTO;
 import org.example.ecommerceapi.dto.category.UpdateCategoryDTO;
+import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
 import org.example.ecommerceapi.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class CategoryController {
     @PostMapping
     public ResponseEntity<CategoryResponseDTO> createCategory(@Valid @RequestBody CreateCategoryDTO createCategoryDTO) {
         CategoryResponseDTO res = categoryService.addCategory(createCategoryDTO);
-        URI uri = URI.create("http://localhost:8080" + res.id());
+        URI uri = URI.create("http://localhost:8081" + res.id());
         return ResponseEntity.created(uri).body(res);
     }
     // read
@@ -61,5 +62,11 @@ public class CategoryController {
     public ResponseEntity<Void> deleteCategory(@PathVariable("categoryId") Long id) {
         categoryService.deleteCategory(id);
         return ResponseEntity.noContent().build();
+    }
+
+    // get products
+    @GetMapping("{id}/products")
+    public ResponseEntity<List<ProductSummaryDTO>> getProducts(@PathVariable Long id) {
+        return ResponseEntity.ok().body(categoryService.getProductsByCategory(id));
     }
 }
