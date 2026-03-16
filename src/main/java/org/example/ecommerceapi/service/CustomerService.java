@@ -10,7 +10,7 @@ import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
 import org.example.ecommerceapi.mapper.CustomerMapper;
 import org.example.ecommerceapi.repository.CustomerRepository;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
-    private final PasswordEncoder passwordEncoder;
+    //private final PasswordEncoder passwordEncoder;
 
     // create account
     public CustomerResponseDTO createAccount(CreateCustomerDTO dto) {
@@ -30,8 +30,8 @@ public class CustomerService {
             throw new BadRequestException("Email already exists");
         }
         Customer customer = CustomerMapper.ToEntity(dto);
-        String hash = passwordEncoder.encode(dto.password());
-        customer.setPasswordHash(hash);
+        //String hash = passwordEncoder.encode(dto.password());
+        customer.setPasswordHash(dto.password());
         return CustomerMapper.toDTO(customerRepository.save(customer));
     }
 

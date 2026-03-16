@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.ecommerceapi.enums.ProductStatus;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -44,6 +45,8 @@ public class Product {
     @Builder.Default
     private Integer stock = 0;
 
+    @Builder.Default
+    private ProductStatus status = ProductStatus.ACTIVE;
 
     @Lob
     private String imageUrl;
