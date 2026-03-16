@@ -9,6 +9,7 @@ import org.example.ecommerceapi.dto.product.UpdateProductDTO;
 import org.example.ecommerceapi.dto.rating.RatingResponseDTO;
 import org.example.ecommerceapi.entity.Category;
 import org.example.ecommerceapi.entity.Product;
+import org.example.ecommerceapi.enums.ProductStatus;
 import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
 import org.example.ecommerceapi.mapper.ProductMapper;
@@ -16,12 +17,17 @@ import org.example.ecommerceapi.mapper.RatingMapper;
 import org.example.ecommerceapi.repository.CategoryRepository;
 import org.example.ecommerceapi.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * @author $(bilal belhaj)
@@ -35,15 +41,39 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
 
-    // get Products
+    // get All products
     public List<ProductSummaryDTO> getAllProducts() {
         return productRepository.findAll()
                 .stream()
                 .map(product -> ProductMapper.toSummary(
-                        product, productRepository.rating(),
-                        productRepository.nbrRatings()
+                        product, productRepository.rating(product.getId()),
+                        productRepository.nbrRatings(product)
                 ))
                 .toList();
+    }
+
+    // get Products
+    public Page<ProductSummaryDTO> getProducts(ProductStatus status, Long categoryId, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
+        Page<Product> products = null;
+        if(status != null && categoryId != null) {
+            Category cat = categoryRepository.findById(categoryId).orElseThrow(
+                    () -> new ResourceNotFoundException("Category not found")
+            );
+            products = productRepository.findByStatusAndCategory(status, cat, pageable);
+        } else if (status != null) {
+            products = productRepository.findByStatus(status, pageable);
+        } else if (categoryId != null) {
+            Category cat = categoryRepository.findById(categoryId).orElseThrow(
+                    () -> new ResourceNotFoundException("Category Not found")
+            );
+            products = productRepository.findByCategory(cat, pageable);
+
+        } else {
+            products = productRepository.findByStatus(ProductStatus.ACTIVE, pageable);
+        }
+        return products
+                .map(product -> ProductMapper.toSummary(product, productRepository.rating(product.getId()), productRepository.nbrRatings(product)));
     }
 
     // get product by id

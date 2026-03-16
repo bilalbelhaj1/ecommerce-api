@@ -45,6 +45,7 @@ public class Product {
     @Builder.Default
     private Integer stock = 0;
 
+    @Enumerated(EnumType.STRING)
     @Builder.Default
     private ProductStatus status = ProductStatus.ACTIVE;
 

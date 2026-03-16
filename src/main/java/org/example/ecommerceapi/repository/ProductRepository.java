@@ -1,9 +1,16 @@
 package org.example.ecommerceapi.repository;
 
+import org.example.ecommerceapi.entity.Category;
 import org.example.ecommerceapi.entity.Product;
+import org.example.ecommerceapi.enums.ProductStatus;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author $(bilal belhaj)
@@ -14,12 +21,18 @@ public interface ProductRepository extends JpaRepository <Product, Long> {
     int countByCategoryId(Long id);
     boolean existsByName(String name);
     @Query(
-            "SELECT avg(rating) FROM Rating WHERE product = Product"
+            "SELECT avg(rating) FROM Rating WHERE product.id = :id"
     )
-    double rating();
+    double rating(@Param("id") Long id);
 
     @Query(
-            "SELECT count(*) FROM Rating WHERE product = Product "
+            "SELECT count(*) FROM Rating WHERE Rating.product = :product "
     )
-    int nbrRatings();
+    int nbrRatings(@Param("product") Product product);
+
+    Page<Product> findByStatusAndCategory(ProductStatus status, Category category, Pageable pageable);
+
+    Page<Product> findByStatus(ProductStatus status, Pageable pageable);
+
+    Page<Product> findByCategory(Category category, Pageable pageable);;
 }

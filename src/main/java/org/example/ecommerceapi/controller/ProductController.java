@@ -7,8 +7,10 @@ import org.example.ecommerceapi.dto.product.ProductResponseDTO;
 import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
 import org.example.ecommerceapi.dto.product.UpdateProductDTO;
 import org.example.ecommerceapi.dto.rating.RatingResponseDTO;
+import org.example.ecommerceapi.enums.ProductStatus;
 import org.example.ecommerceapi.service.ProductService;
 import org.example.ecommerceapi.service.RatingService;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +30,17 @@ public class ProductController {
 
     // get products
     @GetMapping
+    public ResponseEntity<Page<ProductSummaryDTO>> getProducts(
+            @RequestParam(required = false) ProductStatus status,
+            @RequestParam(required = false) Long categoryId,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+            ) {
+        return ResponseEntity.ok().body(productService.getProducts(status, categoryId, page, size));
+    }
+
+    // get All Products Admin
+    @GetMapping("/all")
     public ResponseEntity<List<ProductSummaryDTO>> getAll() {
         return ResponseEntity.ok().body(productService.getAllProducts());
     }
