@@ -12,6 +12,7 @@ import org.example.ecommerceapi.service.ProductService;
 import org.example.ecommerceapi.service.RatingService;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -40,6 +41,7 @@ public class ProductController {
     }
 
     // get All Products Admin
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
     public ResponseEntity<List<ProductSummaryDTO>> getAll() {
         return ResponseEntity.ok().body(productService.getAllProducts());
@@ -52,6 +54,7 @@ public class ProductController {
     }
 
     // add product (admin)
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<ProductResponseDTO> addProduct(@Valid @RequestBody CreateProductDTO createProductDTO) {
         ProductResponseDTO res = productService.addProduct(createProductDTO);
@@ -60,6 +63,7 @@ public class ProductController {
     }
 
     // update product (admin)
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping(path = "{productId}")
     public ResponseEntity<ProductResponseDTO> updateProduct(@PathVariable("productId") Long id, @Valid @RequestBody UpdateProductDTO updateProductDTO) {
         ProductResponseDTO res = productService.updateProduct(id, updateProductDTO);
@@ -68,6 +72,7 @@ public class ProductController {
     }
 
     // delete product (admin)
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping(path = "{productId}")
     public ResponseEntity<Void> deleteProduct(@PathVariable("productId") Long id) {
         productService.deleteProduct(id);
