@@ -59,6 +59,10 @@ public class Customer {
     @Builder.Default
     private List<Rating> ratings = new ArrayList<>();
 
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;
