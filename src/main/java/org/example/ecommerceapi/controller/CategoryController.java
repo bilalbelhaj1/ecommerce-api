@@ -7,7 +7,6 @@ import org.example.ecommerceapi.dto.category.CreateCategoryDTO;
 import org.example.ecommerceapi.dto.category.UpdateCategoryDTO;
 import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
 import org.example.ecommerceapi.service.CategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
