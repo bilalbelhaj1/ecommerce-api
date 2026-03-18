@@ -6,11 +6,13 @@ import org.example.ecommerceapi.dto.customer.CreateCustomerDTO;
 import org.example.ecommerceapi.dto.customer.CustomerResponseDTO;
 import org.example.ecommerceapi.dto.customer.UpdateCustomerDTO;
 import org.example.ecommerceapi.entity.Customer;
+import org.example.ecommerceapi.entity.Role;
+import org.example.ecommerceapi.entity.User;
 import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
 import org.example.ecommerceapi.mapper.CustomerMapper;
 import org.example.ecommerceapi.repository.CustomerRepository;
-//import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
@@ -22,18 +24,6 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
-    //private final PasswordEncoder passwordEncoder;
-
-    // create account
-    public CustomerResponseDTO createAccount(CreateCustomerDTO dto) {
-        if (customerRepository.existsByEmail(dto.email())) {
-            throw new BadRequestException("Email already exists");
-        }
-        Customer customer = CustomerMapper.ToEntity(dto);
-        //String hash = passwordEncoder.encode(dto.password());
-        customer.setPasswordHash(dto.password());
-        return CustomerMapper.toDTO(customerRepository.save(customer));
-    }
 
     // get profile
     public CustomerResponseDTO getProfile(Long id) {

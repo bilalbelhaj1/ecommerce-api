@@ -22,14 +22,6 @@ public class CustomerController {
 
     private final CustomerService customerService;
 
-    // create customer
-    @PostMapping
-    public ResponseEntity<CustomerResponseDTO> create(@Valid @RequestBody CreateCustomerDTO dto) {
-        CustomerResponseDTO res = customerService.createAccount(dto);
-        URI uri = URI.create("http://localhost:8080/api/v1/customer/" + res.id());
-        return ResponseEntity.created(uri).body(res);
-    }
-
     // get
     @GetMapping("{id}")
     public ResponseEntity<CustomerResponseDTO> getCustomer(@PathVariable Long id) {

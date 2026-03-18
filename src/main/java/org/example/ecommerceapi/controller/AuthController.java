@@ -1,18 +1,18 @@
 package org.example.ecommerceapi.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.ecommerceapi.entity.Role;
-import org.example.ecommerceapi.entity.User;
-import org.example.ecommerceapi.repository.RoleRepository;
-import org.example.ecommerceapi.repository.UserRepository;
-import org.example.ecommerceapi.security.JwtService;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.example.ecommerceapi.dto.auth.LoginDTO;
+import org.example.ecommerceapi.dto.auth.LoginResponseDTO;
+import org.example.ecommerceapi.dto.customer.CreateCustomerDTO;
+import org.example.ecommerceapi.dto.customer.CustomerSummaryDTO;
+import org.example.ecommerceapi.service.AuthService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
+import java.net.URI;
 
 /**
  * @author $(bilal belhaj)
@@ -21,40 +21,17 @@ import java.util.Map;
 @RequestMapping("/auth")
 @RequiredArgsConstructor
 public class AuthController {
-
-    private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
-    private final PasswordEncoder passwordEncoder;
-    private final JwtService jwtService;
+    private final AuthService authService;
 
     @PostMapping("/register")
-    public String register(@RequestBody Map<String,String> body){
-
-        User user = new User();
-        user.setEmail(body.get("email"));
-        user.setPassword(passwordEncoder.encode(body.get("password")));
-
-        Role role =
-                roleRepository.findByName("ROLE_CUSTOMER").orElseThrow();
-
-        user.getRoles().add(role);
-        userRepository.save(user);
-
-        return "Customer registered";
+    public ResponseEntity<CustomerSummaryDTO> register(@RequestBody CreateCustomerDTO dto){
+       CustomerSummaryDTO res = authService.createAccount(dto);
+       URI uri = URI.create("http://localhost:8081/api/v1/auth/login");
+       return ResponseEntity.created(uri).body(res);
     }
 
     @PostMapping("/login")
-    public Map<String,String> login(@RequestBody Map<String,String> body){
-
-        User user =
-                userRepository.findByEmail(body.get("email")).orElseThrow();
-
-        if(!passwordEncoder.matches(body.get("password"),
-                user.getPassword()))
-            throw new RuntimeException("Bad credentials");
-
-        String token = jwtService.generateToken(user);
-
-        return Map.of("token",token);
+    public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginDTO dto){
+        return ResponseEntity.ok().body(authService.login(dto));
     }
 }

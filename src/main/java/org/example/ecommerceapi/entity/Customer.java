@@ -42,12 +42,6 @@ public class Customer {
     @Column(unique = true)
     private String phoneNumber;
 
-    @Column(nullable = false)
-    private String passwordHash;
-
-    @Transient
-    private String password;
-
     @Column(name = "address")
     private String address;
 
