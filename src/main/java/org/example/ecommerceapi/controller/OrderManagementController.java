@@ -62,14 +62,4 @@ public class OrderManagementController {
     ) {
         return ResponseEntity.ok().body(orderManagementService.cancelOrder(id));
     }
-
-//    // update status
-//    @PutMapping("/status/{id}")
-//    public ResponseEntity<OrderSummaryDTO> updateStatus(
-//            @PathVariable Long id,
-//            @RequestParam OrderStatus status
-//            ) {
-//        return ResponseEntity.ok().body(orderManagementService.updateStatus(id, status));
-//    }
-
 }
