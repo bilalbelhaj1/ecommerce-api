@@ -15,6 +15,8 @@ import org.example.ecommerceapi.repository.CustomerRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author $(bilal belhaj)
  **/
@@ -24,6 +26,13 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
+
+    public List<CustomerResponseDTO> getCustomers() {
+        return customerRepository.findAll()
+                .stream()
+                .map(CustomerMapper::toDTO)
+                .toList();
+    }
 
     // get profile
     public CustomerResponseDTO getProfile(Long id) {

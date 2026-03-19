@@ -6,6 +6,7 @@ import org.example.ecommerceapi.dto.rating.CreateRatingDTO;
 import org.example.ecommerceapi.dto.rating.RatingResponseDTO;
 import org.example.ecommerceapi.service.RatingService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -21,6 +22,7 @@ public class RatingController {
     private final RatingService ratingService;
 
     // create
+    @PreAuthorize("hasRole('CUSTOMER')")
     @PostMapping("/products/{productId}/rating")
     public ResponseEntity<RatingResponseDTO> rateProduct(@PathVariable Long productId, @Valid @RequestBody CreateRatingDTO dto) {
         RatingResponseDTO res = ratingService.create(productId, dto);

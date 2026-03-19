@@ -8,6 +8,7 @@ import org.example.ecommerceapi.dto.category.UpdateCategoryDTO;
 import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
 import org.example.ecommerceapi.service.CategoryService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -25,6 +26,7 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     // create
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<CategoryResponseDTO> createCategory(@Valid @RequestBody CreateCategoryDTO createCategoryDTO) {
         CategoryResponseDTO res = categoryService.addCategory(createCategoryDTO);
@@ -39,6 +41,7 @@ public class CategoryController {
         );
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(path = "{categoryId}")
     public ResponseEntity<CategoryResponseDTO> getCategory(@PathVariable("categoryId") Long id) {
         return ResponseEntity.ok().body(
@@ -47,6 +50,7 @@ public class CategoryController {
     }
 
     // update
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping(path = "{categoryId}")
     public ResponseEntity<CategoryResponseDTO> updateCategory(
             @PathVariable("categoryId") Long id,
@@ -57,6 +61,7 @@ public class CategoryController {
         );
     }
     // delete
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping(path = "{categoryId}")
     public ResponseEntity<Void> deleteCategory(@PathVariable("categoryId") Long id) {
         categoryService.deleteCategory(id);
