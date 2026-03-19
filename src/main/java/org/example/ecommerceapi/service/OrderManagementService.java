@@ -15,6 +15,10 @@ import org.example.ecommerceapi.repository.CustomerRepository;
 import org.example.ecommerceapi.repository.OrderItemRepository;
 import org.example.ecommerceapi.repository.OrderRepository;
 import org.example.ecommerceapi.repository.ProductRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -82,18 +86,31 @@ public class OrderManagementService {
     }
 
     // view orders (all by admin)
-    public List<OrderSummaryDTO> getAllOrders() {
-        return orderRepository.findAll()
-                .stream()
-                .map(OrderManagementMapper::toSummaryDTO)
-                .toList();
+    public Page<OrderSummaryDTO> getAllOrders(OrderStatus status, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
+        Page<Order> orders = null;
+        if (status != null) {
+            orders = orderRepository.findByStatus(status, pageable);
+        } else {
+            orders = orderRepository.findAll(pageable);
+        }
+        return orders
+                .map(OrderManagementMapper::toSummaryDTO);
     }
+
     // view customer orders
-    public List<OrderSummaryDTO> getCustomerOrders(Long id) {
-        return orderRepository.findByCustomerId(id).stream()
-                .map(OrderManagementMapper::toSummaryDTO)
-                .toList();
+    public Page<OrderSummaryDTO> getCustomerOrders(Long id, OrderStatus status, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
+        Page<Order> orders = null;
+        if (status != null) {
+            orders = orderRepository.findByCustomerIdAndStatus(id, status, pageable);
+        } else {
+            orders = orderRepository.findByCustomerId(id, pageable);
+        }
+        return orders
+                .map(OrderManagementMapper::toSummaryDTO);
     }
+
     // view order by id
     public OrderResponseDTO getOrder(Long id) {
         Order order = orderRepository.findById(id).orElseThrow(
@@ -104,6 +121,7 @@ public class OrderManagementService {
                 .toList();
         return new OrderResponseDTO(OrderManagementMapper.toSummaryDTO(order), itemsRes);
     }
+
     // cancel order
     public OrderSummaryDTO cancelOrder(Long id){
         Order order = orderRepository.findById(id).orElseThrow(
@@ -120,8 +138,8 @@ public class OrderManagementService {
         order.setStatus(OrderStatus.CANCELLED);
         return OrderManagementMapper.toSummaryDTO(orderRepository.save(order));
     }
-    // update status
 
+    // update status
     public OrderSummaryDTO updateStatus(Long id, OrderStatus status) {
         Order order = orderRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Order not found")
@@ -129,11 +147,5 @@ public class OrderManagementService {
 
         order.setStatus(status);
         return OrderManagementMapper.toSummaryDTO(orderRepository.save(order));
-    }
-    // get by status
-    public List<OrderSummaryDTO> getByStatus(OrderStatus status) {
-        return orderRepository.findByStatus(status).stream()
-                .map(OrderManagementMapper::toSummaryDTO)
-                .toList();
     }
 }
