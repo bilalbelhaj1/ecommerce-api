@@ -1,6 +1,6 @@
 package org.example.ecommerceapi.config;
 
-import io.jsonwebtoken.io.IOException;
+import java.io.IOException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,7 +25,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain)
-            throws ServletException, IOException, java.io.IOException {
+            throws ServletException, IOException {
 
         String header = request.getHeader("Authorization");
 
