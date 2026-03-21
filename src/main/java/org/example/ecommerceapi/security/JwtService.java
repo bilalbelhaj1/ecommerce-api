@@ -13,7 +13,6 @@ public class JwtService {
     private final String SECRET = "fhhhfrokplplrfrigtugtvnut4crvryrhfrhf";
 
     public String generateToken(User user) {
-
         return Jwts.builder()
                 .setSubject(user.getEmail())
                 .claim("roles",

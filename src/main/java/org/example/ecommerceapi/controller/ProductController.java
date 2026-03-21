@@ -22,7 +22,7 @@ import java.util.List;
  * @author $(bilal belhaj)
  **/
 @RestController
-@RequestMapping("api/v1/product")
+@RequestMapping("api/v1/products")
 @RequiredArgsConstructor
 public class ProductController {
 
@@ -32,7 +32,7 @@ public class ProductController {
     // get products
     @GetMapping
     public ResponseEntity<Page<ProductSummaryDTO>> getProducts(
-            @RequestParam(required = false) ProductStatus status,
+            @RequestParam(defaultValue = "ACTIVE") ProductStatus status,
             @RequestParam(required = false) Long categoryId,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size
@@ -48,7 +48,7 @@ public class ProductController {
     }
 
     // get one product
-    @GetMapping(path = "{productId}")
+    @GetMapping("{productId}")
     public ResponseEntity<ProductResponseDTO> getOne(@PathVariable("productId") Long id) {
         return ResponseEntity.ok().body(productService.getProduct(id));
     }
@@ -58,7 +58,7 @@ public class ProductController {
     @PostMapping
     public ResponseEntity<ProductResponseDTO> addProduct(@Valid @RequestBody CreateProductDTO createProductDTO) {
         ProductResponseDTO res = productService.addProduct(createProductDTO);
-        URI uri = URI.create("http://localhost:8080/api/v1/product/" + res.id());
+        URI uri = URI.create("http://localhost:8080/api/v1/products/" + res.id());
         return ResponseEntity.created(uri).body(res);
     }
 
@@ -67,8 +67,8 @@ public class ProductController {
     @PutMapping(path = "{productId}")
     public ResponseEntity<ProductResponseDTO> updateProduct(@PathVariable("productId") Long id, @Valid @RequestBody UpdateProductDTO updateProductDTO) {
         ProductResponseDTO res = productService.updateProduct(id, updateProductDTO);
-        URI uri = URI.create("http://localhost:8080/api/v1/product/" + res.id());
-        return ResponseEntity.ok().body(res);
+        URI uri = URI.create("http://localhost:8080/api/v1/products/" + res.id());
+        return ResponseEntity.created(uri).body(res);
     }
 
     // delete product (admin)
@@ -80,10 +80,8 @@ public class ProductController {
     }
 
     // get ratings
-    @GetMapping("/ratings/{id}")
-    public ResponseEntity<List<RatingResponseDTO>> getRatings(
-            @PathVariable Long id
-    ) {
+    @GetMapping("{id}/ratings")
+    public ResponseEntity<List<RatingResponseDTO>> getRatings(@PathVariable Long id) {
         return ResponseEntity.ok().body(ratingService.getAll(id));
     }
 }

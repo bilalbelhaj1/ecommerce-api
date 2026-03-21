@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Size;
  * @author $(bilal belhaj)
  **/
 public record CreateRatingDTO(
+        Long productId,
         @Size(min = 4, max = 255)
         String comment,
 

@@ -33,6 +33,7 @@ public class CategoryController {
         URI uri = URI.create("http://localhost:8081" + res.id());
         return ResponseEntity.created(uri).body(res);
     }
+
     // read
     @GetMapping
     public ResponseEntity<List<CategoryResponseDTO>> getCategories() {

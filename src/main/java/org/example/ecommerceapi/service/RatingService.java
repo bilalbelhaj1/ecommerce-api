@@ -7,7 +7,6 @@ import org.example.ecommerceapi.entity.Customer;
 import org.example.ecommerceapi.entity.Product;
 import org.example.ecommerceapi.entity.Rating;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
-import org.example.ecommerceapi.mapper.CustomerMapper;
 import org.example.ecommerceapi.mapper.RatingMapper;
 import org.example.ecommerceapi.repository.CustomerRepository;
 import org.example.ecommerceapi.repository.ProductRepository;
@@ -29,15 +28,14 @@ public class RatingService {
 
     // create
     @Transactional
-    public RatingResponseDTO create(Long productId, CreateRatingDTO dto) {
+    public RatingResponseDTO create(CreateRatingDTO dto) {
         Customer customer = customerRepository.findById(dto.customerId()).orElseThrow(
                 () -> new ResourceNotFoundException("Customer Not found")
         );
-        Product product = productRepository.findById(productId).orElseThrow(
+        Product product = productRepository.findById(dto.productId()).orElseThrow(
                 () -> new ResourceNotFoundException("Product Not found")
         );
         Rating rating = RatingMapper.toEntity(dto, customer, product);
-        System.out.println(rating);
         Rating saved = ratingRepository.save(rating);
         return RatingMapper.toDTO(saved);
     }
