@@ -32,6 +32,7 @@ public class ProductController {
 
     private final ProductService productService;
     private final RatingService ratingService;
+    private final ObjectMapper mapper;
 
     // get products
     @GetMapping
@@ -72,14 +73,10 @@ public class ProductController {
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<ProductResponseDTO> addProduct(
             @RequestPart("product") String productJson,
-            @RequestPart("image") MultipartFile imageFile) throws Exception {
-
-        ObjectMapper mapper = new ObjectMapper();
-        CreateProductDTO createProductDTO =
-                mapper.readValue(productJson, CreateProductDTO.class);
-
+            @RequestPart("image") MultipartFile imageFile
+    ){
+        CreateProductDTO createProductDTO = mapper.readValue(productJson, CreateProductDTO.class);
         ProductResponseDTO res = productService.addProduct(createProductDTO, imageFile);
-
         URI uri = URI.create("http://localhost:8080/api/v1/products/" + res.id());
         return ResponseEntity.created(uri).body(res);
     }
@@ -97,8 +94,8 @@ public class ProductController {
     public ResponseEntity<ProductResponseDTO> updateProduct(
             @PathVariable("productId") Long id,
             @RequestPart("product") String productJson,
-            @RequestPart("image") MultipartFile imageFile) {
-        ObjectMapper mapper = new ObjectMapper();
+            @RequestPart("image") MultipartFile imageFile
+    ) {
         UpdateProductDTO updateProductDTO = mapper.readValue(productJson, UpdateProductDTO.class);
         ProductResponseDTO res = productService.updateProduct(id, updateProductDTO, imageFile);
         URI uri = URI.create("http://localhost:8080/api/v1/products/" + res.id());
