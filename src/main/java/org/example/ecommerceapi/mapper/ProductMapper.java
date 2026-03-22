@@ -33,6 +33,7 @@ public final class ProductMapper {
                 product.getPrice(),
                 product.getStock(),
                 product.getImageData(),
+                product.getImageType(),
                 CategoryMapper.toSummary(product.getCategory()),
                 ratings
 

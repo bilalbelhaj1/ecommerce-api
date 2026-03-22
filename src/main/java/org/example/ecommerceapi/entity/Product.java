@@ -55,6 +55,8 @@ public class Product {
     @Column(name = "image_data", columnDefinition = "BYTEA")
     private byte[] imageData;
 
+    private String imageType;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;

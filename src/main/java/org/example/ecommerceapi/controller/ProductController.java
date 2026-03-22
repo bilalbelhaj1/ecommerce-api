@@ -7,6 +7,7 @@ import org.example.ecommerceapi.dto.product.ProductResponseDTO;
 import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
 import org.example.ecommerceapi.dto.product.UpdateProductDTO;
 import org.example.ecommerceapi.dto.rating.RatingResponseDTO;
+import org.example.ecommerceapi.entity.Product;
 import org.example.ecommerceapi.enums.ProductStatus;
 import org.example.ecommerceapi.service.ProductService;
 import org.example.ecommerceapi.service.RatingService;
@@ -66,6 +67,8 @@ public class ProductController {
         return ResponseEntity.ok().body(productService.getProduct(id));
     }
 
+    // add product
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<ProductResponseDTO> addProduct(
             @RequestPart("product") String productJson,
@@ -81,10 +84,22 @@ public class ProductController {
         return ResponseEntity.created(uri).body(res);
     }
 
+    // get image of product
+    @GetMapping("{id}/image")
+    public ResponseEntity<byte[]> getImageByProductId(@PathVariable Long id) {
+        ProductResponseDTO product = productService.getProduct(id);
+        return ResponseEntity.ok().contentType(MediaType.valueOf(product.imageType())).body(product.imageData());
+    }
+
     // update product (admin)
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping(path = "{productId}")
-    public ResponseEntity<ProductResponseDTO> updateProduct(@PathVariable("productId") Long id, @Valid @RequestBody UpdateProductDTO updateProductDTO, MultipartFile imageFile) {
+    public ResponseEntity<ProductResponseDTO> updateProduct(
+            @PathVariable("productId") Long id,
+            @RequestPart("product") String productJson,
+            @RequestPart("image") MultipartFile imageFile) {
+        ObjectMapper mapper = new ObjectMapper();
+        UpdateProductDTO updateProductDTO = mapper.readValue(productJson, UpdateProductDTO.class);
         ProductResponseDTO res = productService.updateProduct(id, updateProductDTO, imageFile);
         URI uri = URI.create("http://localhost:8080/api/v1/products/" + res.id());
         return ResponseEntity.created(uri).body(res);

@@ -17,6 +17,7 @@ public record ProductResponseDTO(
         BigDecimal price,
         int stock,
         byte[] imageData,
+        String imageType,
         CategorySummaryDTO category,
         List<RatingResponseDTO> ratings
 ) {

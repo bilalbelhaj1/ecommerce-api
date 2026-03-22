@@ -111,6 +111,7 @@ public class ProductService {
         Product product = ProductMapper.toEntity(createProductDTO, cat);
         try {
             product.setImageData(imageFile.getBytes());
+            product.setImageType(imageFile.getContentType());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
