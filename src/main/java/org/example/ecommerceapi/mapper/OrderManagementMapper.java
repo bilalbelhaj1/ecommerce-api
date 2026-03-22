@@ -19,6 +19,7 @@ import java.util.List;
 public final class OrderManagementMapper {
     public static OrderSummaryDTO toSummaryDTO(Order order) {
         return new OrderSummaryDTO(
+                order.getId(),
                 order.getDate(),
                 order.getShippingAddress(),
                 order.getTotalAmount(),

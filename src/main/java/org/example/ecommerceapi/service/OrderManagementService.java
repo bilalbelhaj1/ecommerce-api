@@ -10,6 +10,7 @@ import org.example.ecommerceapi.entity.Product;
 import org.example.ecommerceapi.enums.OrderStatus;
 import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
+import org.example.ecommerceapi.mapper.CustomerMapper;
 import org.example.ecommerceapi.mapper.OrderManagementMapper;
 import org.example.ecommerceapi.repository.CustomerRepository;
 import org.example.ecommerceapi.repository.OrderItemRepository;
@@ -81,7 +82,8 @@ public class OrderManagementService {
                 OrderManagementMapper.toSummaryDTO(order),
                 order.getItems().stream()
                         .map(item -> OrderManagementMapper.toOrderItemDTO(item, item.getProduct()))
-                        .toList()
+                        .toList(),
+                CustomerMapper.toSummary(order.getCustomer())
         );
     }
 
@@ -119,7 +121,7 @@ public class OrderManagementService {
         List<OrderItemResponse> itemsRes = order.getItems().stream()
                 .map(item -> OrderManagementMapper.toOrderItemDTO(item, item.getProduct()))
                 .toList();
-        return new OrderResponseDTO(OrderManagementMapper.toSummaryDTO(order), itemsRes);
+        return new OrderResponseDTO(OrderManagementMapper.toSummaryDTO(order), itemsRes, CustomerMapper.toSummary(order.getCustomer()));
     }
 
     // cancel order

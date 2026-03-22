@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
  * @author $(bilal belhaj)
  **/
 public record OrderSummaryDTO(
+        Long id,
         LocalDateTime date,
         String shippingAddress,
         BigDecimal totalAmount,
