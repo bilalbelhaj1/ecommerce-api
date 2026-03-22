@@ -34,7 +34,7 @@ public interface ProductRepository extends JpaRepository <Product, Long> {
     Page<Product> findByCategory(Category category, Pageable pageable);
     @Query("SELECT p FROM Product p WHERE " +
             "LOWER(p.name) LIKE LOWER(CONCAT('%', :q ,'%')) OR "+
-            "LOWER(CAST(p.description as string ) ) LIKE LOWER(CONCAT('%', :q ,'%')) OR " +
+            "LOWER(p.description) LIKE LOWER(CONCAT('%', :q ,'%')) OR " +
             "LOWER(p.category.name) LIKE LOWER(CONCAT('%', :q ,'%')) "
     )
     Page<Product> searchProducts(String q, Pageable pageable);

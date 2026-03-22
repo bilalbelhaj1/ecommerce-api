@@ -11,7 +11,7 @@ public record ProductSummaryDTO(
         BigDecimal price,
         Integer stock,
         String description,
-        String imageUrl,
+        byte[] imageData,
         Double rating,
         Integer nbrRatings
 ) {

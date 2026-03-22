@@ -6,11 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.ecommerceapi.enums.ProductStatus;
+import org.hibernate.annotations.JdbcTypeCode;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
+import java.sql.Types;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +37,6 @@ public class Product {
     @Column(nullable = false,length = 100)
     private String name;
 
-    @Lob
     private String description;
 
     @Column(nullable = false, precision = 10, scale = 2)
@@ -50,7 +51,9 @@ public class Product {
     private ProductStatus status = ProductStatus.ACTIVE;
 
     @Lob
-    private String imageUrl;
+    @JdbcTypeCode(Types.BINARY) // This forces Hibernate to send raw bytes, not a BigInt OID
+    @Column(name = "image_data", columnDefinition = "BYTEA")
+    private byte[] imageData;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)

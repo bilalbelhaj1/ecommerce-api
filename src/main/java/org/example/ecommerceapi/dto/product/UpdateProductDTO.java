@@ -18,7 +18,6 @@ public record UpdateProductDTO(
         BigDecimal price,
         @PositiveOrZero
         Integer stock,
-        String imageUrl,
         Long categoryId
 ) {
 }

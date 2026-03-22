@@ -22,7 +22,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -96,21 +98,32 @@ public class ProductService {
         return ProductMapper.toDTO(product, ratings);
     }
     // add product
-    public ProductResponseDTO addProduct(CreateProductDTO createProductDTO) {
+    public ProductResponseDTO addProduct(CreateProductDTO createProductDTO, MultipartFile imageFile) {
         if (productRepository.existsByName(createProductDTO.name())) {
             throw new BadRequestException("Product with the name : " + createProductDTO.name() + " already exists");
         }
         Category cat = categoryRepository.findById(createProductDTO.categoryId()).orElseThrow(
                 () -> new ResourceNotFoundException("Category not found")
         );
-        Product saved = productRepository.save(ProductMapper.toEntity(createProductDTO, cat));
+        if (imageFile == null) {
+            throw new BadRequestException("Product image is required");
+        }
+        Product product = ProductMapper.toEntity(createProductDTO, cat);
+        try {
+            product.setImageData(imageFile.getBytes());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        Product saved = productRepository.save(product);
+
         List<RatingResponseDTO> ratings = !saved.getRatings().isEmpty() ? saved.getRatings().stream()
                 .map(RatingMapper::toDTO)
                 .toList() : new ArrayList<>();
         return ProductMapper.toDTO(saved, ratings);
     }
     // update product
-    public ProductResponseDTO updateProduct(Long id, UpdateProductDTO updateProductDTO) {
+    public ProductResponseDTO updateProduct(Long id, UpdateProductDTO updateProductDTO, MultipartFile imageFile) {
         Product product = productRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Product Not Found")
         );
@@ -129,11 +142,12 @@ public class ProductService {
             product.setDescription(updateProductDTO.description());
         }
 
-        if (updateProductDTO.imageUrl() != null
-                && !Objects.equals( updateProductDTO.imageUrl(), product.getImageUrl())
-                && !updateProductDTO.imageUrl().isEmpty()
-        ) {
-            product.setImageUrl(updateProductDTO.imageUrl());
+        if (imageFile != null) {
+            try {
+                product.setImageData(imageFile.getBytes());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         if (updateProductDTO.price() != null

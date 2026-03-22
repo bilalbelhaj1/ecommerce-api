@@ -20,7 +20,6 @@ public record CreateProductDTO(
 
         @PositiveOrZero
         int stock,
-        String imageUrl,
         Long categoryId
 ) {
 }

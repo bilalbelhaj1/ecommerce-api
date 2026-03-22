@@ -21,7 +21,6 @@ public final class ProductMapper {
                 .description(createProductDTO.description())
                 .price(createProductDTO.price())
                 .stock(createProductDTO.stock())
-                .imageUrl(createProductDTO.imageUrl())
                 .category(category)
                 .build();
     }
@@ -33,7 +32,7 @@ public final class ProductMapper {
                 product.getDescription(),
                 product.getPrice(),
                 product.getStock(),
-                product.getImageUrl(),
+                product.getImageData(),
                 CategoryMapper.toSummary(product.getCategory()),
                 ratings
 
@@ -47,7 +46,7 @@ public final class ProductMapper {
                 product.getPrice(),
                 product.getStock(),
                 product.getDescription(),
-                product.getImageUrl(),
+                product.getImageData(),
                 rating,
                 nbrRatings
         );
