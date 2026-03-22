@@ -30,6 +30,7 @@ public class SecurityConfig {
                     .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
                     .requestMatchers(HttpMethod.GET, "/api/v1/products/**").permitAll()
                     .requestMatchers(HttpMethod.GET, "/api/v1/category/**").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/api/v1/ratings/**").permitAll()
                     .anyRequest().authenticated()
             )
 
