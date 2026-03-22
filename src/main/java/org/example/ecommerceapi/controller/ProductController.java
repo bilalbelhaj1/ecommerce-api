@@ -40,6 +40,16 @@ public class ProductController {
         return ResponseEntity.ok().body(productService.getProducts(status, categoryId, page, size));
     }
 
+    // search Products
+    @GetMapping("search")
+    public ResponseEntity<Page<ProductSummaryDTO>> searchProducts(
+            @RequestParam String q,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+    ) {
+        return ResponseEntity.ok().body(productService.search(q, page, size));
+    }
+
     // get All Products Admin
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")

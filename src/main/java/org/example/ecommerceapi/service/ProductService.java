@@ -76,6 +76,15 @@ public class ProductService {
                 .map(product -> ProductMapper.toSummary(product, productRepository.rating(product.getId()), productRepository.nbrRatings(product)));
     }
 
+    // search Products
+    public Page<ProductSummaryDTO> search(String q, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
+        return productRepository.searchProducts(q, pageable).map(
+                product -> ProductMapper.toSummary(product, productRepository.rating(product.getId()), productRepository.nbrRatings(product))
+        );
+    }
+
+
     // get product by id
     public ProductResponseDTO getProduct(Long id) {
         Product product = productRepository.findById(id).orElseThrow(
