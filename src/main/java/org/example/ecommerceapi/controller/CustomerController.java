@@ -32,6 +32,7 @@ public class CustomerController {
     }
 
     // get
+    @PreAuthorize("hasAnyRole('ADMIN', 'CUSTOMER')")
     @GetMapping("{id}")
     public ResponseEntity<CustomerResponseDTO> getCustomer(@PathVariable Long id) {
         return ResponseEntity.ok().body(customerService.getProfile(id));

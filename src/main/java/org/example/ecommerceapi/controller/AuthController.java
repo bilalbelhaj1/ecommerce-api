@@ -5,23 +5,48 @@ import org.example.ecommerceapi.dto.auth.LoginDTO;
 import org.example.ecommerceapi.dto.auth.LoginResponseDTO;
 import org.example.ecommerceapi.dto.customer.CreateCustomerDTO;
 import org.example.ecommerceapi.dto.customer.CustomerSummaryDTO;
+import org.example.ecommerceapi.entity.Role;
+import org.example.ecommerceapi.entity.User;
+import org.example.ecommerceapi.repository.RoleRepository;
+import org.example.ecommerceapi.repository.UserRepository;
 import org.example.ecommerceapi.service.AuthService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.HashSet;
 
 /**
  * @author $(bilal belhaj)
  **/
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("api/v1/auth")
 @RequiredArgsConstructor
 public class AuthController {
     private final AuthService authService;
+    private final RoleRepository roleRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
+
+    @PostMapping("/create-admin")
+    public User createAdmin(
+            @RequestParam String email,
+            @RequestParam String password
+    ) {
+        Role role = roleRepository.findByName("ROLE_ADMIN").orElse(
+                Role.builder()
+                        .name("ROLE_ADMIN").build()
+        );
+        Role saved = roleRepository.save(role);
+        User user = User.builder()
+                .email(email)
+                .password(passwordEncoder.encode(password))
+                .roles(new HashSet<>())
+                .build();
+        user.getRoles().add(saved);
+        return userRepository.save(user);
+    }
 
     @PostMapping("/register")
     public ResponseEntity<CustomerSummaryDTO> register(@RequestBody CreateCustomerDTO dto){

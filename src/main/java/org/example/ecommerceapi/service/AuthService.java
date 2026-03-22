@@ -1,5 +1,6 @@
 package org.example.ecommerceapi.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.auth.LoginDTO;
 import org.example.ecommerceapi.dto.auth.LoginResponseDTO;
@@ -18,11 +19,14 @@ import org.example.ecommerceapi.security.JwtService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+
 /**
  * @author $(bilal belhaj)
  **/
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class AuthService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
@@ -34,10 +38,11 @@ public class AuthService {
         if (userRepository.existsByEmail(dto.email())) {
             throw new BadRequestException("User with this email already exists");
         }
-        Role role = roleRepository.findByName("ROLE_CUSTOMER").orElse(Role.builder().name("ROLE_CUSTOMER").build());
+        Role role = roleRepository.findByName("ROLE_CUSTOMER").orElse(roleRepository.save(Role.builder().name("ROLE_CUSTOMER").build()));
         User user = User.builder()
                 .email(dto.email())
                 .password(passwordEncoder.encode(dto.password()))
+                .roles(new HashSet<>())
                 .build();
         user.getRoles().add(role);
         User savedUser = userRepository.save(user);
