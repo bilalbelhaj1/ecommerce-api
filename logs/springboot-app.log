@@ -126,3 +126,51 @@
 2026-03-25 19:43:45 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
 2026-03-25 19:43:45 INFO  org.example.ecommerceapi.EcommerceApiApplication - Started EcommerceApiApplication in 3.753 seconds (process running for 34.442)
 2026-03-25 19:43:45 INFO  org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-03-25 19:50:09 INFO  org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 3 class path changes (3 additions, 0 deletions, 0 modifications)
+2026-03-25 19:50:09 INFO  org.springframework.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-25 19:50:09 INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2026-03-25 19:50:09 INFO  org.springframework.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-25 19:50:09 INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2026-03-25 19:50:09 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-25 19:50:10 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-03-25 19:50:10 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-03-25 19:50:10 INFO  org.example.ecommerceapi.EcommerceApiApplication - Starting EcommerceApiApplication using Java 25 with PID 25008 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-25 19:50:10 INFO  org.example.ecommerceapi.EcommerceApiApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-25 19:50:11 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-25 19:50:11 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121 ms. Found 9 JPA repository interfaces.
+2026-03-25 19:50:11 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-03-25 19:50:11 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-25 19:50:11 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-25 19:50:11 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-25 19:50:11 INFO  org.springframework.boot.web.context.servlet.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1265 ms
+2026-03-25 19:50:11 INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-25 19:50:11 INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-25 19:50:11 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-03-25 19:50:11 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@49f1fe4c
+2026-03-25 19:50:11 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-03-25 19:50:11 INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-25 19:50:12 INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-25 19:50:12 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-25 19:50:13 WARN  org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-25 19:50:13 INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-25 19:50:13 INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-25 19:50:13 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-25 19:50:13 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-03-25 19:50:13 INFO  org.example.ecommerceapi.EcommerceApiApplication - Started EcommerceApiApplication in 3.602 seconds (process running for 422.47)
+2026-03-25 19:50:13 INFO  org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-03-25 19:50:20 INFO  org.springframework.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-25 19:50:20 INFO  org.springframework.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-25 19:50:20 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-25 19:50:20 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2026-03-25 19:50:20 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.

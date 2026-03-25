@@ -29,9 +29,12 @@ public class Notification {
     @Column(nullable = false)
     private String content;
 
+    @Builder.Default
+    private boolean isRead = false;
+
     @ManyToOne()
     @JoinColumn(name = "user_id", nullable = false)
-    private User userId;
+    private User user;
 
     @Column(updatable = false)
     @CreatedDate
