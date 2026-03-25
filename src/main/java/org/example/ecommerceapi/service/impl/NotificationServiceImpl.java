@@ -7,6 +7,7 @@ import org.example.ecommerceapi.entity.Notification;
 import org.example.ecommerceapi.entity.User;
 import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
+import org.example.ecommerceapi.mapper.NotificationMapper;
 import org.example.ecommerceapi.repository.NotificationRepository;
 import org.example.ecommerceapi.repository.UserRepository;
 import org.example.ecommerceapi.service.NotificationService;
@@ -29,8 +30,8 @@ public class NotificationServiceImpl implements NotificationService {
                 () -> new ResourceNotFoundException("User Not found")
         );
 
-        Notification notification = toEntity(dto, user);
-        return toResponse(notificationRepository.save(notification));
+        Notification notification = NotificationMapper.toEntity(dto, user);
+        return NotificationMapper.toResponse(notificationRepository.save(notification));
     }
 
     // get notifications
@@ -40,7 +41,7 @@ public class NotificationServiceImpl implements NotificationService {
         }
         return notificationRepository.findByUserId(userId)
                 .stream()
-                .map(this::toResponse)
+                .map(NotificationMapper::toResponse)
                 .toList();
     }
 
@@ -50,7 +51,7 @@ public class NotificationServiceImpl implements NotificationService {
                 () -> new ResourceNotFoundException("Notification not found")
         );
         notification.setRead(true);
-        return toResponse(notificationRepository.save(notification));
+        return NotificationMapper.toResponse(notificationRepository.save(notification));
     }
 
     // delete notification
@@ -61,22 +62,4 @@ public class NotificationServiceImpl implements NotificationService {
         notificationRepository.deleteById(id);
     }
 
-    // mappers
-    private NotificationResponse toResponse(Notification notification) {
-        return new NotificationResponse(
-                notification.getType(),
-                notification.getContent(),
-                notification.getId(),
-                notification.isRead(),
-                notification.getCreatedAt()
-        );
-    }
-
-    private Notification toEntity(CreateNotificationDTO dto, User user) {
-        return Notification.builder()
-                .type(dto.type())
-                .content(dto.content())
-                .user(user)
-                .build();
-    }
 }
