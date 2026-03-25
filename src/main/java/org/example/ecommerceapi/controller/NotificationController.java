@@ -3,6 +3,7 @@ package org.example.ecommerceapi.controller;
 import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.notification.NotificationResponse;
 import org.example.ecommerceapi.service.NotificationService;
+import org.example.ecommerceapi.service.impl.NotificationServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +33,7 @@ public class NotificationController {
         return ResponseEntity.ok().body(notificationService.read(id));
     }
 
-    // delete 
+    // delete
     @DeleteMapping("{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         notificationService.delete(id);

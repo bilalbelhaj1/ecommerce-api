@@ -1,13 +1,11 @@
 package org.example.ecommerceapi.controller;
 
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.product.CreateProductDTO;
 import org.example.ecommerceapi.dto.product.ProductResponseDTO;
 import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
 import org.example.ecommerceapi.dto.product.UpdateProductDTO;
 import org.example.ecommerceapi.dto.rating.RatingResponseDTO;
-import org.example.ecommerceapi.entity.Product;
 import org.example.ecommerceapi.enums.ProductStatus;
 import org.example.ecommerceapi.service.ProductService;
 import org.example.ecommerceapi.service.RatingService;
