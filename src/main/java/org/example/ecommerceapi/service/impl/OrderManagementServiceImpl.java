@@ -2,6 +2,7 @@ package org.example.ecommerceapi.service.impl;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.example.ecommerceapi.dto.notification.CreateNotificationDTO;
 import org.example.ecommerceapi.dto.orderManagement.*;
 import org.example.ecommerceapi.entity.Customer;
 import org.example.ecommerceapi.entity.Order;
@@ -15,6 +16,7 @@ import org.example.ecommerceapi.mapper.OrderManagementMapper;
 import org.example.ecommerceapi.repository.CustomerRepository;
 import org.example.ecommerceapi.repository.OrderRepository;
 import org.example.ecommerceapi.repository.ProductRepository;
+import org.example.ecommerceapi.service.NotificationService;
 import org.example.ecommerceapi.service.OrderManagementService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -36,6 +38,7 @@ public class OrderManagementServiceImpl implements OrderManagementService {
     private final OrderRepository orderRepository;
     private final CustomerRepository customerRepository;
     private final ProductRepository productRepository;
+    private NotificationService notificationService;
 
     // place order
     public OrderResponseDTO placeOrder(CreateOrderDTO dto) {
@@ -76,6 +79,13 @@ public class OrderManagementServiceImpl implements OrderManagementService {
         }
         order.setTotalAmount(totalAmount);
         orderRepository.save(order);
+
+        // notify Customer
+        notificationService.send(new CreateNotificationDTO(
+                "ORDER_PLACED",
+                "your order is placed succefully navigate to orders to keep track of your order",
+                customer.getUser().getId()
+        ));
 
         return new OrderResponseDTO(
                 OrderManagementMapper.toSummaryDTO(order),
@@ -137,6 +147,7 @@ public class OrderManagementServiceImpl implements OrderManagementService {
             throw new BadRequestException("Cannot cancel delevered orders");
         }
         order.setStatus(OrderStatus.CANCELLED);
+
         return OrderManagementMapper.toSummaryDTO(orderRepository.save(order));
     }
 
@@ -147,6 +158,12 @@ public class OrderManagementServiceImpl implements OrderManagementService {
         );
 
         order.setStatus(status);
+        // notify Customer
+        notificationService.send(new CreateNotificationDTO(
+                "ORDER_" + status,
+                "your order is " + status + " successfully navigate to orders to keep track of your order status",
+                order.getCustomer().getUser().getId()
+        ));
         return OrderManagementMapper.toSummaryDTO(orderRepository.save(order));
     }
 }
