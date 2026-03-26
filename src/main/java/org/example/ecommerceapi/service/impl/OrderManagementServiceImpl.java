@@ -42,7 +42,7 @@ public class OrderManagementServiceImpl implements OrderManagementService {
 
     // place order
     public OrderResponseDTO placeOrder(CreateOrderDTO dto) {
-        // find customers
+        // find customer
         Customer customer = customerRepository.findById(dto.customerId()).orElseThrow(
                 () -> new ResourceNotFoundException("Customer Not found")
         );
@@ -83,7 +83,7 @@ public class OrderManagementServiceImpl implements OrderManagementService {
         // notify Customer
         notificationService.send(new CreateNotificationDTO(
                 "ORDER_PLACED",
-                "your order is placed succefully navigate to orders to keep track of your order",
+                "your order is placed successfully navigate to orders to keep track of your order",
                 customer.getUser().getId()
         ));
 
