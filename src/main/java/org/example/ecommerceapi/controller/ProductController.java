@@ -1,6 +1,8 @@
 package org.example.ecommerceapi.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.ecommerceapi.dto.product.CreateProductDTO;
 import org.example.ecommerceapi.dto.product.ProductResponseDTO;
 import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
@@ -31,6 +33,7 @@ public class ProductController {
     private final ProductService productService;
     private final RatingService ratingService;
     private final ObjectMapper mapper;
+    private static final Logger logger = LogManager.getLogger(ProductController.class);
 
     // get products
     @GetMapping
@@ -75,6 +78,7 @@ public class ProductController {
     ){
         CreateProductDTO createProductDTO = mapper.readValue(productJson, CreateProductDTO.class);
         ProductResponseDTO res = productService.addProduct(createProductDTO, imageFile);
+        logger.info("Request to create product, product name: {}", createProductDTO.name());
         URI uri = URI.create("http://localhost:8080/api/v1/products/" + res.id());
         return ResponseEntity.created(uri).body(res);
     }
@@ -83,6 +87,7 @@ public class ProductController {
     @GetMapping("{id}/image")
     public ResponseEntity<byte[]> getImageByProductId(@PathVariable Long id) {
         ProductResponseDTO product = productService.getProduct(id);
+        logger.info("Request to get product image productId={}", id);
         return ResponseEntity.ok().contentType(MediaType.valueOf(product.imageType())).body(product.imageData());
     }
 
@@ -94,6 +99,7 @@ public class ProductController {
             @RequestPart("product") String productJson,
             @RequestPart("image") MultipartFile imageFile
     ) {
+        logger.info("Request to update product productId:{}", id);
         UpdateProductDTO updateProductDTO = mapper.readValue(productJson, UpdateProductDTO.class);
         ProductResponseDTO res = productService.updateProduct(id, updateProductDTO, imageFile);
         URI uri = URI.create("http://localhost:8080/api/v1/products/" + res.id());
@@ -104,6 +110,7 @@ public class ProductController {
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping(path = "{productId}")
     public ResponseEntity<Void> deleteProduct(@PathVariable("productId") Long id) {
+        logger.info("Request to delete product productId:{}", id);
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
     }
