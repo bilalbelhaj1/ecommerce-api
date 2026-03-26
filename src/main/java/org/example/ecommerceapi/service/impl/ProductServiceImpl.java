@@ -2,6 +2,8 @@ package org.example.ecommerceapi.service.impl;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.ecommerceapi.dto.product.CreateProductDTO;
 import org.example.ecommerceapi.dto.product.ProductResponseDTO;
 import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
@@ -41,6 +43,7 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
+    private static final Logger logger = LogManager.getLogger(ProductServiceImpl.class);
 
     // get All products
     public List<ProductSummaryDTO> getAllProducts() {
@@ -99,12 +102,18 @@ public class ProductServiceImpl implements ProductService {
     // add product
     public ProductResponseDTO addProduct(CreateProductDTO createProductDTO, MultipartFile imageFile) {
         if (productRepository.existsByName(createProductDTO.name())) {
+            logger.warn("Product with name {} already exists", createProductDTO.name());
             throw new BadRequestException("Product with the name : " + createProductDTO.name() + " already exists");
         }
         Category cat = categoryRepository.findById(createProductDTO.categoryId()).orElseThrow(
-                () -> new ResourceNotFoundException("Category not found")
+
+        () -> {
+            logger.warn("Product with name {} not created category not found categoryId: {}", createProductDTO.name(), createProductDTO.categoryId());
+            return new ResourceNotFoundException("Category not found");
+        }
         );
         if (imageFile == null) {
+            logger.warn("Product with name {} not created, no image provided", createProductDTO.name());
             throw new BadRequestException("Product image is required");
         }
         Product product = ProductMapper.toEntity(createProductDTO, cat);
@@ -120,26 +129,51 @@ public class ProductServiceImpl implements ProductService {
         List<RatingResponseDTO> ratings = !saved.getRatings().isEmpty() ? saved.getRatings().stream()
                 .map(RatingMapper::toDTO)
                 .toList() : new ArrayList<>();
+        logger.info("Product with name {} created productId: {}", saved.getName(), saved.getId());
         return ProductMapper.toDTO(saved, ratings);
     }
-    // update product
-    public ProductResponseDTO updateProduct(Long id, UpdateProductDTO updateProductDTO, MultipartFile imageFile) {
-        Product product = productRepository.findById(id).orElseThrow(
-                () -> new ResourceNotFoundException("Product Not Found")
-        );
 
-        if (updateProductDTO.name() != null
-                && !Objects.equals( updateProductDTO.name(), product.getName())
-                && !updateProductDTO.name().isEmpty()
+    // update product
+    public ProductResponseDTO updateProduct(Long id, UpdateProductDTO dto, MultipartFile imageFile) {
+        Product product = productRepository.findById(id).orElseThrow(
+                () -> {
+                    logger.warn("Product not updated product not found productId: {}", id);
+                    return new ResourceNotFoundException("Product Not Found");
+                }
+        );
+        Product saved = productRepository.save(update(product, dto, imageFile ));
+        List<RatingResponseDTO> ratings = !saved.getRatings().isEmpty() ? saved.getRatings().stream()
+                .map(RatingMapper::toDTO)
+                .toList() : new ArrayList<>();
+        logger.info("Product updated productId: {}", id);
+        return ProductMapper.toDTO(saved, ratings);
+    }
+
+    // delete product
+    public void deleteProduct(Long id) {
+        Product product = productRepository.findById(id).orElseThrow(
+                () -> {
+                    logger.warn("Product not found productId: {}", id);
+                    return new ResourceNotFoundException("Product not found");
+                }
+        );
+        logger.info("Product deleted ");
+        productRepository.delete(product);
+    }
+
+    private Product update(Product product, UpdateProductDTO dto, MultipartFile imageFile) {
+        if (dto.name() != null
+                && !Objects.equals( dto.name(), product.getName())
+                && !dto.name().isEmpty()
         ) {
-            product.setName(updateProductDTO.name());
+            product.setName(dto.name());
         }
 
-        if (updateProductDTO.description() != null
-                && !Objects.equals( updateProductDTO.description(), product.getDescription())
-                && !updateProductDTO.description().isEmpty()
+        if (dto.description() != null
+                && !Objects.equals( dto.description(), product.getDescription())
+                && !dto.description().isEmpty()
         ) {
-            product.setDescription(updateProductDTO.description());
+            product.setDescription(dto.description());
         }
 
         if (imageFile != null) {
@@ -150,40 +184,28 @@ public class ProductServiceImpl implements ProductService {
             }
         }
 
-        if (updateProductDTO.price() != null
-                && updateProductDTO.price().compareTo(BigDecimal.valueOf(0.01)) > 0
-                && !updateProductDTO.price().equals(product.getPrice())
+        if (dto.price() != null
+                && dto.price().compareTo(BigDecimal.valueOf(0.01)) > 0
+                && !dto.price().equals(product.getPrice())
         ) {
-            product.setPrice(updateProductDTO.price());
+            product.setPrice(dto.price());
         }
 
-        if (updateProductDTO.stock() != null
-                && updateProductDTO.stock() >= 0
-                && !updateProductDTO.stock().equals(product.getStock())
+        if (dto.stock() != null
+                && dto.stock() >= 0
+                && !dto.stock().equals(product.getStock())
         ) {
-            product.setStock(updateProductDTO.stock());
+            product.setStock(dto.stock());
         }
-        if (updateProductDTO.categoryId() != null
-                && !updateProductDTO.categoryId().equals(product.getCategory().getId())
+        if (dto.categoryId() != null
+                && !dto.categoryId().equals(product.getCategory().getId())
         ) {
-            Category category = categoryRepository.findById(updateProductDTO.categoryId()).orElseThrow(
+            Category category = categoryRepository.findById(dto.categoryId()).orElseThrow(
                     () -> new ResourceNotFoundException("Category Not Found")
             );
             product.setCategory(category);
         }
-        Product saved = productRepository.save(product);
-        List<RatingResponseDTO> ratings = !saved.getRatings().isEmpty() ? saved.getRatings().stream()
-                .map(RatingMapper::toDTO)
-                .toList() : new ArrayList<>();
-        return ProductMapper.toDTO(saved, ratings);
-    }
-
-    // delete product
-    public void deleteProduct(Long id) {
-        Product product = productRepository.findById(id).orElseThrow(
-                () -> new ResourceNotFoundException("Product not found")
-        );
-        productRepository.delete(product);
+        return product;
     }
 
 }
