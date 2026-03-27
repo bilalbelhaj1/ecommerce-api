@@ -84,7 +84,7 @@ public class OrderManagementServiceImpl implements OrderManagementService {
         notificationService.send(new CreateNotificationDTO(
                 "ORDER_PLACED",
                 "your order is placed successfully navigate to orders to keep track of your order",
-                customer.getUser().getId()
+                customer.getAppUser().getId()
         ));
 
         return new OrderResponseDTO(
@@ -162,7 +162,7 @@ public class OrderManagementServiceImpl implements OrderManagementService {
         notificationService.send(new CreateNotificationDTO(
                 "ORDER_" + status,
                 "your order is " + status + " successfully navigate to orders to keep track of your order status",
-                order.getCustomer().getUser().getId()
+                order.getCustomer().getAppUser().getId()
         ));
         return OrderManagementMapper.toSummaryDTO(orderRepository.save(order));
     }

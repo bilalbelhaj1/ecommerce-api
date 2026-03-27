@@ -1,5 +1,8 @@
 package org.example.ecommerceapi.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,6 +28,7 @@ import java.util.List;
 /**
  * @author $(bilal belhaj)
  **/
+@Tag(name = "Products", description = "Operations related to products")
 @RestController
 @RequestMapping("api/v1/products")
 @RequiredArgsConstructor
@@ -65,7 +69,13 @@ public class ProductController {
 
     // get one product
     @GetMapping("{productId}")
-    public ResponseEntity<ProductResponseDTO> getOne(@PathVariable("productId") Long id) {
+    @Operation(
+            summary = "Get one product by Id",
+            description = "Returns full product details including ratings"
+    )
+    public ResponseEntity<ProductResponseDTO> getOne(
+            @Parameter(description = "Id of the product") @PathVariable("productId") Long id
+    ) {
         return ResponseEntity.ok().body(productService.getProduct(id));
     }
 

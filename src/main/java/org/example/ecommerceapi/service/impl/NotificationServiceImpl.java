@@ -3,8 +3,8 @@ package org.example.ecommerceapi.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.notification.CreateNotificationDTO;
 import org.example.ecommerceapi.dto.notification.NotificationResponse;
+import org.example.ecommerceapi.entity.AppUser;
 import org.example.ecommerceapi.entity.Notification;
-import org.example.ecommerceapi.entity.User;
 import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
 import org.example.ecommerceapi.mapper.NotificationMapper;
@@ -26,11 +26,11 @@ public class NotificationServiceImpl implements NotificationService {
 
     // send notification
     public NotificationResponse send(CreateNotificationDTO dto){
-        User user = userRepository.findById(dto.userId()).orElseThrow(
+        AppUser appUser = userRepository.findById(dto.userId()).orElseThrow(
                 () -> new ResourceNotFoundException("User Not found")
         );
 
-        Notification notification = NotificationMapper.toEntity(dto, user);
+        Notification notification = NotificationMapper.toEntity(dto, appUser);
         return NotificationMapper.toResponse(notificationRepository.save(notification));
     }
 

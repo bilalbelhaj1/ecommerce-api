@@ -1,0 +1,1000 @@
+2026-03-26 21:03:32 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 644 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:03:32 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:03:33 INFO  DevToolsPropertyDefaultsPostProcessor:69 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-26 21:03:33 INFO  DevToolsPropertyDefaultsPostProcessor:69 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-26 21:03:33 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-26 21:03:35 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:03:35 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 215 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:03:36 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:03:36 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:03:36 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:03:36 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:03:36 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 3527 ms
+2026-03-26 21:03:36 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:03:37 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-26 21:03:38 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:03:38 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-26 21:03:38 INFO  HikariPool:580 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6fc50af1
+2026-03-26 21:03:38 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-26 21:03:38 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:03:41 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:03:41 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:03:42 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26 21:03:45 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:03:45 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:03:46 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:03:46 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:03:46 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 14.278 seconds (process running for 16.508)
+2026-03-26 21:03:46 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:03:46 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:04:31 INFO  [/]:168 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26 21:04:31 INFO  DispatcherServlet:523 - Initializing Servlet 'dispatcherServlet'
+2026-03-26 21:04:31 INFO  DispatcherServlet:545 - Completed initialization in 3 ms
+2026-03-26 21:05:41 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:05:41 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:05:41 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:05:41 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-26 21:05:41 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-26 21:05:48 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 11148 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:05:48 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:05:49 INFO  DevToolsPropertyDefaultsPostProcessor:69 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-26 21:05:49 INFO  DevToolsPropertyDefaultsPostProcessor:69 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-26 21:05:49 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-26 21:05:50 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:05:51 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 173 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:05:52 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:05:52 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:05:52 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:05:52 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:05:52 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 3118 ms
+2026-03-26 21:05:52 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:05:52 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-26 21:05:53 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:05:53 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-26 21:05:53 INFO  HikariPool:580 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1befbd18
+2026-03-26 21:05:53 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-26 21:05:53 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:05:56 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:05:56 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:05:56 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26 21:05:59 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:05:59 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:06:00 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:06:00 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:06:00 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 12.142 seconds (process running for 14.234)
+2026-03-26 21:06:00 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:06:00 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:06:07 INFO  [/]:168 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26 21:06:07 INFO  DispatcherServlet:523 - Initializing Servlet 'dispatcherServlet'
+2026-03-26 21:06:07 INFO  DispatcherServlet:545 - Completed initialization in 3 ms
+2026-03-26 21:06:33 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:06:33 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:06:33 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:06:34 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-26 21:06:34 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-26 21:06:41 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 30644 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:06:41 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:06:41 INFO  DevToolsPropertyDefaultsPostProcessor:69 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-26 21:06:41 INFO  DevToolsPropertyDefaultsPostProcessor:69 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-26 21:06:42 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-26 21:06:43 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:06:43 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 187 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:06:45 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:06:45 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:06:45 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:06:45 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:06:45 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 3297 ms
+2026-03-26 21:06:45 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:06:45 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-26 21:06:46 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:06:46 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-26 21:06:46 INFO  HikariPool:580 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3d64dc8b
+2026-03-26 21:06:46 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-26 21:06:47 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:06:49 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:06:49 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:06:49 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26 21:06:52 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:06:52 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:06:54 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:06:54 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:06:54 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 12.874 seconds (process running for 14.846)
+2026-03-26 21:06:54 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:06:54 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:06:59 INFO  [/]:168 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26 21:06:59 INFO  DispatcherServlet:523 - Initializing Servlet 'dispatcherServlet'
+2026-03-26 21:06:59 INFO  DispatcherServlet:545 - Completed initialization in 3 ms
+2026-03-26 21:09:34 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:09:34 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:09:34 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:09:34 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-26 21:09:34 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-26 21:09:42 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 3508 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:09:42 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:09:42 INFO  DevToolsPropertyDefaultsPostProcessor:69 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-26 21:09:42 INFO  DevToolsPropertyDefaultsPostProcessor:69 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-26 21:09:42 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-26 21:09:44 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:09:44 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 162 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:09:45 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:09:45 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:09:45 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:09:45 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:09:45 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 3173 ms
+2026-03-26 21:09:46 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:09:46 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-26 21:09:47 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:09:47 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-26 21:09:47 INFO  HikariPool:580 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6d44afb2
+2026-03-26 21:09:47 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-26 21:09:47 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:09:49 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:09:50 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:09:50 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26 21:09:53 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:09:53 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:09:54 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:09:54 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:09:54 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 12.801 seconds (process running for 14.826)
+2026-03-26 21:09:54 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:09:54 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:10:09 INFO  [/]:168 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26 21:10:09 INFO  DispatcherServlet:523 - Initializing Servlet 'dispatcherServlet'
+2026-03-26 21:10:09 INFO  DispatcherServlet:545 - Completed initialization in 3 ms
+2026-03-26 21:10:09 ERROR GlobalExceptionHandler:59 - Unhandled exception from server 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/swagger-ui/index.html for request '/api/v1/swagger-ui/index.html'.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.example.ecommerceapi.config.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-03-26 21:10:09 WARN  ExceptionHandlerExceptionResolver:248 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/swagger-ui/index.html for request '/api/v1/swagger-ui/index.html'.]
+2026-03-26 21:10:33 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:10:33 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:10:33 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:10:33 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-26 21:10:33 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-26 21:10:40 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 14772 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:10:40 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:10:40 INFO  DevToolsPropertyDefaultsPostProcessor:69 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-26 21:10:40 INFO  DevToolsPropertyDefaultsPostProcessor:69 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-26 21:10:40 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-26 21:10:42 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:10:42 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 162 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:10:43 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:10:43 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:10:43 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:10:43 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:10:43 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 3060 ms
+2026-03-26 21:10:43 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:10:44 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-26 21:10:45 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:10:45 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-26 21:10:45 INFO  HikariPool:580 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a890b0f
+2026-03-26 21:10:45 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-26 21:10:45 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:10:47 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:10:47 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:10:48 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26 21:10:50 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:10:50 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:10:51 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:10:52 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:10:52 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 12.165 seconds (process running for 14.2)
+2026-03-26 21:10:52 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:10:52 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:10:59 INFO  [/]:168 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26 21:10:59 INFO  DispatcherServlet:523 - Initializing Servlet 'dispatcherServlet'
+2026-03-26 21:10:59 INFO  DispatcherServlet:545 - Completed initialization in 3 ms
+2026-03-26 21:11:00 ERROR GlobalExceptionHandler:59 - Unhandled exception from server 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/swagger-ui/index.html for request '/api/swagger-ui/index.html'.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.example.ecommerceapi.config.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-03-26 21:11:00 WARN  ExceptionHandlerExceptionResolver:248 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/swagger-ui/index.html for request '/api/swagger-ui/index.html'.]
+2026-03-26 21:11:24 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:11:24 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:11:24 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:11:24 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-26 21:11:24 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-26 21:11:33 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 18168 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:11:33 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:11:33 INFO  DevToolsPropertyDefaultsPostProcessor:69 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-26 21:11:33 INFO  DevToolsPropertyDefaultsPostProcessor:69 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-26 21:11:33 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-26 21:11:35 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:11:35 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 187 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:11:36 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:11:36 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:11:36 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:11:36 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:11:36 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 3397 ms
+2026-03-26 21:11:36 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:11:36 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-26 21:11:37 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:11:38 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-26 21:11:38 INFO  HikariPool:580 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1cf67cd0
+2026-03-26 21:11:38 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-26 21:11:38 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:11:40 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:11:41 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:11:41 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26 21:11:44 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:11:44 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:11:45 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:11:45 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:11:45 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 13.562 seconds (process running for 15.59)
+2026-03-26 21:11:45 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:11:45 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:12:01 INFO  [/]:168 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26 21:12:01 INFO  DispatcherServlet:523 - Initializing Servlet 'dispatcherServlet'
+2026-03-26 21:12:01 INFO  DispatcherServlet:545 - Completed initialization in 3 ms
+2026-03-26 21:12:09 ERROR GlobalExceptionHandler:59 - Unhandled exception from server 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui.css.map for request '/swagger-ui/swagger-ui.css.map'.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.example.ecommerceapi.config.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-03-26 21:12:09 WARN  ExceptionHandlerExceptionResolver:248 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui.css.map for request '/swagger-ui/swagger-ui.css.map'.]
+2026-03-26 21:13:42 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:13:42 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:13:42 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:13:42 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-26 21:13:42 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-26 21:13:49 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 20000 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:13:49 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:13:50 INFO  DevToolsPropertyDefaultsPostProcessor:69 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-26 21:13:50 INFO  DevToolsPropertyDefaultsPostProcessor:69 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-26 21:13:50 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-26 21:13:51 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:13:51 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 168 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:13:52 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:13:52 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:13:52 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:13:52 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:13:53 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 3001 ms
+2026-03-26 21:13:53 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:13:53 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-26 21:13:54 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:13:54 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-26 21:13:54 INFO  HikariPool:580 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a890b0f
+2026-03-26 21:13:54 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-26 21:13:54 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:13:56 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:13:57 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:13:57 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26 21:13:59 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:14:00 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:14:01 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:14:01 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:14:01 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 12.019 seconds (process running for 14.054)
+2026-03-26 21:14:01 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:14:01 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:14:06 INFO  [/]:168 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26 21:14:06 INFO  DispatcherServlet:523 - Initializing Servlet 'dispatcherServlet'
+2026-03-26 21:14:06 INFO  DispatcherServlet:545 - Completed initialization in 1 ms
+2026-03-26 21:14:06 ERROR GlobalExceptionHandler:59 - Unhandled exception from server 
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui.css.map for request '/swagger-ui/swagger-ui.css.map'.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.example.ecommerceapi.config.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:52)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-03-26 21:14:06 WARN  ExceptionHandlerExceptionResolver:248 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui.css.map for request '/swagger-ui/swagger-ui.css.map'.]
+2026-03-26 21:14:07 INFO  AbstractOpenApiResource:435 - Init duration for springdoc-openapi is: 1095 ms
+2026-03-26 21:15:15 WARN  SpringDataJackson3Configuration$PageModule$WarningLoggingModifier:155 - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-03-26 21:20:42 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:214 - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-03-26 21:20:42 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:20:42 INFO  Http11NioProtocol:168 - Pausing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:20:42 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:20:42 INFO  Http11NioProtocol:168 - Stopping ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:20:42 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:20:42 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-26 21:20:42 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-26 21:20:43 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 20000 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:20:43 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:20:43 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:20:44 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 97 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:20:44 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:20:44 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:20:44 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:20:44 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:20:44 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 1287 ms
+2026-03-26 21:20:44 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:20:44 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:20:44 INFO  HikariDataSource:109 - HikariPool-2 - Starting...
+2026-03-26 21:20:44 INFO  HikariPool:580 - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@39755d0d
+2026-03-26 21:20:44 INFO  HikariDataSource:122 - HikariPool-2 - Start completed.
+2026-03-26 21:20:44 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:20:45 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:20:45 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:20:46 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:20:46 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:20:47 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:20:47 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:20:47 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 3.962 seconds (process running for 419.794)
+2026-03-26 21:20:47 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:20:47 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:20:47 INFO  ConditionEvaluationDeltaLoggingListener:66 - Condition evaluation unchanged
+2026-03-26 21:21:57 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:214 - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-03-26 21:21:57 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:21:57 INFO  Http11NioProtocol:168 - Pausing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:21:57 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:21:57 INFO  Http11NioProtocol:168 - Stopping ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:21:57 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:21:57 INFO  HikariDataSource:349 - HikariPool-2 - Shutdown initiated...
+2026-03-26 21:21:57 INFO  HikariDataSource:351 - HikariPool-2 - Shutdown completed.
+2026-03-26 21:21:58 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 20000 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:21:58 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:21:58 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:21:58 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 97 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:21:59 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:21:59 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:21:59 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:21:59 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:21:59 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 1011 ms
+2026-03-26 21:21:59 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:21:59 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:21:59 INFO  HikariDataSource:109 - HikariPool-3 - Starting...
+2026-03-26 21:21:59 INFO  HikariPool:580 - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@45b1e84a
+2026-03-26 21:21:59 INFO  HikariDataSource:122 - HikariPool-3 - Start completed.
+2026-03-26 21:21:59 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:21:59 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:22:00 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:22:01 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:22:01 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:22:01 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:01 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:22:01 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 3.588 seconds (process running for 494.402)
+2026-03-26 21:22:01 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:22:01 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:22:01 INFO  ConditionEvaluationDeltaLoggingListener:66 - Condition evaluation unchanged
+2026-03-26 21:22:03 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:214 - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-03-26 21:22:03 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:22:03 INFO  Http11NioProtocol:168 - Pausing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:03 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:22:03 INFO  Http11NioProtocol:168 - Stopping ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:03 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:22:03 INFO  HikariDataSource:349 - HikariPool-3 - Shutdown initiated...
+2026-03-26 21:22:03 INFO  HikariDataSource:351 - HikariPool-3 - Shutdown completed.
+2026-03-26 21:22:03 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 20000 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:22:03 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:22:04 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:22:04 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 73 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:22:04 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:22:04 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:04 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:22:04 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:22:04 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 1238 ms
+2026-03-26 21:22:04 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:22:05 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:22:05 INFO  HikariDataSource:109 - HikariPool-4 - Starting...
+2026-03-26 21:22:05 INFO  HikariPool:580 - HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@3fc829d3
+2026-03-26 21:22:05 INFO  HikariDataSource:122 - HikariPool-4 - Start completed.
+2026-03-26 21:22:05 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:22:05 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:22:05 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:22:06 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:22:06 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:22:06 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:06 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:22:06 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 3.517 seconds (process running for 499.601)
+2026-03-26 21:22:06 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:22:06 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:22:06 INFO  ConditionEvaluationDeltaLoggingListener:66 - Condition evaluation unchanged
+2026-03-26 21:22:49 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:214 - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-03-26 21:22:49 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:22:49 INFO  Http11NioProtocol:168 - Pausing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:49 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:22:49 INFO  Http11NioProtocol:168 - Stopping ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:49 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:22:49 INFO  HikariDataSource:349 - HikariPool-4 - Shutdown initiated...
+2026-03-26 21:22:49 INFO  HikariDataSource:351 - HikariPool-4 - Shutdown completed.
+2026-03-26 21:22:49 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 20000 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:22:49 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:22:50 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:22:50 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 85 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:22:50 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:22:50 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:50 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:22:50 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:22:51 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 1066 ms
+2026-03-26 21:22:51 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:22:51 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:22:51 INFO  HikariDataSource:109 - HikariPool-5 - Starting...
+2026-03-26 21:22:51 INFO  HikariPool:580 - HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@7ca62efd
+2026-03-26 21:22:51 INFO  HikariDataSource:122 - HikariPool-5 - Start completed.
+2026-03-26 21:22:51 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:22:51 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:22:51 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:22:52 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:22:52 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:22:52 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:53 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:22:53 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 3.164 seconds (process running for 545.743)
+2026-03-26 21:22:53 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:22:53 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:22:53 INFO  ConditionEvaluationDeltaLoggingListener:66 - Condition evaluation unchanged
+2026-03-26 21:22:54 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:214 - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-03-26 21:22:54 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:22:54 INFO  Http11NioProtocol:168 - Pausing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:54 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:22:54 INFO  Http11NioProtocol:168 - Stopping ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:54 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:22:54 INFO  HikariDataSource:349 - HikariPool-5 - Shutdown initiated...
+2026-03-26 21:22:54 INFO  HikariDataSource:351 - HikariPool-5 - Shutdown completed.
+2026-03-26 21:22:54 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 20000 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:22:54 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:22:55 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:22:55 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 76 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:22:55 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:22:55 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:55 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:22:55 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:22:55 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 896 ms
+2026-03-26 21:22:55 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:22:55 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:22:55 INFO  HikariDataSource:109 - HikariPool-6 - Starting...
+2026-03-26 21:22:55 INFO  HikariPool:580 - HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@47d22e84
+2026-03-26 21:22:55 INFO  HikariDataSource:122 - HikariPool-6 - Start completed.
+2026-03-26 21:22:55 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:22:56 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:22:56 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:22:56 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:22:56 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:22:57 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:22:57 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:22:57 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 2.746 seconds (process running for 550.131)
+2026-03-26 21:22:57 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:22:57 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:22:57 INFO  ConditionEvaluationDeltaLoggingListener:66 - Condition evaluation unchanged
+2026-03-26 21:24:00 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:214 - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-03-26 21:24:00 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:24:00 INFO  Http11NioProtocol:168 - Pausing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:24:00 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:24:00 INFO  Http11NioProtocol:168 - Stopping ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:24:00 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:24:00 INFO  HikariDataSource:349 - HikariPool-6 - Shutdown initiated...
+2026-03-26 21:24:00 INFO  HikariDataSource:351 - HikariPool-6 - Shutdown completed.
+2026-03-26 21:24:01 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 20000 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:24:01 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:24:01 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:24:01 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 92 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:24:01 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:24:01 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:24:01 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:24:01 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:24:01 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 947 ms
+2026-03-26 21:24:02 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:24:02 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:24:02 INFO  HikariDataSource:109 - HikariPool-7 - Starting...
+2026-03-26 21:24:02 INFO  HikariPool:580 - HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@187aee04
+2026-03-26 21:24:02 INFO  HikariDataSource:122 - HikariPool-7 - Start completed.
+2026-03-26 21:24:02 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:24:02 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:24:02 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:24:03 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:24:03 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:24:04 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:24:04 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 3.092 seconds (process running for 616.758)
+2026-03-26 21:24:04 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26 21:24:04 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:24:04 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:24:04 INFO  ConditionEvaluationDeltaLoggingListener:66 - Condition evaluation unchanged
+2026-03-26 21:24:04 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-26 21:24:04 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:24:04 INFO  HikariDataSource:349 - HikariPool-7 - Shutdown initiated...
+2026-03-26 21:24:04 INFO  HikariDataSource:351 - HikariPool-7 - Shutdown completed.
+2026-03-26 21:24:09 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 12176 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-26 21:24:09 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-26 21:24:09 INFO  DevToolsPropertyDefaultsPostProcessor:69 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-26 21:24:09 INFO  DevToolsPropertyDefaultsPostProcessor:69 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-26 21:24:10 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-26 21:24:11 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26 21:24:11 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 163 ms. Found 9 JPA repository interfaces.
+2026-03-26 21:24:12 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-26 21:24:12 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:24:12 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-26 21:24:12 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-26 21:24:12 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 3049 ms
+2026-03-26 21:24:13 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26 21:24:13 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-26 21:24:14 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26 21:24:14 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-26 21:24:14 INFO  HikariPool:580 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@473e2486
+2026-03-26 21:24:14 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-26 21:24:14 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26 21:24:16 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26 21:24:16 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26 21:24:17 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26 21:24:19 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26 21:24:19 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-26 21:24:21 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-26 21:24:21 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-26 21:24:21 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 12.107 seconds (process running for 14.113)
+2026-03-26 21:24:21 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-26 21:24:21 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-26 21:25:09 INFO  [/]:168 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26 21:25:09 INFO  DispatcherServlet:523 - Initializing Servlet 'dispatcherServlet'
+2026-03-26 21:25:09 INFO  DispatcherServlet:545 - Completed initialization in 4 ms
+2026-03-26 21:25:11 INFO  AbstractOpenApiResource:435 - Init duration for springdoc-openapi is: 1238 ms

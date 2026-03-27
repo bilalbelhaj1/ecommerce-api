@@ -50,7 +50,7 @@ public class CustomerServiceImpl implements CustomerService {
                 throw new BadRequestException("Email already exists");
             }
             customer.setEmail(dto.email());
-            customer.getUser().setEmail(dto.email());
+            customer.getAppUser().setUsername(dto.email());
         }
         if (dto.firstName() != null && !dto.firstName().isEmpty()) {
             customer.setFirstName(dto.firstName());

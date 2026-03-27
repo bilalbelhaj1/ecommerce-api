@@ -2,7 +2,6 @@ package org.example.ecommerceapi.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.HashSet;
@@ -18,7 +17,7 @@ import java.util.Set;
 @Builder
 @Entity
 @Table(name = "users")
-public class User {
+public class AppUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +25,7 @@ public class User {
 
     @Email
     @Column(nullable = false, unique = true)
-    private String email;
+    private String username;
 
     private String password;
 

@@ -6,9 +6,9 @@ import org.example.ecommerceapi.dto.auth.LoginDTO;
 import org.example.ecommerceapi.dto.auth.LoginResponseDTO;
 import org.example.ecommerceapi.dto.customer.CreateCustomerDTO;
 import org.example.ecommerceapi.dto.customer.CustomerSummaryDTO;
+import org.example.ecommerceapi.entity.AppUser;
 import org.example.ecommerceapi.entity.Customer;
 import org.example.ecommerceapi.entity.Role;
-import org.example.ecommerceapi.entity.User;
 import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
 import org.example.ecommerceapi.mapper.CustomerMapper;
@@ -17,6 +17,11 @@ import org.example.ecommerceapi.repository.RoleRepository;
 import org.example.ecommerceapi.repository.UserRepository;
 import org.example.ecommerceapi.security.JwtService;
 import org.example.ecommerceapi.service.AuthService;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -35,32 +40,42 @@ public class AuthServiceImpl implements AuthService {
     private final CustomerRepository customerRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
+    private final AuthenticationManager authenticationManager;
 
     public CustomerSummaryDTO createAccount(CreateCustomerDTO dto) {
-        if (userRepository.existsByEmail(dto.email())) {
+        if (userRepository.existsByUsername(dto.email())) {
             throw new BadRequestException("User with this email already exists");
         }
         Role role = roleRepository.findByName("ROLE_CUSTOMER").orElse(roleRepository.save(Role.builder().name("ROLE_CUSTOMER").build()));
-        User user = User.builder()
-                .email(dto.email())
+        AppUser appUser = AppUser.builder()
+                .username(dto.email())
                 .password(passwordEncoder.encode(dto.password()))
                 .roles(new HashSet<>())
                 .build();
-        user.getRoles().add(role);
-        User savedUser = userRepository.save(user);
-        Customer customer = CustomerMapper.ToEntity(dto, savedUser);
+        appUser.getRoles().add(role);
+        AppUser savedAppUser = userRepository.save(appUser);
+        Customer customer = CustomerMapper.ToEntity(dto, savedAppUser);
         return CustomerMapper.toSummary(customerRepository.save(customer)) ;
     }
 
     public LoginResponseDTO login(LoginDTO dto) {
-        User user = userRepository.findByEmail(dto.email()).orElseThrow(
+        AppUser appUser = userRepository.findByUsername(dto.email()).orElseThrow(
                 () -> new ResourceNotFoundException("Invalid email or password ")
         );
-        if (!passwordEncoder.matches(dto.password(), user.getPassword())){
+        if (!passwordEncoder.matches(dto.password(), appUser.getPassword())){
             throw new ResourceNotFoundException("Invalid email or password");
         }
-        String token = jwtService.generateToken(user);
-        return new LoginResponseDTO(user.getEmail(), user.getId(), token);
+
+        Authentication auth = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        appUser.getUsername(), appUser.getPassword()
+                )
+        );
+
+        SecurityContextHolder.getContext().setAuthentication(auth);
+
+        String token = jwtService.generateToken(appUser);
+        return new LoginResponseDTO(appUser.getUsername(), appUser.getId(), token);
     }
 
 }

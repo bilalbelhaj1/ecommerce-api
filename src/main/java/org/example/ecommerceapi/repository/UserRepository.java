@@ -1,6 +1,6 @@
 package org.example.ecommerceapi.repository;
 
-import org.example.ecommerceapi.entity.User;
+import org.example.ecommerceapi.entity.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
@@ -8,7 +8,7 @@ import java.util.Optional;
 /**
  * @author $(bilal belhaj)
  **/
-public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findByEmail(String email);
-    boolean existsByEmail(String email);
+public interface UserRepository extends JpaRepository<AppUser, Long> {
+    Optional<AppUser> findByUsername(String username);
+    boolean existsByUsername(String username);
 }

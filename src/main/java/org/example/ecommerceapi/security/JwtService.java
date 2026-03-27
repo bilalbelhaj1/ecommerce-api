@@ -2,8 +2,8 @@ package org.example.ecommerceapi.security;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import org.example.ecommerceapi.entity.AppUser;
 import org.example.ecommerceapi.entity.Role;
-import org.example.ecommerceapi.entity.User;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
@@ -14,11 +14,11 @@ public class JwtService {
 
     private final SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
-    public String generateToken(User user) {
+    public String generateToken(AppUser appUser) {
         return Jwts.builder()
-                .setSubject(user.getEmail())
+                .setSubject(appUser.getUsername())
                 .claim("roles",
-                        user.getRoles().stream()
+                        appUser.getRoles().stream()
                                 .map(Role::getName)
                                 .toList())
                 .setIssuedAt(new Date())
@@ -27,7 +27,7 @@ public class JwtService {
                 .compact();
     }
 
-    public String extractEmail(String token){
+    public String extractUsername(String token){
         return Jwts.parserBuilder()
                 .setSigningKey(key)
                 .build()

@@ -5,12 +5,13 @@ import org.example.ecommerceapi.dto.auth.LoginDTO;
 import org.example.ecommerceapi.dto.auth.LoginResponseDTO;
 import org.example.ecommerceapi.dto.customer.CreateCustomerDTO;
 import org.example.ecommerceapi.dto.customer.CustomerSummaryDTO;
+import org.example.ecommerceapi.entity.AppUser;
 import org.example.ecommerceapi.entity.Role;
-import org.example.ecommerceapi.entity.User;
 import org.example.ecommerceapi.repository.RoleRepository;
 import org.example.ecommerceapi.repository.UserRepository;
 import org.example.ecommerceapi.service.AuthService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +31,7 @@ public class AuthController {
     private final UserRepository userRepository;
 
     @PostMapping("/create-admin")
-    public User createAdmin(
+    public AppUser createAdmin(
             @RequestParam String email,
             @RequestParam String password
     ) {
@@ -39,13 +40,13 @@ public class AuthController {
                         .name("ROLE_ADMIN").build()
         );
         Role saved = roleRepository.save(role);
-        User user = User.builder()
-                .email(email)
+        AppUser appUser = AppUser.builder()
+                .username(email)
                 .password(passwordEncoder.encode(password))
                 .roles(new HashSet<>())
                 .build();
-        user.getRoles().add(saved);
-        return userRepository.save(user);
+        appUser.getRoles().add(saved);
+        return userRepository.save(appUser);
     }
 
     @PostMapping("/register")

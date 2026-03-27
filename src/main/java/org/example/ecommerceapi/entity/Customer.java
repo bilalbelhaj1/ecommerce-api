@@ -55,7 +55,7 @@ public class Customer {
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private AppUser appUser;
 
     @CreatedDate
     @Column(updatable = false)
