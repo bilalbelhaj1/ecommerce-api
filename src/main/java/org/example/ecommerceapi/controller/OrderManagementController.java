@@ -1,5 +1,8 @@
 package org.example.ecommerceapi.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.orderManagement.CreateOrderDTO;
@@ -17,6 +20,7 @@ import java.net.URI;
 /**
  * @author $(bilal belhaj)
  **/
+@Tag(name = "Orders", description = "Operations related to orders (customer)")
 @RestController
 @RequestMapping("api/v1/orders")
 @RequiredArgsConstructor
@@ -27,6 +31,10 @@ public class OrderManagementController {
     // place order
     @PreAuthorize("hasRole('CUSTOMER')")
     @PostMapping
+    @Operation(
+            summary = "place Order",
+            description = "place a new order"
+    )
     public ResponseEntity<OrderResponseDTO> createOrder(@Valid @RequestBody CreateOrderDTO dto) {
         URI uri = URI.create("http://localhost:8081/api/v1/orders");
         return ResponseEntity.created(uri).body(orderManagementService.placeOrder(dto));
@@ -35,9 +43,13 @@ public class OrderManagementController {
     // get all orders (customer)
     @PreAuthorize("hasRole('CUSTOMER')")
     @GetMapping("/customer/{id}")
+    @Operation(
+            summary = "get orders",
+            description = "returns all customer orders with pagination support and filtering by status"
+    )
     public ResponseEntity<Page<OrderSummaryDTO>> getByCustomer(
-            @PathVariable Long id,
-            @RequestParam(required = false) OrderStatus status,
+            @Parameter(description = "Customer Id")  @PathVariable Long id,
+            @Parameter(description = "order status") @RequestParam(required = false) OrderStatus status,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size
     ) {
@@ -47,8 +59,12 @@ public class OrderManagementController {
     // get one order
     @PreAuthorize("hasRole('CUSTOMER')")
     @GetMapping("{id}")
+    @Operation(
+            summary = "get order",
+            description = "return order details"
+    )
     public ResponseEntity<OrderResponseDTO> getById(
-            @PathVariable Long id
+            @Parameter(description = "Order Id") @PathVariable Long id
     ) {
         return ResponseEntity.ok().body(orderManagementService.getOrder(id));
     }
@@ -56,8 +72,12 @@ public class OrderManagementController {
     // cancel order
     @PreAuthorize("hasRole('CUSTOMER')")
     @PutMapping("{id}/cancel")
+    @Operation(
+            summary = "cancel order",
+            description = "cancel order by customer"
+    )
     public ResponseEntity<OrderSummaryDTO> cancelOrder(
-            @PathVariable Long id
+            @Parameter(description = "Order Id") @PathVariable Long id
     ) {
         return ResponseEntity.ok().body(orderManagementService.cancelOrder(id));
     }
