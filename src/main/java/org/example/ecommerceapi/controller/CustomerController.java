@@ -1,5 +1,8 @@
 package org.example.ecommerceapi.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.customer.CustomerResponseDTO;
@@ -15,6 +18,7 @@ import java.util.List;
  * @author $(bilal belhaj)
  **/
 
+@Tag(name = "customers", description = "operations related to customers")
 @RestController
 @RequestMapping("api/v1/customers")
 @RequiredArgsConstructor
@@ -25,6 +29,10 @@ public class CustomerController {
     // get customers
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping()
+    @Operation(
+            summary = "get all customers",
+            description = "admin endpoint to get all the customers"
+    )
     public ResponseEntity<List<CustomerResponseDTO>> getCustomers() {
         return ResponseEntity.ok().body(customerService.getCustomers());
     }
@@ -32,14 +40,22 @@ public class CustomerController {
     // get
     @PreAuthorize("hasAnyRole('ADMIN', 'CUSTOMER')")
     @GetMapping("{id}")
-    public ResponseEntity<CustomerResponseDTO> getCustomer(@PathVariable Long id) {
+    @Operation(
+            summary = "get customer data",
+            description = "returns customer information's"
+    )
+    public ResponseEntity<CustomerResponseDTO> getCustomer(@Parameter(description = "Customer Id") @PathVariable Long id) {
         return ResponseEntity.ok().body(customerService.getProfile(id));
     }
 
     // Update
     @PreAuthorize("hasRole('CUSTOMER')")
     @PutMapping("{id}")
-    public ResponseEntity<CustomerResponseDTO> updateCustomer(@PathVariable Long id, @Valid @RequestBody UpdateCustomerDTO dto) {
+    @Operation(
+            summary = "update customer ",
+            description = "customer endpoint to update profile"
+    )
+    public ResponseEntity<CustomerResponseDTO> updateCustomer(@Parameter(description = "Customer Id") @PathVariable Long id, @Valid @RequestBody UpdateCustomerDTO dto) {
         return ResponseEntity.ok().body(customerService.updateProfile(id, dto));
     }
 

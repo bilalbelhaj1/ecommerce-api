@@ -829,3 +829,95 @@ Caused by: org.springframework.data.core.PropertyReferenceException: No property
 2026-03-27 02:01:42 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
 2026-03-27 02:01:42 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
 2026-03-27 02:01:42 INFO  ConditionEvaluationDeltaLoggingListener:66 - Condition evaluation unchanged
+2026-03-27 02:02:26 INFO  [/]:168 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-27 02:02:26 INFO  DispatcherServlet:523 - Initializing Servlet 'dispatcherServlet'
+2026-03-27 02:02:26 INFO  DispatcherServlet:545 - Completed initialization in 3 ms
+2026-03-27 02:02:27 INFO  AbstractOpenApiResource:435 - Init duration for springdoc-openapi is: 768 ms
+2026-03-27 02:05:15 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:214 - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-03-27 02:05:15 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-27 02:05:15 INFO  Http11NioProtocol:168 - Pausing ProtocolHandler ["http-nio-8081"]
+2026-03-27 02:05:15 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-27 02:05:15 INFO  Http11NioProtocol:168 - Stopping ProtocolHandler ["http-nio-8081"]
+2026-03-27 02:05:15 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27 02:05:15 INFO  HikariDataSource:349 - HikariPool-3 - Shutdown initiated...
+2026-03-27 02:05:15 INFO  HikariDataSource:351 - HikariPool-3 - Shutdown completed.
+2026-03-27 02:05:15 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 18084 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-27 02:05:15 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-27 02:05:16 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27 02:05:16 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 91 ms. Found 9 JPA repository interfaces.
+2026-03-27 02:05:17 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-27 02:05:17 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-27 02:05:17 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-27 02:05:17 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-27 02:05:17 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 1146 ms
+2026-03-27 02:05:17 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-27 02:05:17 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27 02:05:17 INFO  HikariDataSource:109 - HikariPool-4 - Starting...
+2026-03-27 02:05:17 INFO  HikariPool:580 - HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@1a8506ea
+2026-03-27 02:05:17 INFO  HikariDataSource:122 - HikariPool-4 - Start completed.
+2026-03-27 02:05:17 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-27 02:05:17 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27 02:05:17 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27 02:05:18 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-27 02:05:18 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27 02:05:19 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-27 02:05:19 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-27 02:05:19 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 3.628 seconds (process running for 827.514)
+2026-03-27 02:05:19 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-27 02:05:19 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-27 02:05:19 INFO  ConditionEvaluationDeltaLoggingListener:66 - Condition evaluation unchanged
+2026-03-27 02:05:20 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:214 - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-03-27 02:05:20 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-27 02:05:20 INFO  Http11NioProtocol:168 - Pausing ProtocolHandler ["http-nio-8081"]
+2026-03-27 02:05:20 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-27 02:05:20 INFO  Http11NioProtocol:168 - Stopping ProtocolHandler ["http-nio-8081"]
+2026-03-27 02:05:20 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27 02:05:20 INFO  HikariDataSource:349 - HikariPool-4 - Shutdown initiated...
+2026-03-27 02:05:20 INFO  HikariDataSource:351 - HikariPool-4 - Shutdown completed.
+2026-03-27 02:05:21 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 18084 (C:\Users\Bilal\Desktop\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\ecommerce-api)
+2026-03-27 02:05:21 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-27 02:05:21 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-27 02:05:21 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 66 ms. Found 9 JPA repository interfaces.
+2026-03-27 02:05:22 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-27 02:05:22 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-27 02:05:22 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-27 02:05:22 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-27 02:05:22 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 904 ms
+2026-03-27 02:05:22 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-27 02:05:22 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-27 02:05:22 INFO  HikariDataSource:109 - HikariPool-5 - Starting...
+2026-03-27 02:05:22 INFO  HikariPool:580 - HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@6414e432
+2026-03-27 02:05:22 INFO  HikariDataSource:122 - HikariPool-5 - Start completed.
+2026-03-27 02:05:22 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-27 02:05:22 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-27 02:05:22 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-27 02:05:23 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-27 02:05:23 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-27 02:05:23 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-27 02:05:23 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-27 02:05:23 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 2.864 seconds (process running for 832.022)
+2026-03-27 02:05:23 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-27 02:05:23 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-27 02:05:23 INFO  ConditionEvaluationDeltaLoggingListener:66 - Condition evaluation unchanged
