@@ -41,6 +41,10 @@ public class ProductController {
 
     // get products
     @GetMapping
+    @Operation(
+            summary = "get all products",
+            description = "public endpoint to get all products with pagination and filtering "
+    )
     public ResponseEntity<Page<ProductSummaryDTO>> getProducts(
             @RequestParam(defaultValue = "ACTIVE") ProductStatus status,
             @RequestParam(required = false) Long categoryId,
@@ -52,6 +56,10 @@ public class ProductController {
 
     // search Products
     @GetMapping("search")
+    @Operation(
+            summary = "Search for products",
+            description = "Endpoint to search for products with pagination"
+    )
     public ResponseEntity<Page<ProductSummaryDTO>> searchProducts(
             @RequestParam String q,
             @RequestParam(defaultValue = "0") int page,
@@ -63,6 +71,10 @@ public class ProductController {
     // get All Products Admin
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
+    @Operation(
+            summary = "get all products by admin",
+            description = "admin endpoint to get all the products in the database"
+    )
     public ResponseEntity<List<ProductSummaryDTO>> getAll() {
         return ResponseEntity.ok().body(productService.getAllProducts());
     }
@@ -82,9 +94,13 @@ public class ProductController {
     // add product
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @Operation(
+            summary = "add new product",
+            description = "admin endpoint to add new product"
+    )
     public ResponseEntity<ProductResponseDTO> addProduct(
-            @RequestPart("product") String productJson,
-            @RequestPart("image") MultipartFile imageFile
+            @Parameter(description = "product data") @RequestPart("product") String productJson,
+            @Parameter(description = "product image") @RequestPart("image") MultipartFile imageFile
     ){
         CreateProductDTO createProductDTO = mapper.readValue(productJson, CreateProductDTO.class);
         ProductResponseDTO res = productService.addProduct(createProductDTO, imageFile);
@@ -95,6 +111,10 @@ public class ProductController {
 
     // get image of product
     @GetMapping("{id}/image")
+    @Operation(
+            summary = "get product image",
+            description = "get product image by product id"
+    )
     public ResponseEntity<byte[]> getImageByProductId(@PathVariable Long id) {
         ProductResponseDTO product = productService.getProduct(id);
         logger.info("Request to get product image productId={}", id);
@@ -104,10 +124,14 @@ public class ProductController {
     // update product (admin)
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping(path = "{productId}")
+    @Operation(
+            summary = "update product",
+            description = "Admin endpoint to update product data and image"
+    )
     public ResponseEntity<ProductResponseDTO> updateProduct(
-            @PathVariable("productId") Long id,
-            @RequestPart("product") String productJson,
-            @RequestPart("image") MultipartFile imageFile
+            @Parameter(description = "product Id") @PathVariable("productId") Long id,
+            @Parameter(description = "product new data") @RequestPart("product") String productJson,
+            @Parameter(description = "optional new image") @RequestPart("image") MultipartFile imageFile
     ) {
         logger.info("Request to update product productId:{}", id);
         UpdateProductDTO updateProductDTO = mapper.readValue(productJson, UpdateProductDTO.class);
@@ -119,7 +143,11 @@ public class ProductController {
     // delete product (admin)
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping(path = "{productId}")
-    public ResponseEntity<Void> deleteProduct(@PathVariable("productId") Long id) {
+    @Operation(
+            summary = "Delete product",
+            description = "admin endpoint to delete product"
+    )
+    public ResponseEntity<Void> deleteProduct(@Parameter(description = "Product Id") @PathVariable("productId") Long id) {
         logger.info("Request to delete product productId:{}", id);
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
@@ -127,7 +155,12 @@ public class ProductController {
 
     // get ratings
     @GetMapping("{id}/ratings")
-    public ResponseEntity<List<RatingResponseDTO>> getRatings(@PathVariable Long id) {
+    @Operation(
+
+            summary = "get product ratings",
+            description = "returns all the product ratings"
+    )
+    public ResponseEntity<List<RatingResponseDTO>> getRatings(@Parameter(description = "Product Id") @PathVariable Long id) {
         return ResponseEntity.ok().body(ratingService.getAll(id));
     }
 }
