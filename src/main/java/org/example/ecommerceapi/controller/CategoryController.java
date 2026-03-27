@@ -1,5 +1,8 @@
 package org.example.ecommerceapi.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.ecommerceapi.dto.category.CategoryResponseDTO;
@@ -18,8 +21,9 @@ import java.util.List;
  * @author $(bilal belhaj)
  **/
 
+@Tag(name = "categories", description = "operations related to categories")
 @RestController
-@RequestMapping("api/v1/category")
+@RequestMapping("api/v1/categories")
 @RequiredArgsConstructor
 public class CategoryController {
 
@@ -28,6 +32,10 @@ public class CategoryController {
     // create
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
+    @Operation(
+            summary = "add category",
+            description = "endpoint to add new category"
+    )
     public ResponseEntity<CategoryResponseDTO> createCategory(@Valid @RequestBody CreateCategoryDTO createCategoryDTO) {
         CategoryResponseDTO res = categoryService.addCategory(createCategoryDTO);
         URI uri = URI.create("http://localhost:8081" + res.id());
@@ -36,6 +44,10 @@ public class CategoryController {
 
     // read
     @GetMapping
+    @Operation(
+            summary = "get categories",
+            description = "public endpoint to get all categories"
+    )
     public ResponseEntity<List<CategoryResponseDTO>> getCategories() {
         return ResponseEntity.ok().body(
                 categoryService.getCategories()
@@ -44,7 +56,11 @@ public class CategoryController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(path = "{categoryId}")
-    public ResponseEntity<CategoryResponseDTO> getCategory(@PathVariable("categoryId") Long id) {
+    @Operation(
+            summary = "get category details",
+            description = "returns more details about a category"
+    )
+    public ResponseEntity<CategoryResponseDTO> getCategory(@Parameter(description = "Category Id") @PathVariable("categoryId") Long id) {
         return ResponseEntity.ok().body(
                 categoryService.getCategory(id)
         );
@@ -53,9 +69,13 @@ public class CategoryController {
     // update
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping(path = "{categoryId}")
+    @Operation(
+            summary = "update category",
+            description = "update a category "
+    )
     public ResponseEntity<CategoryResponseDTO> updateCategory(
-            @PathVariable("categoryId") Long id,
-            @Valid @RequestBody UpdateCategoryDTO updateCategoryDTO
+            @Parameter(description = "Category Id") @PathVariable("categoryId") Long id,
+            @Parameter(description = "new category data") @Valid @RequestBody UpdateCategoryDTO updateCategoryDTO
             ) {
         return ResponseEntity.ok().body(
                 categoryService.updateCategory(id, updateCategoryDTO)
@@ -64,14 +84,22 @@ public class CategoryController {
     // delete
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping(path = "{categoryId}")
-    public ResponseEntity<Void> deleteCategory(@PathVariable("categoryId") Long id) {
+    @Operation(
+            summary = "Delete category",
+            description = "delete a category"
+    )
+    public ResponseEntity<Void> deleteCategory(@Parameter(description = "Category Id") @PathVariable("categoryId") Long id) {
         categoryService.deleteCategory(id);
         return ResponseEntity.noContent().build();
     }
 
     // get products
     @GetMapping("{id}/products")
-    public ResponseEntity<List<ProductSummaryDTO>> getProducts(@PathVariable Long id) {
+    @Operation(
+            summary = "get category's products",
+            description = "return all products belongs to a category"
+    )
+    public ResponseEntity<List<ProductSummaryDTO>> getProducts(@Parameter(description = "Category Id") @PathVariable Long id) {
         return ResponseEntity.ok().body(categoryService.getProductsByCategory(id));
     }
 }
