@@ -8,6 +8,7 @@ import org.example.ecommerceapi.dto.notification.NotificationResponse;
 import org.example.ecommerceapi.service.NotificationService;
 import org.example.ecommerceapi.service.impl.NotificationServiceImpl;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
  * @author $(bilal belhaj)
  **/
 @Tag(name = "notifications", description = "operations related to notifications")
+@PreAuthorize("hasAnyRole('ADMIN', 'CUSTOMER')")
 @RestController
 @RequestMapping ("/api/v1/notifications")
 @RequiredArgsConstructor

@@ -73,6 +73,9 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerSummaryDTO create(CreateCustomerDTO dto, AppUser user) {
+        if (customerRepository.existsByEmail(dto.email())) {
+            throw new BadRequestException("Customer with this email already exists");
+        }
         Customer customer = CustomerMapper.ToEntity(dto, user);
         return CustomerMapper.toSummary(customerRepository.save(customer));
     }
