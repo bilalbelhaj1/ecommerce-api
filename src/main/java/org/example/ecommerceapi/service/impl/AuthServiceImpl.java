@@ -17,6 +17,7 @@ import org.example.ecommerceapi.repository.RoleRepository;
 import org.example.ecommerceapi.repository.UserRepository;
 import org.example.ecommerceapi.security.JwtService;
 import org.example.ecommerceapi.service.AuthService;
+import org.example.ecommerceapi.service.CustomerService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -41,6 +42,7 @@ public class AuthServiceImpl implements AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final CustomerService customerService;
 
     public CustomerSummaryDTO createAccount(CreateCustomerDTO dto) {
         if (userRepository.existsByUsername(dto.email())) {
@@ -54,8 +56,7 @@ public class AuthServiceImpl implements AuthService {
                 .build();
         appUser.getRoles().add(role);
         AppUser savedAppUser = userRepository.save(appUser);
-        Customer customer = CustomerMapper.ToEntity(dto, savedAppUser);
-        return CustomerMapper.toSummary(customerRepository.save(customer)) ;
+        return customerService.create(dto, savedAppUser);
     }
 
     public LoginResponseDTO login(LoginDTO dto) {
@@ -68,7 +69,7 @@ public class AuthServiceImpl implements AuthService {
 
         Authentication auth = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        appUser.getUsername(), appUser.getPassword()
+                        appUser.getUsername(), dto.password()
                 )
         );
 

@@ -2,8 +2,11 @@ package org.example.ecommerceapi.service.impl;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.example.ecommerceapi.dto.customer.CreateCustomerDTO;
 import org.example.ecommerceapi.dto.customer.CustomerResponseDTO;
+import org.example.ecommerceapi.dto.customer.CustomerSummaryDTO;
 import org.example.ecommerceapi.dto.customer.UpdateCustomerDTO;
+import org.example.ecommerceapi.entity.AppUser;
 import org.example.ecommerceapi.entity.Customer;
 import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.exception.ResourceNotFoundException;
@@ -66,6 +69,12 @@ public class CustomerServiceImpl implements CustomerService {
         }
 
         return CustomerMapper.toDTO(customerRepository.save(customer));
+    }
+
+    @Override
+    public CustomerSummaryDTO create(CreateCustomerDTO dto, AppUser user) {
+        Customer customer = CustomerMapper.ToEntity(dto, user);
+        return CustomerMapper.toSummary(customerRepository.save(customer));
     }
 
     // delete account
