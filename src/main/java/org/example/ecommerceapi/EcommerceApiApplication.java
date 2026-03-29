@@ -21,5 +21,4 @@ public class EcommerceApiApplication {
     public String home() {
         return "Welcome";
     }
-
 }

@@ -1888,3 +1888,240 @@ The unsaved transient entity must be saved in an operation prior to saving these
 2026-03-28 18:12:22 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-03-28 18:12:22 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
 2026-03-28 18:12:22 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-29 21:49:20 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 17928 (C:\Users\Bilal\Desktop\api-backup\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-29 21:49:20 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-29 21:49:20 INFO  DevToolsPropertyDefaultsPostProcessor:69 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-29 21:49:20 INFO  DevToolsPropertyDefaultsPostProcessor:69 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-29 21:49:20 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-29 21:49:22 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-29 21:49:22 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 163 ms. Found 9 JPA repository interfaces.
+2026-03-29 21:49:23 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-29 21:49:23 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-29 21:49:23 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-29 21:49:23 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-29 21:49:23 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 3577 ms
+2026-03-29 21:49:24 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-29 21:49:24 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-29 21:49:25 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-29 21:49:25 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-29 21:49:25 INFO  HikariPool:580 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70414a87
+2026-03-29 21:49:25 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-29 21:49:26 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-29 21:49:28 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-29 21:49:28 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29 21:49:28 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-29 21:49:31 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-29 21:49:31 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-29 21:49:33 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-29 21:49:33 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-29 21:49:33 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 13.892 seconds (process running for 17.059)
+2026-03-29 21:49:33 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-29 21:49:33 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-29 21:49:53 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:214 - Restarting due to 90 class path changes (0 additions, 89 deletions, 1 modification)
+2026-03-29 21:49:53 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-29 21:49:53 INFO  Http11NioProtocol:168 - Pausing ProtocolHandler ["http-nio-8081"]
+2026-03-29 21:49:53 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-29 21:49:53 INFO  Http11NioProtocol:168 - Stopping ProtocolHandler ["http-nio-8081"]
+2026-03-29 21:49:53 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29 21:49:53 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-29 21:49:53 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-29 21:49:54 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 17928 (C:\Users\Bilal\Desktop\api-backup\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-29 21:49:54 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-29 21:49:54 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-29 21:49:54 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2026-03-29 21:49:54 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-29 21:49:54 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-29 21:49:54 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-29 21:49:54 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-29 21:49:54 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 843 ms
+2026-03-29 21:49:55 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-29 21:49:55 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-29 21:49:55 INFO  HikariDataSource:109 - HikariPool-2 - Starting...
+2026-03-29 21:49:55 INFO  HikariPool:580 - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@7ca7aade
+2026-03-29 21:49:55 INFO  HikariDataSource:122 - HikariPool-2 - Start completed.
+2026-03-29 21:49:55 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-29 21:49:55 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-29 21:49:55 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29 21:49:55 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-29 21:49:55 WARN  UserDetailsServiceAutoConfiguration:83 - 
+
+Using generated security password: 57991754-7005-409c-b383-3743f29d2d1a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-03-29 21:49:55 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-03-29 21:49:55 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-29 21:49:55 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-29 21:49:55 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 1.93 seconds (process running for 39.705)
+2026-03-29 21:49:55 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-29 21:49:55 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-29 21:49:55 INFO  ConditionEvaluationDeltaLoggingListener:61 - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   ServletWebSecurityAutoConfiguration.EnableWebSecurityConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ServletWebSecurityAutoConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - AnyNestedCondition 1 matched 2 did not; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'spring.security.user.password'; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'spring.security.user.name'; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured)
+      - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-03-29 21:49:56 INFO  [/]:168 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-29 21:49:56 INFO  DispatcherServlet:523 - Initializing Servlet 'dispatcherServlet'
+2026-03-29 21:49:56 INFO  DispatcherServlet:545 - Completed initialization in 2 ms
+2026-03-29 21:50:02 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener:214 - Restarting due to 89 class path changes (89 additions, 0 deletions, 0 modifications)
+2026-03-29 21:50:02 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-29 21:50:02 INFO  Http11NioProtocol:168 - Pausing ProtocolHandler ["http-nio-8081"]
+2026-03-29 21:50:02 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-29 21:50:02 INFO  Http11NioProtocol:168 - Stopping ProtocolHandler ["http-nio-8081"]
+2026-03-29 21:50:02 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29 21:50:02 INFO  HikariDataSource:349 - HikariPool-2 - Shutdown initiated...
+2026-03-29 21:50:02 INFO  HikariDataSource:351 - HikariPool-2 - Shutdown completed.
+2026-03-29 21:50:02 INFO  EcommerceApiApplication:54 - Starting EcommerceApiApplication using Java 25 with PID 17928 (C:\Users\Bilal\Desktop\api-backup\ecommerce-api\target\classes started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-29 21:50:02 INFO  EcommerceApiApplication:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-29 21:50:03 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-29 21:50:03 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 102 ms. Found 9 JPA repository interfaces.
+2026-03-29 21:50:03 INFO  TomcatWebServer:114 - Tomcat initialized with port 8081 (http)
+2026-03-29 21:50:03 INFO  Http11NioProtocol:168 - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-29 21:50:03 INFO  StandardService:168 - Starting service [Tomcat]
+2026-03-29 21:50:03 INFO  StandardEngine:168 - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-29 21:50:03 INFO  WebApplicationContextInitializer:77 - Root WebApplicationContext: initialization completed in 1193 ms
+2026-03-29 21:50:04 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-29 21:50:04 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-29 21:50:04 INFO  HikariDataSource:109 - HikariPool-3 - Starting...
+2026-03-29 21:50:04 INFO  HikariPool:580 - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@40294d21
+2026-03-29 21:50:04 INFO  HikariDataSource:122 - HikariPool-3 - Start completed.
+2026-03-29 21:50:04 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/ecommerce]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: ecommerce/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-29 21:50:05 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-29 21:50:05 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29 21:50:05 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-29 21:50:06 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-29 21:50:06 INFO  Http11NioProtocol:168 - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-29 21:50:06 INFO  TomcatWebServer:240 - Tomcat started on port 8081 (http) with context path '/'
+2026-03-29 21:50:06 INFO  EcommerceApiApplication:60 - Started EcommerceApiApplication in 4.248 seconds (process running for 50.659)
+2026-03-29 21:50:06 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-29 21:50:06 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-29 21:50:06 INFO  ConditionEvaluationDeltaLoggingListener:61 - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   ServletWebSecurityAutoConfiguration.EnableWebSecurityConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   ServletWebSecurityAutoConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' filterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' customUserDetailsService (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - found 'session' scope (OnWebApplicationCondition)
+         - AnyNestedCondition 1 matched 2 did not; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'spring.security.user.password'; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'spring.security.user.name'; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-03-29 21:51:17 INFO  [/]:168 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-29 21:51:17 INFO  DispatcherServlet:523 - Initializing Servlet 'dispatcherServlet'
+2026-03-29 21:51:17 INFO  DispatcherServlet:545 - Completed initialization in 3 ms
+2026-03-29 21:51:18 INFO  AbstractOpenApiResource:435 - Init duration for springdoc-openapi is: 1139 ms
+2026-03-29 21:52:49 INFO  GracefulShutdown:54 - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-29 21:52:49 INFO  GracefulShutdown:76 - Graceful shutdown complete
+2026-03-29 21:52:49 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29 21:52:49 INFO  HikariDataSource:349 - HikariPool-3 - Shutdown initiated...
+2026-03-29 21:52:49 INFO  HikariDataSource:351 - HikariPool-3 - Shutdown completed.
