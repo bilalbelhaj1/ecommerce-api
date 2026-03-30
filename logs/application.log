@@ -809,3 +809,197 @@ The unsaved transient entity must be saved in an operation prior to saving these
 2026-03-30 20:09:37 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
 2026-03-30 20:09:39 INFO  NotificationRepositoryTest:60 - Started NotificationRepositoryTest in 5.371 seconds (process running for 7.145)
 2026-03-30 20:09:39 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:28:08 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:28:08 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.OrderRepositoryTest
+2026-03-30 20:29:31 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:29:31 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.OrderRepositoryTest
+2026-03-30 20:29:31 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 20:29:31 INFO  OrderRepositoryTest:54 - Starting OrderRepositoryTest using Java 25 with PID 9148 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 20:29:31 INFO  OrderRepositoryTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 20:29:32 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 20:29:32 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 20:29:32 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 94 ms. Found 9 JPA repository interfaces.
+2026-03-30 20:29:32 INFO  TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor:145 - Replacing 'dataSource' DataSource bean with embedded version
+2026-03-30 20:29:32 INFO  EmbeddedDatabaseFactory:196 - Starting embedded database: url='jdbc:h2:mem:9254573c-9d76-4c31-a7aa-e4673ce60109;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-30 20:29:32 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 20:29:33 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 20:29:33 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 20:29:33 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 20:29:33 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:9254573c-9d76-4c31-a7aa-e4673ce60109]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 9254573C-9D76-4C31-A7AA-E4673CE60109/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 20:29:34 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 20:29:34 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:29:34 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 20:29:35 INFO  OrderRepositoryTest:60 - Started OrderRepositoryTest in 4.159 seconds (process running for 5.843)
+2026-03-30 20:29:36 WARN  error:143 - HHH000247: ErrorCode: 23502, SQLState: 23502
+2026-03-30 20:29:36 WARN  error:144 - NULL not allowed for column "TOTAL_AMOUNT"; SQL statement:
+insert into orders (created_at,customer_id,date,shipping_address,status,total_amount,updated_at,id) values (?,?,?,?,?,?,?,default) [23502-240]
+2026-03-30 20:29:36 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:29:59 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:29:59 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.OrderRepositoryTest
+2026-03-30 20:29:59 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 20:29:59 INFO  OrderRepositoryTest:54 - Starting OrderRepositoryTest using Java 25 with PID 21920 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 20:29:59 INFO  OrderRepositoryTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 20:29:59 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 20:30:00 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 20:30:00 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 90 ms. Found 9 JPA repository interfaces.
+2026-03-30 20:30:00 INFO  TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor:145 - Replacing 'dataSource' DataSource bean with embedded version
+2026-03-30 20:30:00 INFO  EmbeddedDatabaseFactory:196 - Starting embedded database: url='jdbc:h2:mem:cd5016a7-0fe1-4f11-8e90-015c755b0aa1;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-30 20:30:00 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 20:30:00 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 20:30:01 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 20:30:01 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 20:30:01 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:cd5016a7-0fe1-4f11-8e90-015c755b0aa1]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: CD5016A7-0FE1-4F11-8E90-015C755B0AA1/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 20:30:02 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 20:30:02 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:30:02 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 20:30:03 INFO  OrderRepositoryTest:60 - Started OrderRepositoryTest in 3.94 seconds (process running for 5.66)
+2026-03-30 20:30:03 WARN  error:143 - HHH000247: ErrorCode: 23502, SQLState: 23502
+2026-03-30 20:30:03 WARN  error:144 - NULL not allowed for column "TOTAL_AMOUNT"; SQL statement:
+insert into orders (created_at,customer_id,date,shipping_address,status,total_amount,updated_at,id) values (?,?,?,?,?,?,?,default) [23502-240]
+2026-03-30 20:30:03 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:30:56 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:30:56 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.OrderRepositoryTest
+2026-03-30 20:30:56 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 20:30:57 INFO  OrderRepositoryTest:54 - Starting OrderRepositoryTest using Java 25 with PID 15756 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 20:30:57 INFO  OrderRepositoryTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 20:30:57 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 20:30:57 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 20:30:57 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 87 ms. Found 9 JPA repository interfaces.
+2026-03-30 20:30:57 INFO  TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor:145 - Replacing 'dataSource' DataSource bean with embedded version
+2026-03-30 20:30:57 INFO  EmbeddedDatabaseFactory:196 - Starting embedded database: url='jdbc:h2:mem:458e0e3c-da6a-4245-81cb-ad4a2ba5d8b1;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-30 20:30:58 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 20:30:58 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 20:30:58 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 20:30:58 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 20:30:58 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:458e0e3c-da6a-4245-81cb-ad4a2ba5d8b1]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 458E0E3C-DA6A-4245-81CB-AD4A2BA5D8B1/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 20:30:59 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 20:30:59 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:31:00 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 20:31:01 INFO  OrderRepositoryTest:60 - Started OrderRepositoryTest in 4.301 seconds (process running for 6.067)
+2026-03-30 20:31:01 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:31:08 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:31:08 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.OrderRepositoryTest
+2026-03-30 20:31:08 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 20:31:08 INFO  OrderRepositoryTest:54 - Starting OrderRepositoryTest using Java 25 with PID 25572 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 20:31:08 INFO  OrderRepositoryTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 20:31:09 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 20:31:09 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 20:31:09 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 86 ms. Found 9 JPA repository interfaces.
+2026-03-30 20:31:09 INFO  TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor:145 - Replacing 'dataSource' DataSource bean with embedded version
+2026-03-30 20:31:09 INFO  EmbeddedDatabaseFactory:196 - Starting embedded database: url='jdbc:h2:mem:94687094-d303-47c0-b375-82c3736db31e;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-30 20:31:09 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 20:31:09 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 20:31:10 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 20:31:10 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 20:31:10 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:94687094-d303-47c0-b375-82c3736db31e]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 94687094-D303-47C0-B375-82C3736DB31E/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 20:31:11 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 20:31:11 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:31:11 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 20:31:12 INFO  OrderRepositoryTest:60 - Started OrderRepositoryTest in 4.074 seconds (process running for 5.793)
+2026-03-30 20:31:13 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:33:44 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:33:44 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.OrderRepositoryTest
+2026-03-30 20:33:44 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 20:33:45 INFO  OrderRepositoryTest:54 - Starting OrderRepositoryTest using Java 25 with PID 25724 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 20:33:45 INFO  OrderRepositoryTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 20:33:45 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 20:33:45 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 20:33:45 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 87 ms. Found 9 JPA repository interfaces.
+2026-03-30 20:33:45 INFO  TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor:145 - Replacing 'dataSource' DataSource bean with embedded version
+2026-03-30 20:33:45 INFO  EmbeddedDatabaseFactory:196 - Starting embedded database: url='jdbc:h2:mem:49aaa085-d10c-4e8f-a551-f299039ee640;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-30 20:33:46 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 20:33:46 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 20:33:46 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 20:33:46 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 20:33:46 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:49aaa085-d10c-4e8f-a551-f299039ee640]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 49AAA085-D10C-4E8F-A551-F299039EE640/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 20:33:47 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 20:33:47 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:33:47 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 20:33:48 INFO  OrderRepositoryTest:60 - Started OrderRepositoryTest in 3.961 seconds (process running for 5.565)
+2026-03-30 20:33:49 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:36:19 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:36:19 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.OrderRepositoryTest
+2026-03-30 20:36:19 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 20:36:19 INFO  OrderRepositoryTest:54 - Starting OrderRepositoryTest using Java 25 with PID 17348 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 20:36:19 INFO  OrderRepositoryTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 20:36:20 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 20:36:20 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 20:36:20 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 88 ms. Found 9 JPA repository interfaces.
+2026-03-30 20:36:20 INFO  TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor:145 - Replacing 'dataSource' DataSource bean with embedded version
+2026-03-30 20:36:20 INFO  EmbeddedDatabaseFactory:196 - Starting embedded database: url='jdbc:h2:mem:999b586a-61b0-4143-b561-6c114e90ab44;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-30 20:36:20 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 20:36:20 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 20:36:21 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 20:36:21 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 20:36:21 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:999b586a-61b0-4143-b561-6c114e90ab44]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 999B586A-61B0-4143-B561-6C114E90AB44/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 20:36:22 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 20:36:22 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:36:22 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 20:36:23 INFO  OrderRepositoryTest:60 - Started OrderRepositoryTest in 4.039 seconds (process running for 5.76)
+2026-03-30 20:36:24 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
