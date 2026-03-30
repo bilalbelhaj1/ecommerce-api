@@ -10,7 +10,6 @@ import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author $(bilal belhaj)
@@ -18,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DataJpaTest
 class NotificationRepositoryTest {
     @Autowired
-    private NotificationRepository notificationRepository;
+    private NotificationRepository underTest;
     @Autowired
     private UserRepository userRepository;
 
@@ -41,9 +40,9 @@ class NotificationRepositoryTest {
                 .type("TEST")
                 .user(user)
                 .build();
-        Notification saved = notificationRepository.save(notification);
+        Notification saved = underTest.save(notification);
         // when
-        List<Notification> res = notificationRepository.findByUserId(user.getId());
+        List<Notification> res = underTest.findByUserId(user.getId());
         // then
         assertThat(res).isNotEmpty();
     }
@@ -51,7 +50,7 @@ class NotificationRepositoryTest {
     @Test
     void findByUserId_ReturnsEmptyList_whenNotExists() {
         // when
-        List<Notification> res = notificationRepository.findByUserId(user.getId());
+        List<Notification> res = underTest.findByUserId(user.getId());
         // then
         assertThat(res).isEmpty();
     }
