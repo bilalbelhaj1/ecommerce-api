@@ -1065,3 +1065,650 @@ insert into orders (created_at,customer_id,date,shipping_address,status,total_am
 2026-03-30 20:50:18 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
 2026-03-30 20:50:19 INFO  UserRepositoryTest:60 - Started UserRepositoryTest in 4.179 seconds (process running for 5.996)
 2026-03-30 20:50:19 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:51:45 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.NotificationRepositoryTest]: NotificationRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:51:45 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.NotificationRepositoryTest
+2026-03-30 20:51:45 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 20:51:46 INFO  NotificationRepositoryTest:54 - Starting NotificationRepositoryTest using Java 25 with PID 12656 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 20:51:46 INFO  NotificationRepositoryTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 20:51:46 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 20:51:46 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 20:51:46 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 92 ms. Found 9 JPA repository interfaces.
+2026-03-30 20:51:46 INFO  TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor:145 - Replacing 'dataSource' DataSource bean with embedded version
+2026-03-30 20:51:46 INFO  EmbeddedDatabaseFactory:196 - Starting embedded database: url='jdbc:h2:mem:5acfcfdd-596d-472d-b86c-bf4287ee6805;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-30 20:51:47 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 20:51:47 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 20:51:47 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 20:51:47 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 20:51:47 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:5acfcfdd-596d-472d-b86c-bf4287ee6805]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 5ACFCFDD-596D-472D-B86C-BF4287EE6805/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 20:51:48 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 20:51:49 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:51:49 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 20:51:50 INFO  NotificationRepositoryTest:60 - Started NotificationRepositoryTest in 4.475 seconds (process running for 6.565)
+2026-03-30 20:51:50 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.ProductRepositoryTest]: ProductRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:51:50 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.ProductRepositoryTest
+2026-03-30 20:51:51 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:51:51 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.OrderRepositoryTest
+2026-03-30 20:51:51 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.CategoryRepositoryTest]: CategoryRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:51:51 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.CategoryRepositoryTest
+2026-03-30 20:51:51 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.CustomerRepositoryTest]: CustomerRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:51:51 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.CustomerRepositoryTest
+2026-03-30 20:51:51 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:51:51 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.UserRepositoryTest
+2026-03-30 20:51:51 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.RatingRepositoryTest]: RatingRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:51:51 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.RatingRepositoryTest
+2026-03-30 20:51:51 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.RoleRepositoryTest]: RoleRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:51:51 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.RoleRepositoryTest
+2026-03-30 20:51:51 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:51:51 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 20:51:51 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 20:51:51 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 12656 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 20:51:51 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 20:51:52 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 20:51:52 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 29 ms. Found 9 JPA repository interfaces.
+2026-03-30 20:51:52 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 20:51:52 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 20:51:52 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 20:51:52 INFO  HikariPool:580 - HikariPool-1 - Added connection conn41: url=jdbc:h2:mem:db user=SA
+2026-03-30 20:51:52 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 20:51:52 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 20:51:52 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 20:51:52 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 20:51:52 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:51:52 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 20:51:53 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 20:51:53 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 2.374 seconds (process running for 10.396)
+2026-03-30 20:51:53 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 20:51:53 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 20:51:54 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:51:54 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:51:54 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 20:51:54 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 20:54:27 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.NotificationRepositoryTest]: NotificationRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:54:27 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.NotificationRepositoryTest
+2026-03-30 20:54:28 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 20:54:28 INFO  NotificationRepositoryTest:54 - Starting NotificationRepositoryTest using Java 25 with PID 19712 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 20:54:28 INFO  NotificationRepositoryTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 20:54:28 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 20:54:28 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 20:54:28 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 77 ms. Found 9 JPA repository interfaces.
+2026-03-30 20:54:28 INFO  TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor:145 - Replacing 'dataSource' DataSource bean with embedded version
+2026-03-30 20:54:28 INFO  EmbeddedDatabaseFactory:196 - Starting embedded database: url='jdbc:h2:mem:4b2bea0d-e503-4c6e-8a2b-54d8d646a986;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-30 20:54:29 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 20:54:29 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 20:54:29 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 20:54:29 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 20:54:29 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:4b2bea0d-e503-4c6e-8a2b-54d8d646a986]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 4B2BEA0D-E503-4C6E-8A2B-54D8D646A986/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 20:54:30 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 20:54:30 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:54:31 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 20:54:32 INFO  NotificationRepositoryTest:60 - Started NotificationRepositoryTest in 4.027 seconds (process running for 5.89)
+2026-03-30 20:54:32 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.ProductRepositoryTest]: ProductRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:54:32 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.ProductRepositoryTest
+2026-03-30 20:54:32 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:54:32 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.OrderRepositoryTest
+2026-03-30 20:54:33 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.CategoryRepositoryTest]: CategoryRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:54:33 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.CategoryRepositoryTest
+2026-03-30 20:54:33 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.CustomerRepositoryTest]: CustomerRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:54:33 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.CustomerRepositoryTest
+2026-03-30 20:54:33 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:54:33 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.UserRepositoryTest
+2026-03-30 20:54:33 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.RatingRepositoryTest]: RatingRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:54:33 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.RatingRepositoryTest
+2026-03-30 20:54:33 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.RoleRepositoryTest]: RoleRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:54:33 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.RoleRepositoryTest
+2026-03-30 20:54:33 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:54:33 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 20:54:33 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 20:54:33 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 19712 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 20:54:33 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 20:54:34 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 20:54:34 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 28 ms. Found 9 JPA repository interfaces.
+2026-03-30 20:54:34 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 20:54:34 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 20:54:34 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 20:54:34 INFO  HikariPool:580 - HikariPool-1 - Added connection conn41: url=jdbc:h2:mem:db user=SA
+2026-03-30 20:54:34 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 20:54:34 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 20:54:34 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 20:54:34 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 20:54:34 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:54:34 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 20:54:35 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 20:54:35 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 2.276 seconds (process running for 9.575)
+2026-03-30 20:54:35 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 20:54:35 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 20:54:36 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:54:36 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:54:36 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 20:54:36 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 20:59:08 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 20:59:08 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 20:59:08 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 20:59:09 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 12796 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 20:59:09 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 20:59:09 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 20:59:10 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 20:59:10 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 77 ms. Found 9 JPA repository interfaces.
+2026-03-30 20:59:10 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 20:59:10 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 20:59:11 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 20:59:11 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 20:59:11 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 20:59:11 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 20:59:11 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 20:59:11 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 20:59:12 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 20:59:12 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:59:12 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 20:59:13 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 20:59:14 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 20:59:14 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 6.001 seconds (process running for 7.667)
+2026-03-30 20:59:14 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 20:59:14 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 20:59:15 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 20:59:15 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 20:59:15 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 21:05:50 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:05:51 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 21:05:51 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:05:51 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 11424 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:05:51 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:05:51 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:05:52 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:05:52 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 171 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:05:53 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:05:53 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:05:53 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:05:53 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 21:05:54 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 21:05:54 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 21:05:54 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:05:54 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:05:55 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:05:55 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:05:55 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:05:56 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 21:05:56 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 21:05:57 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 5.985 seconds (process running for 7.643)
+2026-03-30 21:05:57 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 21:05:57 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 21:05:57 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:05:57 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 21:05:57 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 21:06:39 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:06:39 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 21:06:39 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:06:40 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 4344 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:06:40 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:06:40 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:06:41 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:06:41 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 75 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:06:41 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:06:41 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:06:42 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:06:42 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 21:06:42 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 21:06:42 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 21:06:42 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:06:42 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:06:43 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:06:43 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:06:43 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:06:44 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 21:06:45 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 21:06:46 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 6.254 seconds (process running for 8.061)
+2026-03-30 21:06:46 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 21:06:46 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 21:06:46 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:06:46 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 21:06:46 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 21:07:36 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:07:36 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 21:07:36 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:07:37 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 17288 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:07:37 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:07:37 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:07:38 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:07:38 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 81 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:07:38 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:07:38 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:07:39 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:07:39 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 21:07:39 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 21:07:39 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 21:07:39 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:07:39 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:07:40 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:07:40 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:07:40 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:07:41 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 21:07:42 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 21:07:42 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 6.044 seconds (process running for 7.722)
+2026-03-30 21:07:42 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 21:07:42 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 21:07:43 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:07:43 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 21:07:43 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 21:09:06 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:09:06 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 21:09:07 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:09:07 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 25772 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:09:07 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:09:07 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:09:08 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:09:08 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 76 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:09:08 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:09:08 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:09:09 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:09:09 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 21:09:09 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 21:09:09 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 21:09:09 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:09:09 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:09:10 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:09:10 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:09:10 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:09:11 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 21:09:12 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 21:09:12 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 5.694 seconds (process running for 7.368)
+2026-03-30 21:09:12 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 21:09:12 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 21:09:13 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:09:13 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 21:09:13 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 21:10:25 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:10:26 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 21:10:26 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:10:26 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 25036 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:10:26 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:10:26 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:10:27 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:10:27 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 86 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:10:28 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:10:28 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:10:28 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:10:28 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 21:10:29 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 21:10:29 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 21:10:29 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:10:29 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:10:30 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:10:30 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:10:30 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:10:31 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 21:10:31 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 21:10:32 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 6.199 seconds (process running for 7.934)
+2026-03-30 21:10:32 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 21:10:32 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 21:10:33 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:10:33 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 21:10:33 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 21:14:19 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:14:20 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 21:14:20 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:14:20 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 6084 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:14:20 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:14:21 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:14:22 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:14:23 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 168 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:14:24 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:14:24 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:14:25 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:14:25 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 21:14:25 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 21:14:25 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 21:14:25 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:14:25 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:14:28 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:14:28 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:14:28 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:14:30 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 21:14:31 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 21:14:32 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 12.421 seconds (process running for 15.881)
+2026-03-30 21:14:32 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 21:14:32 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 21:14:34 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:14:34 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 21:14:34 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 21:23:45 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:23:45 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 21:23:46 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:23:46 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 25240 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:23:46 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:23:47 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:23:48 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:23:48 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 192 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:23:49 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:23:49 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:23:50 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:23:51 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 21:23:51 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 21:23:51 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 21:23:51 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:23:51 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:23:53 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:23:53 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:23:54 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:23:56 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 21:23:56 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 21:23:58 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 12.289 seconds (process running for 15.846)
+2026-03-30 21:23:58 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 21:23:58 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 21:23:59 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:23:59 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 21:23:59 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 21:26:28 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:26:28 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 21:26:28 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:26:29 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 17464 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:26:29 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:26:29 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:26:31 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:26:31 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 215 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:26:32 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:26:32 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:26:34 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:26:34 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 21:26:34 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 21:26:34 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 21:26:34 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:26:34 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:26:37 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:26:37 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:26:37 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:26:39 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 21:26:40 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 21:26:42 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 13.429 seconds (process running for 16.833)
+2026-03-30 21:26:42 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 21:26:42 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 21:26:43 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:26:43 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 21:26:43 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 21:30:41 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:30:41 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 21:30:41 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:30:42 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 11492 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:30:42 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:30:42 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:30:44 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:30:44 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 175 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:30:45 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:30:45 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:30:46 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:30:46 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 21:30:47 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 21:30:47 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 21:30:47 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:30:47 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:30:49 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:30:49 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:30:49 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:30:52 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 21:30:52 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 21:30:53 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 12.207 seconds (process running for 15.585)
+2026-03-30 21:30:53 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 21:30:53 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 21:30:55 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:30:55 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 21:30:55 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 21:32:24 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:32:24 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 21:32:25 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:32:25 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 9340 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:32:25 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:32:26 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:32:27 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:32:27 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 180 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:32:28 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:32:28 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:32:29 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:32:29 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 21:32:30 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 21:32:30 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 21:32:30 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:32:30 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:32:32 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:32:32 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:32:33 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:32:35 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 21:32:35 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 21:32:37 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 12.173 seconds (process running for 15.555)
+2026-03-30 21:32:37 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 21:32:37 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 21:32:38 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:32:38 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 21:32:38 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.
+2026-03-30 21:33:22 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:33:22 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.UserRepositoryTest
+2026-03-30 21:33:22 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:33:23 INFO  UserRepositoryTest:54 - Starting UserRepositoryTest using Java 25 with PID 4112 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:33:23 INFO  UserRepositoryTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:33:24 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:33:25 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:33:25 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 280 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:33:25 INFO  TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor:145 - Replacing 'dataSource' DataSource bean with embedded version
+2026-03-30 21:33:25 INFO  EmbeddedDatabaseFactory:196 - Starting embedded database: url='jdbc:h2:mem:a685c2fc-a183-4050-9266-9b6d7196cf1a;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-30 21:33:26 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:33:26 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:33:27 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:33:27 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:33:28 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:a685c2fc-a183-4050-9266-9b6d7196cf1a]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: A685C2FC-A183-4050-9266-9B6D7196CF1A/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:33:30 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:33:31 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:33:31 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:33:33 INFO  UserRepositoryTest:60 - Started UserRepositoryTest in 10.984 seconds (process running for 14.33)
+2026-03-30 21:33:35 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:33:53 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.service.CustomerServiceTest]: CustomerServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-30 21:33:54 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.service.CustomerServiceTest
+2026-03-30 21:33:54 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-30 21:33:54 INFO  CustomerServiceTest:54 - Starting CustomerServiceTest using Java 25 with PID 26168 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-30 21:33:54 INFO  CustomerServiceTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-30 21:33:55 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-30 21:33:57 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30 21:33:57 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 190 ms. Found 9 JPA repository interfaces.
+2026-03-30 21:33:58 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30 21:33:58 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30 21:33:59 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30 21:34:00 INFO  HikariDataSource:109 - HikariPool-1 - Starting...
+2026-03-30 21:34:00 INFO  HikariPool:580 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2026-03-30 21:34:00 INFO  HikariDataSource:122 - HikariPool-1 - Start completed.
+2026-03-30 21:34:00 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30 21:34:00 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:db]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: DB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30 21:34:02 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30 21:34:03 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:34:03 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30 21:34:05 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer:110 - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30 21:34:06 WARN  JpaBaseConfiguration$JpaWebConfiguration:247 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30 21:34:07 INFO  CustomerServiceTest:60 - Started CustomerServiceTest in 13.277 seconds (process running for 16.86)
+2026-03-30 21:34:07 WARN  SpringDocAppInitializer:83 - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-30 21:34:07 WARN  SpringDocAppInitializer:83 - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-30 21:34:09 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30 21:34:09 INFO  HikariDataSource:349 - HikariPool-1 - Shutdown initiated...
+2026-03-30 21:34:09 INFO  HikariDataSource:351 - HikariPool-1 - Shutdown completed.

@@ -71,6 +71,7 @@ public class CustomerServiceImpl implements CustomerService {
         return CustomerMapper.toDTO(customerRepository.save(customer));
     }
 
+    // create
     @Override
     public CustomerSummaryDTO create(CreateCustomerDTO dto, AppUser user) {
         if (customerRepository.existsByEmail(dto.email())) {
