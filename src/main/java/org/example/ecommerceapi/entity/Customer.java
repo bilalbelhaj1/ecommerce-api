@@ -53,7 +53,7 @@ public class Customer {
     @Builder.Default
     private List<Rating> ratings = new ArrayList<>();
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", nullable = false)
     private AppUser appUser;
 
