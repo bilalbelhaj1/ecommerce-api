@@ -38,7 +38,7 @@ public class OrderManagementServiceImpl implements OrderManagementService {
     private final OrderRepository orderRepository;
     private final CustomerRepository customerRepository;
     private final ProductRepository productRepository;
-    private NotificationService notificationService;
+    private final NotificationService notificationService;
 
     // place order
     public OrderResponseDTO placeOrder(CreateOrderDTO dto) {

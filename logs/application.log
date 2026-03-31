@@ -153,3 +153,109 @@
 2026-03-31 20:59:29 WARN  ProductServiceImpl:116 - Product with name prod not created, no image provided
 2026-03-31 20:59:29 WARN  ProductServiceImpl:105 - Product with name prod already exists
 2026-03-31 20:59:29 WARN  ProductServiceImpl:111 - Product with name prod not created category not found categoryId: 1
+2026-03-31 21:02:16 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.NotificationRepositoryTest]: NotificationRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:02:16 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.NotificationRepositoryTest
+2026-03-31 21:02:16 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-31 21:02:17 INFO  NotificationRepositoryTest:54 - Starting NotificationRepositoryTest using Java 25 with PID 19804 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-31 21:02:17 INFO  NotificationRepositoryTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-31 21:02:17 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-31 21:02:18 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-31 21:02:18 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 173 ms. Found 9 JPA repository interfaces.
+2026-03-31 21:02:18 INFO  TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor:145 - Replacing 'dataSource' DataSource bean with embedded version
+2026-03-31 21:02:18 INFO  EmbeddedDatabaseFactory:196 - Starting embedded database: url='jdbc:h2:mem:b0640756-58ca-4c04-8398-17e0ef9f1c1e;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-31 21:02:19 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-31 21:02:19 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-31 21:02:20 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-31 21:02:20 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-31 21:02:20 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:b0640756-58ca-4c04-8398-17e0ef9f1c1e]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: B0640756-58CA-4C04-8398-17E0EF9F1C1E/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-31 21:02:23 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-31 21:02:23 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-31 21:02:23 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-31 21:02:25 INFO  NotificationRepositoryTest:60 - Started NotificationRepositoryTest in 9.226 seconds (process running for 13.301)
+2026-03-31 21:02:27 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.ProductRepositoryTest]: ProductRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:02:27 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.ProductRepositoryTest
+2026-03-31 21:02:28 INFO  ProductServiceImpl:148 - Product updated productId: 1
+2026-03-31 21:02:28 INFO  ProductServiceImpl:132 - Product with name prod created productId: null
+2026-03-31 21:02:28 WARN  ProductServiceImpl:156 - Product not found productId: 1
+2026-03-31 21:02:28 WARN  ProductServiceImpl:140 - Product not updated product not found productId: 1
+2026-03-31 21:02:28 INFO  ProductServiceImpl:160 - Product deleted 
+2026-03-31 21:02:28 WARN  ProductServiceImpl:116 - Product with name prod not created, no image provided
+2026-03-31 21:02:28 WARN  ProductServiceImpl:105 - Product with name prod already exists
+2026-03-31 21:02:28 WARN  ProductServiceImpl:111 - Product with name prod not created category not found categoryId: 1
+2026-03-31 21:02:28 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.RatingRepositoryTest]: RatingRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:02:28 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.RatingRepositoryTest
+2026-03-31 21:02:28 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.RoleRepositoryTest]: RoleRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:02:28 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.RoleRepositoryTest
+2026-03-31 21:02:29 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:02:29 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.OrderRepositoryTest
+2026-03-31 21:02:29 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.CategoryRepositoryTest]: CategoryRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:02:29 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.CategoryRepositoryTest
+2026-03-31 21:02:29 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.CustomerRepositoryTest]: CustomerRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:02:29 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.CustomerRepositoryTest
+2026-03-31 21:02:29 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:02:29 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.UserRepositoryTest
+2026-03-31 21:02:30 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-31 21:03:04 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.NotificationRepositoryTest]: NotificationRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:03:05 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.NotificationRepositoryTest
+2026-03-31 21:03:05 INFO  RestartApplicationListener:74 - Restart disabled due to context in which it is running
+2026-03-31 21:03:06 INFO  NotificationRepositoryTest:54 - Starting NotificationRepositoryTest using Java 25 with PID 7556 (started by Bilal in C:\Users\Bilal\Desktop\api-backup\ecommerce-api)
+2026-03-31 21:03:06 INFO  NotificationRepositoryTest:652 - No active profile set, falling back to 1 default profile: "default"
+2026-03-31 21:03:07 INFO  RepositoryConfigurationDelegate:145 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-31 21:03:08 INFO  Version:18 - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-31 21:03:08 INFO  RepositoryConfigurationDelegate:213 - Finished Spring Data repository scanning in 222 ms. Found 9 JPA repository interfaces.
+2026-03-31 21:03:08 INFO  TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor:145 - Replacing 'dataSource' DataSource bean with embedded version
+2026-03-31 21:03:08 INFO  EmbeddedDatabaseFactory:196 - Starting embedded database: url='jdbc:h2:mem:a0680776-c7ba-4ee6-abfa-929f8e91b6a9;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-31 21:03:10 INFO  jpa:102 - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-31 21:03:10 INFO  core:41 - HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-31 21:03:12 INFO  SpringPersistenceUnitInfo:129 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-31 21:03:12 WARN  deprecation:152 - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-31 21:03:12 INFO  pooling:179 - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:a0680776-c7ba-4ee6-abfa-929f8e91b6a9]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: A0680776-C7BA-4EE6-ABFA-929F8E91B6A9/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-31 21:03:16 INFO  core:53 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-31 21:03:16 INFO  LocalContainerEntityManagerFactoryBean:464 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-31 21:03:16 INFO  QueryEnhancerFactories:48 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-31 21:03:20 INFO  NotificationRepositoryTest:60 - Started NotificationRepositoryTest in 14.684 seconds (process running for 21.556)
+2026-03-31 21:03:21 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.ProductRepositoryTest]: ProductRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:03:21 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.ProductRepositoryTest
+2026-03-31 21:03:23 INFO  ProductServiceImpl:148 - Product updated productId: 1
+2026-03-31 21:03:23 INFO  ProductServiceImpl:132 - Product with name prod created productId: null
+2026-03-31 21:03:23 WARN  ProductServiceImpl:156 - Product not found productId: 1
+2026-03-31 21:03:23 WARN  ProductServiceImpl:140 - Product not updated product not found productId: 1
+2026-03-31 21:03:23 INFO  ProductServiceImpl:160 - Product deleted 
+2026-03-31 21:03:23 WARN  ProductServiceImpl:116 - Product with name prod not created, no image provided
+2026-03-31 21:03:23 WARN  ProductServiceImpl:105 - Product with name prod already exists
+2026-03-31 21:03:23 WARN  ProductServiceImpl:111 - Product with name prod not created category not found categoryId: 1
+2026-03-31 21:03:23 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.RatingRepositoryTest]: RatingRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:03:23 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.RatingRepositoryTest
+2026-03-31 21:03:23 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.RoleRepositoryTest]: RoleRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:03:24 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.RoleRepositoryTest
+2026-03-31 21:03:24 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.OrderRepositoryTest]: OrderRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:03:24 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.OrderRepositoryTest
+2026-03-31 21:03:24 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.CategoryRepositoryTest]: CategoryRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:03:24 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.CategoryRepositoryTest
+2026-03-31 21:03:24 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.CustomerRepositoryTest]: CustomerRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:03:24 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.CustomerRepositoryTest
+2026-03-31 21:03:25 INFO  AnnotationConfigContextLoaderUtils:83 - Could not detect default configuration classes for test class [org.example.ecommerceapi.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-31 21:03:25 INFO  SpringBootTestContextBootstrapper:211 - Found @SpringBootConfiguration org.example.ecommerceapi.EcommerceApiApplication for test class org.example.ecommerceapi.repository.UserRepositoryTest
+2026-03-31 21:03:25 INFO  LocalContainerEntityManagerFactoryBean:693 - Closing JPA EntityManagerFactory for persistence unit 'default'
