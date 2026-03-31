@@ -1,6 +1,9 @@
 package org.example.ecommerceapi.service;
 
 import org.example.ecommerceapi.dto.category.UpdateCategoryDTO;
+import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
+import org.example.ecommerceapi.entity.Product;
+import org.example.ecommerceapi.enums.ProductStatus;
 import org.example.ecommerceapi.exception.BadRequestException;
 import org.example.ecommerceapi.dto.category.CategoryResponseDTO;
 import org.example.ecommerceapi.dto.category.CreateCategoryDTO;
@@ -17,6 +20,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
@@ -157,8 +162,34 @@ class CategoryServiceTest {
     }
 
     @Test
-    void existsByName_returnsTrue_whenCategoryExists(){}
-
+    void getProductsByCategory_returns_whenProductsExists() {
+        // given
+        category.setId(1L);
+        Product product = Product.builder()
+                .name("product")
+                .description("description")
+                .imageData(new byte[12])
+                .imageType("png")
+                .stock(12)
+                .id(2L)
+                .price(BigDecimal.TEN)
+                .category(category)
+                .status(ProductStatus.ACTIVE)
+                .build();
+        category.getProducts().add(product);
+        when(productRepository.nbrRatings(product)).thenReturn(2);
+        when(productRepository.rating(2L)).thenReturn(4.5);
+        when(categoryRepository.findById(1L)).thenReturn(Optional.of(category));
+        // when
+        List<ProductSummaryDTO> res = underTest.getProductsByCategory(1L);
+        // then
+        assertThat(res).isNotEmpty();
+    }
     @Test
-    void existsByName_returnsFalse_whenCategoryNotExists(){}
+    void getProductsByCategory_throws_whenCategoryNotExists() {
+        // given
+        when(categoryRepository.findById(1L)).thenReturn(Optional.empty());
+        // then
+        assertThatThrownBy(() -> underTest.getProductsByCategory(1L)).isInstanceOf(ResourceNotFoundException.class);
+    }
 }
