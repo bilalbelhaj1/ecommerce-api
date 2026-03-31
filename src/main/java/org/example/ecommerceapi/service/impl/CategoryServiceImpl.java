@@ -66,6 +66,9 @@ public class CategoryServiceImpl implements CategoryService {
         if (updateCategoryDTO.name() != null
                 && !updateCategoryDTO.name().isEmpty()
                 && !Objects.equals(updateCategoryDTO.name(), category.getName())){
+            if (categoryRepository.existsByName(updateCategoryDTO.name())) {
+                throw new BadRequestException("Category with name " + updateCategoryDTO.name() + " Already exists ");
+            }
             category.setName(updateCategoryDTO.name());
         }
         if (updateCategoryDTO.description() != null
