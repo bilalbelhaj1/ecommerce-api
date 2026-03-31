@@ -39,6 +39,7 @@ public class NotificationServiceImpl implements NotificationService {
         if (userId == null) {
             throw new BadRequestException("Invalid request with no userId");
         }
+        if (!userRepository.existsById(userId)) throw new ResourceNotFoundException("User Not Found");
         return notificationRepository.findByUserId(userId)
                 .stream()
                 .map(NotificationMapper::toResponse)
