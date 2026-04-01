@@ -46,15 +46,15 @@ public class OrderManagementServiceImpl implements OrderManagementService {
         Customer customer = customerRepository.findById(dto.customerId()).orElseThrow(
                 () -> new ResourceNotFoundException("Customer Not found")
         );
+
+        if(dto.items() == null || dto.items().isEmpty()){
+            throw new BadRequestException("Order must contain at least one item");
+        }
         // create order
         Order order = OrderManagementMapper.toEntity(dto, customer);
         BigDecimal totalAmount = BigDecimal.ZERO;
         // create items
         for (CreateItemDTO itemDTO : dto.items()) {
-
-            if(dto.items().isEmpty()){
-                throw new BadRequestException("Order must contain at least one item");
-            }
 
             // check if product exists then create item
             Product product = productRepository.findById(itemDTO.productId()).orElseThrow(
@@ -111,6 +111,9 @@ public class OrderManagementServiceImpl implements OrderManagementService {
 
     // view customer orders
     public Page<OrderSummaryDTO> getCustomerOrders(Long id, OrderStatus status, int page, int size) {
+        if (!customerRepository.existsById(id)) {
+            throw new ResourceNotFoundException("Customer Not found");
+        }
         Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
         Page<Order> orders = null;
         if (status != null) {
