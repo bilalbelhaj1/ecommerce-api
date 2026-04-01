@@ -60,10 +60,10 @@ public class AuthServiceImpl implements AuthService {
 
     public LoginResponseDTO login(LoginDTO dto) {
         AppUser appUser = userRepository.findByUsername(dto.email()).orElseThrow(
-                () -> new ResourceNotFoundException("Invalid email or password ")
+                () -> new BadRequestException("Invalid email or password ")
         );
         if (!passwordEncoder.matches(dto.password(), appUser.getPassword())){
-            throw new ResourceNotFoundException("Invalid email or password");
+            throw new BadRequestException("Invalid email or password");
         }
 
         Authentication auth = authenticationManager.authenticate(

@@ -1,5 +1,7 @@
 package org.example.ecommerceapi.service;
 
+import org.example.ecommerceapi.dto.auth.LoginDTO;
+import org.example.ecommerceapi.dto.auth.LoginResponseDTO;
 import org.example.ecommerceapi.dto.customer.CreateCustomerDTO;
 import org.example.ecommerceapi.dto.customer.CustomerSummaryDTO;
 import org.example.ecommerceapi.entity.AppUser;
@@ -16,6 +18,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
@@ -25,8 +28,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 /**
  * @author $(bilal belhaj)
@@ -88,5 +90,30 @@ class AuthServiceTest {
 
     @Test
     void login() {
+        AppUser user = AppUser.builder().password("hashedpassword").username(email).build();
+        when(userRepository.findByUsername(email)).thenReturn(Optional.of(user));
+        when(passwordEncoder.matches(password, "hashedpassword")).thenReturn(true);
+        when(authenticationManager.authenticate(any())).thenReturn(mock(Authentication.class));
+        when(jwtService.generateToken(user)).thenReturn("token");
+
+        LoginResponseDTO res = underTest.login(new LoginDTO(password, email));
+
+        assertThat(res).isNotNull();
+        assertThat(res.email()).isEqualTo(email);
+        assertThat(res.id()).isEqualTo(user.getId());
+    }
+
+    @Test
+    void login_throws_whenInvalidEmail() {
+        when(userRepository.findByUsername(email)).thenReturn(Optional.empty());
+
+        assertThatThrownBy(() -> underTest.login(new LoginDTO(password, email))).isInstanceOf(BadRequestException.class);
+    }
+
+    @Test
+    void login_throws_whenInvalidPassword() {
+        AppUser user = AppUser.builder().password(passwordEncoder.encode(password)).username(email).build();
+        when(userRepository.findByUsername(email)).thenReturn(Optional.of(user));
+        assertThatThrownBy(() -> underTest.login(new LoginDTO("invalidpass", email))).isInstanceOf(BadRequestException.class);
     }
 }
