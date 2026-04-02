@@ -9,14 +9,14 @@ import jakarta.validation.constraints.Size;
  * @author $(bilal belhaj)
  **/
 public record CreateRatingDTO(
-        @NotBlank
+        @Min(1)
         Long productId,
         @Size(min = 4, max = 255)
         String comment,
 
         @Min(1) @Max(5)
         int rating,
-        @NotBlank
+        @Min(1)
         Long customerId
 ) {
 }
