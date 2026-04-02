@@ -16,7 +16,7 @@ public record UpdateCustomerDTO(
         @Email
         String email,
 
-        @Size(min = 9, max = 15)
+       // @Size(min = 9, max = 15)
         String phoneNumber,
 
         @Size(min = 3, max = 255)

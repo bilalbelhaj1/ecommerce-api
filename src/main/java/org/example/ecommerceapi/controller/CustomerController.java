@@ -55,6 +55,7 @@ public class CustomerController {
             summary = "update customer ",
             description = "customer endpoint to update profile"
     )
+
     public ResponseEntity<CustomerResponseDTO> updateCustomer(@Parameter(description = "Customer Id") @PathVariable Long id, @Valid @RequestBody UpdateCustomerDTO dto) {
         return ResponseEntity.ok().body(customerService.updateProfile(id, dto));
     }
