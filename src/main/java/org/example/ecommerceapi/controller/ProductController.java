@@ -1,5 +1,7 @@
 package org.example.ecommerceapi.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -20,7 +22,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import tools.jackson.databind.ObjectMapper;
 
 import java.net.URI;
 import java.util.List;
@@ -101,7 +102,7 @@ public class ProductController {
     public ResponseEntity<ProductResponseDTO> addProduct(
             @Parameter(description = "product data") @RequestPart("product") String productJson,
             @Parameter(description = "product image") @RequestPart("image") MultipartFile imageFile
-    ){
+    ) throws JsonProcessingException {
         CreateProductDTO createProductDTO = mapper.readValue(productJson, CreateProductDTO.class);
         ProductResponseDTO res = productService.addProduct(createProductDTO, imageFile);
         logger.info("Request to create product, product name: {}", createProductDTO.name());
@@ -132,7 +133,7 @@ public class ProductController {
             @Parameter(description = "product Id") @PathVariable("productId") Long id,
             @Parameter(description = "product new data") @RequestPart("product") String productJson,
             @Parameter(description = "optional new image") @RequestPart("image") MultipartFile imageFile
-    ) {
+    ) throws JsonProcessingException {
         logger.info("Request to update product productId:{}", id);
         UpdateProductDTO updateProductDTO = mapper.readValue(productJson, UpdateProductDTO.class);
         ProductResponseDTO res = productService.updateProduct(id, updateProductDTO, imageFile);
