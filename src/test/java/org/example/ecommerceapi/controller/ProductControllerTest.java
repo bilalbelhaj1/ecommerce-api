@@ -6,6 +6,7 @@ import org.example.ecommerceapi.dto.customer.CustomerSummaryDTO;
 import org.example.ecommerceapi.dto.product.CreateProductDTO;
 import org.example.ecommerceapi.dto.product.ProductResponseDTO;
 import org.example.ecommerceapi.dto.product.ProductSummaryDTO;
+import org.example.ecommerceapi.dto.product.UpdateProductDTO;
 import org.example.ecommerceapi.dto.rating.RatingResponseDTO;
 import org.example.ecommerceapi.enums.ProductStatus;
 import org.example.ecommerceapi.service.ProductService;
@@ -19,6 +20,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -26,10 +28,11 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
  * @author $(bilal belhaj)
@@ -166,27 +169,103 @@ class ProductControllerTest {
                 List.of(new RatingResponseDTO(1L, "cool", 4, new CustomerSummaryDTO(1L, "bil", "bel")))
         );
         CreateProductDTO req = new CreateProductDTO("prod1", "desc1", BigDecimal.TEN , 12, 1L);
-        when(productService.addProduct(null, null)).thenReturn(res);
-
-        mockMvc.perform(post("/api/v1/products").contentType(MediaType.MULTIPART_FORM_DATA)
-                        .content(objectMapper.writeValueAsString(req))
-                        .content(new byte[10])
-                )
+        when(productService.addProduct(any(), any())).thenReturn(res);
+        MockMultipartFile product = new MockMultipartFile(
+                "product",
+                "",
+                MediaType.APPLICATION_JSON_VALUE,
+                objectMapper.writeValueAsBytes(req)
+        );
+        MockMultipartFile image = new MockMultipartFile(
+                "image",
+                "image.png",
+                MediaType.IMAGE_PNG_VALUE,
+                new byte[10]
+        );
+        mockMvc.perform(multipart("/api/v1/products")
+                .file(product)
+                .file(image)
+        )
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id").value(1L))
                 .andExpect(jsonPath("$.name").value("prod1"))
-                .andExpect(jsonPath("$.price").value(BigDecimal.TEN))
+                .andExpect(jsonPath("$.price").value(10))
                 .andExpect(jsonPath("$.stock").value(12))
                 .andExpect(jsonPath("$.category.id").value(1L))
                 .andExpect(jsonPath("$.ratings.length()").value(1));
     }
 
     @Test
-    void getImageByProductId() {
+    void getImageByProductId() throws Exception{
+        byte[] image = new byte[]{1,2,3,4,5};
+        ProductResponseDTO res = new ProductResponseDTO(
+                1L,
+                "prod1",
+                "desc1",
+                BigDecimal.TEN,
+                12,
+                image,
+                "image/png",
+                new CategorySummaryDTO("cat1", 1L),
+                List.of()
+        );
+
+        when(productService.getProduct(1L)).thenReturn(res);
+
+        mockMvc.perform(get("/api/v1/products/{id}/image", 1L))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.IMAGE_PNG))
+                .andExpect(content().bytes(image));
     }
 
     @Test
-    void updateProduct() {
+    void updateProduct() throws Exception{
+        byte[] imageBytes = new byte[]{1,2,3,4,5};
+
+        ProductResponseDTO res = new ProductResponseDTO(
+                1L,
+                "prodUpdate",
+                "desc",
+                BigDecimal.TEN,
+                12,
+                imageBytes,
+                "image/png",
+                new CategorySummaryDTO("cat1", 1L),
+                List.of(new RatingResponseDTO(1L, "cool", 4, new CustomerSummaryDTO(1L, "bil", "bel")))
+        );
+        UpdateProductDTO req = new UpdateProductDTO(
+                "prodUpdate",
+                "desc",
+                null,
+                null,
+                1L
+        );
+
+        when(productService.updateProduct(eq(1L), any(), any())).thenReturn(res);
+
+        MockMultipartFile product = new MockMultipartFile(
+                "product",
+                "",
+                MediaType.APPLICATION_JSON_VALUE,
+                objectMapper.writeValueAsBytes(req)
+        );
+        MockMultipartFile image = new MockMultipartFile(
+                "image",
+                "image.png",
+                MediaType.IMAGE_PNG_VALUE,
+                imageBytes
+        );
+        mockMvc.perform(multipart("/api/v1/products/{productId}", 1L)
+                        .file(product)
+                        .file(image)
+                        .with(request -> {
+                            request.setMethod("PUT");
+                            return request;
+                        })
+        )
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id").value(1L))
+                .andExpect(jsonPath("$.name").value("prodUpdate"));
     }
 
     @Test
