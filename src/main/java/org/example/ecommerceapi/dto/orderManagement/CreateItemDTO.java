@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Positive;
  * @author $(bilal belhaj)
  **/
 public record CreateItemDTO(
-        @NotBlank
+        @Min(1)
         Long productId,
         @Positive @Min(1)
         Integer quantity

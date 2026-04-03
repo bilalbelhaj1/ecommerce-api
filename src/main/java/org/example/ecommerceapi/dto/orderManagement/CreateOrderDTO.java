@@ -1,5 +1,6 @@
 package org.example.ecommerceapi.dto.orderManagement;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -9,7 +10,7 @@ import java.util.List;
  * @author $(bilal belhaj)
  **/
 public record CreateOrderDTO(
-        @NotBlank
+        @Min(1)
         Long customerId,
         @NotEmpty
         List<CreateItemDTO> items,
