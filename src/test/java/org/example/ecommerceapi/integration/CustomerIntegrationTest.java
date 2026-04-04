@@ -39,10 +39,6 @@ public class CustomerIntegrationTest {
 
     @Autowired
     private CustomerRepository customerRepository;
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private CustomerService customerService;
 
     @Test
     void getCustomers() throws Exception{

@@ -140,13 +140,15 @@ public class CategoryIntegrationTest {
     @Test
     void getProductsByCategory_success() throws Exception {
         Category saved = categoryRepository.save(Category.builder().name("cat1").description("desc").build());
-        List<Product> products = List.of(
-                Product.builder().name("prod1").description("desc1").stock(10).price(BigDecimal.TEN).category(saved).build(),
-                Product.builder().name("prod2").description("desc2").stock(20).price(BigDecimal.valueOf(20)).category(saved).build()
-        );
+        Product prod1 = Product.builder().name("prod1").description("desc1").stock(10).price(BigDecimal.TEN).category(saved).build();
+        Product prod2 = Product.builder().name("prod2").description("desc2").stock(20).price(BigDecimal.valueOf(20)).category(saved).build();
+        List<Product> products = List.of(prod1, prod2);
+        saved.getProducts().add(prod1);
+        saved.getProducts().add(prod2);
         List<Product> savedProducts = productRepository.saveAll(products);
+        categoryRepository.save(saved);
 
-        mockMvc.perform(get("/api/v1/categories/{categoryId}/products", saved.getId()))
+        mockMvc.perform(get("/api/v1/categories/{id}/products", saved.getId()))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()").value(savedProducts.size()))
                 .andExpect(jsonPath("$[0].id").value(savedProducts.get(0).getId()))
